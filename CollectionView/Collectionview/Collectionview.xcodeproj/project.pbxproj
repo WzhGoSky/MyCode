@@ -14,8 +14,9 @@
 		84A5D1D91D536E2B000701C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A5D1D71D536E2B000701C9 /* LaunchScreen.storyboard */; };
 		84A5D1E41D536E2B000701C9 /* CollectionviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5D1E31D536E2B000701C9 /* CollectionviewTests.m */; };
 		84A5D1EF1D536E2B000701C9 /* CollectionviewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5D1EE1D536E2B000701C9 /* CollectionviewUITests.m */; };
-		84A5D2021D538783000701C9 /* ZHNormalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5D2011D538783000701C9 /* ZHNormalController.m */; };
 		84A5D2071D538ED6000701C9 /* ZHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5D2061D538ED6000701C9 /* ZHNavigationController.m */; };
+		84F6CC811D55DE5400543935 /* ZHNormalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6CC801D55DE5400543935 /* ZHNormalController.m */; };
+		84F6CC881D55DEDA00543935 /* ZHWaterFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6CC871D55DEDA00543935 /* ZHWaterFlowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +52,14 @@
 		84A5D1EA1D536E2B000701C9 /* CollectionviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A5D1EE1D536E2B000701C9 /* CollectionviewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionviewUITests.m; sourceTree = "<group>"; };
 		84A5D1F01D536E2B000701C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84A5D2001D538783000701C9 /* ZHNormalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNormalController.h; sourceTree = "<group>"; };
-		84A5D2011D538783000701C9 /* ZHNormalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNormalController.m; sourceTree = "<group>"; };
 		84A5D2031D538819000701C9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		84A5D2041D538B6F000701C9 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		84A5D2051D538ED6000701C9 /* ZHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNavigationController.h; sourceTree = "<group>"; };
 		84A5D2061D538ED6000701C9 /* ZHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNavigationController.m; sourceTree = "<group>"; };
+		84F6CC7F1D55DE5400543935 /* ZHNormalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNormalController.h; sourceTree = "<group>"; };
+		84F6CC801D55DE5400543935 /* ZHNormalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNormalController.m; sourceTree = "<group>"; };
+		84F6CC861D55DEDA00543935 /* ZHWaterFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHWaterFlowController.h; sourceTree = "<group>"; };
+		84F6CC871D55DEDA00543935 /* ZHWaterFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHWaterFlowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,18 +164,28 @@
 		84A5D1FE1D538723000701C9 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				84A5D1FF1D538743000701C9 /* normal */,
+				84F6CC851D55DEDA00543935 /* waterFlow(瀑布流) */,
+				84F6CC7E1D55DE5400543935 /* normal(普通用法) */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
 		};
-		84A5D1FF1D538743000701C9 /* normal */ = {
+		84F6CC7E1D55DE5400543935 /* normal(普通用法) */ = {
 			isa = PBXGroup;
 			children = (
-				84A5D2001D538783000701C9 /* ZHNormalController.h */,
-				84A5D2011D538783000701C9 /* ZHNormalController.m */,
+				84F6CC7F1D55DE5400543935 /* ZHNormalController.h */,
+				84F6CC801D55DE5400543935 /* ZHNormalController.m */,
 			);
-			path = normal;
+			path = "normal(普通用法)";
+			sourceTree = "<group>";
+		};
+		84F6CC851D55DEDA00543935 /* waterFlow(瀑布流) */ = {
+			isa = PBXGroup;
+			children = (
+				84F6CC861D55DEDA00543935 /* ZHWaterFlowController.h */,
+				84F6CC871D55DEDA00543935 /* ZHWaterFlowController.m */,
+			);
+			path = "waterFlow(瀑布流)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A5D1D11D536E2B000701C9 /* ViewController.m in Sources */,
+				84F6CC881D55DEDA00543935 /* ZHWaterFlowController.m in Sources */,
 				84A5D1CE1D536E2B000701C9 /* AppDelegate.m in Sources */,
+				84F6CC811D55DE5400543935 /* ZHNormalController.m in Sources */,
 				84A5D2071D538ED6000701C9 /* ZHNavigationController.m in Sources */,
-				84A5D2021D538783000701C9 /* ZHNormalController.m in Sources */,
 				84A5D1CB1D536E2B000701C9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +547,7 @@
 				84A5D1F51D536E2B000701C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84A5D1F61D536E2B000701C9 /* Build configuration list for PBXNativeTarget "CollectionviewTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +556,7 @@
 				84A5D1F81D536E2B000701C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84A5D1F91D536E2B000701C9 /* Build configuration list for PBXNativeTarget "CollectionviewUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +565,7 @@
 				84A5D1FB1D536E2B000701C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

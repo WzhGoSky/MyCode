@@ -83,8 +83,8 @@
 {
     if (!_dataArr) {
         
-        _dataArr = @[@{@"sectionName":@"基础",@"data":@[@"普通用法 ZHNormalController"]},
-                     @{@"sectionName":@"高级",@"data":@[@"瀑布流"]}];
+        _dataArr = @[@{@"sectionName":@"基础",@"data":@[@"普通用法 ZHNormalController",@"瀑布流 ZHWaterFlowController"]},
+                     @{@"sectionName":@"高级",@"data":@[]}];
     }
     return _dataArr;
 }
