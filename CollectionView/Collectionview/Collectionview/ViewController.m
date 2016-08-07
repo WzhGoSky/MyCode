@@ -8,7 +8,6 @@
 //  整理一个关于collectionView用法的Demo
 
 #import "ViewController.h"
-#import "header.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -84,7 +83,7 @@
     if (!_dataArr) {
         
         _dataArr = @[@{@"sectionName":@"基础",@"data":@[@"普通用法 ZHNormalController",@"瀑布流 ZHWaterFlowController"]},
-                     @{@"sectionName":@"高级",@"data":@[]}];
+                     @{@"sectionName":@"自定义布局",@"data":@[]}];
     }
     return _dataArr;
 }
