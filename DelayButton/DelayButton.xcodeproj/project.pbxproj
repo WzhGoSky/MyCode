@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		842C3F551D56D60F009F4A77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F541D56D60F009F4A77 /* main.m */; };
+		842C3F581D56D60F009F4A77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F571D56D60F009F4A77 /* AppDelegate.m */; };
+		842C3F5B1D56D60F009F4A77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F5A1D56D60F009F4A77 /* ViewController.m */; };
+		842C3F5E1D56D60F009F4A77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C3F5C1D56D60F009F4A77 /* Main.storyboard */; };
+		842C3F601D56D60F009F4A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842C3F5F1D56D60F009F4A77 /* Assets.xcassets */; };
+		842C3F631D56D60F009F4A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C3F611D56D60F009F4A77 /* LaunchScreen.storyboard */; };
+		842C3F6E1D56D60F009F4A77 /* DelayButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F6D1D56D60F009F4A77 /* DelayButtonTests.m */; };
+		842C3F791D56D60F009F4A77 /* DelayButtonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F781D56D60F009F4A77 /* DelayButtonUITests.m */; };
+		842C3F881D56D640009F4A77 /* UIControl+clickDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F871D56D640009F4A77 /* UIControl+clickDelay.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		842C3F6A1D56D60F009F4A77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 842C3F481D56D60F009F4A77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 842C3F4F1D56D60F009F4A77;
+			remoteInfo = DelayButton;
+		};
+		842C3F751D56D60F009F4A77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 842C3F481D56D60F009F4A77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 842C3F4F1D56D60F009F4A77;
+			remoteInfo = DelayButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		842C3F501D56D60F009F4A77 /* DelayButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelayButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842C3F541D56D60F009F4A77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		842C3F561D56D60F009F4A77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		842C3F571D56D60F009F4A77 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		842C3F591D56D60F009F4A77 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		842C3F5A1D56D60F009F4A77 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		842C3F5D1D56D60F009F4A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		842C3F5F1D56D60F009F4A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		842C3F621D56D60F009F4A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		842C3F641D56D60F009F4A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842C3F691D56D60F009F4A77 /* DelayButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DelayButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		842C3F6D1D56D60F009F4A77 /* DelayButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayButtonTests.m; sourceTree = "<group>"; };
+		842C3F6F1D56D60F009F4A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842C3F741D56D60F009F4A77 /* DelayButtonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DelayButtonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		842C3F781D56D60F009F4A77 /* DelayButtonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayButtonUITests.m; sourceTree = "<group>"; };
+		842C3F7A1D56D60F009F4A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842C3F861D56D640009F4A77 /* UIControl+clickDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+clickDelay.h"; sourceTree = "<group>"; };
+		842C3F871D56D640009F4A77 /* UIControl+clickDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+clickDelay.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842C3F4D1D56D60F009F4A77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		842C3F661D56D60F009F4A77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		842C3F711D56D60F009F4A77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		842C3F471D56D60F009F4A77 = {
+			isa = PBXGroup;
+			children = (
+				842C3F521D56D60F009F4A77 /* DelayButton */,
+				842C3F6C1D56D60F009F4A77 /* DelayButtonTests */,
+				842C3F771D56D60F009F4A77 /* DelayButtonUITests */,
+				842C3F511D56D60F009F4A77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		842C3F511D56D60F009F4A77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842C3F501D56D60F009F4A77 /* DelayButton.app */,
+				842C3F691D56D60F009F4A77 /* DelayButtonTests.xctest */,
+				842C3F741D56D60F009F4A77 /* DelayButtonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		842C3F521D56D60F009F4A77 /* DelayButton */ = {
+			isa = PBXGroup;
+			children = (
+				842C3F861D56D640009F4A77 /* UIControl+clickDelay.h */,
+				842C3F871D56D640009F4A77 /* UIControl+clickDelay.m */,
+				842C3F561D56D60F009F4A77 /* AppDelegate.h */,
+				842C3F571D56D60F009F4A77 /* AppDelegate.m */,
+				842C3F591D56D60F009F4A77 /* ViewController.h */,
+				842C3F5A1D56D60F009F4A77 /* ViewController.m */,
+				842C3F5C1D56D60F009F4A77 /* Main.storyboard */,
+				842C3F5F1D56D60F009F4A77 /* Assets.xcassets */,
+				842C3F611D56D60F009F4A77 /* LaunchScreen.storyboard */,
+				842C3F641D56D60F009F4A77 /* Info.plist */,
+				842C3F531D56D60F009F4A77 /* Supporting Files */,
+			);
+			path = DelayButton;
+			sourceTree = "<group>";
+		};
+		842C3F531D56D60F009F4A77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				842C3F541D56D60F009F4A77 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		842C3F6C1D56D60F009F4A77 /* DelayButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				842C3F6D1D56D60F009F4A77 /* DelayButtonTests.m */,
+				842C3F6F1D56D60F009F4A77 /* Info.plist */,
+			);
+			path = DelayButtonTests;
+			sourceTree = "<group>";
+		};
+		842C3F771D56D60F009F4A77 /* DelayButtonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				842C3F781D56D60F009F4A77 /* DelayButtonUITests.m */,
+				842C3F7A1D56D60F009F4A77 /* Info.plist */,
+			);
+			path = DelayButtonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842C3F4F1D56D60F009F4A77 /* DelayButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842C3F7D1D56D60F009F4A77 /* Build configuration list for PBXNativeTarget "DelayButton" */;
+			buildPhases = (
+				842C3F4C1D56D60F009F4A77 /* Sources */,
+				842C3F4D1D56D60F009F4A77 /* Frameworks */,
+				842C3F4E1D56D60F009F4A77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DelayButton;
+			productName = DelayButton;
+			productReference = 842C3F501D56D60F009F4A77 /* DelayButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		842C3F681D56D60F009F4A77 /* DelayButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842C3F801D56D60F009F4A77 /* Build configuration list for PBXNativeTarget "DelayButtonTests" */;
+			buildPhases = (
+				842C3F651D56D60F009F4A77 /* Sources */,
+				842C3F661D56D60F009F4A77 /* Frameworks */,
+				842C3F671D56D60F009F4A77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				842C3F6B1D56D60F009F4A77 /* PBXTargetDependency */,
+			);
+			name = DelayButtonTests;
+			productName = DelayButtonTests;
+			productReference = 842C3F691D56D60F009F4A77 /* DelayButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		842C3F731D56D60F009F4A77 /* DelayButtonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842C3F831D56D60F009F4A77 /* Build configuration list for PBXNativeTarget "DelayButtonUITests" */;
+			buildPhases = (
+				842C3F701D56D60F009F4A77 /* Sources */,
+				842C3F711D56D60F009F4A77 /* Frameworks */,
+				842C3F721D56D60F009F4A77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				842C3F761D56D60F009F4A77 /* PBXTargetDependency */,
+			);
+			name = DelayButtonUITests;
+			productName = DelayButtonUITests;
+			productReference = 842C3F741D56D60F009F4A77 /* DelayButtonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842C3F481D56D60F009F4A77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = wangzhenhai;
+				TargetAttributes = {
+					842C3F4F1D56D60F009F4A77 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					842C3F681D56D60F009F4A77 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 842C3F4F1D56D60F009F4A77;
+					};
+					842C3F731D56D60F009F4A77 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 842C3F4F1D56D60F009F4A77;
+					};
+				};
+			};
+			buildConfigurationList = 842C3F4B1D56D60F009F4A77 /* Build configuration list for PBXProject "DelayButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 842C3F471D56D60F009F4A77;
+			productRefGroup = 842C3F511D56D60F009F4A77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842C3F4F1D56D60F009F4A77 /* DelayButton */,
+				842C3F681D56D60F009F4A77 /* DelayButtonTests */,
+				842C3F731D56D60F009F4A77 /* DelayButtonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		842C3F4E1D56D60F009F4A77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842C3F631D56D60F009F4A77 /* LaunchScreen.storyboard in Resources */,
+				842C3F601D56D60F009F4A77 /* Assets.xcassets in Resources */,
+				842C3F5E1D56D60F009F4A77 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		842C3F671D56D60F009F4A77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		842C3F721D56D60F009F4A77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842C3F4C1D56D60F009F4A77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842C3F5B1D56D60F009F4A77 /* ViewController.m in Sources */,
+				842C3F881D56D640009F4A77 /* UIControl+clickDelay.m in Sources */,
+				842C3F581D56D60F009F4A77 /* AppDelegate.m in Sources */,
+				842C3F551D56D60F009F4A77 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		842C3F651D56D60F009F4A77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842C3F6E1D56D60F009F4A77 /* DelayButtonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		842C3F701D56D60F009F4A77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842C3F791D56D60F009F4A77 /* DelayButtonUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		842C3F6B1D56D60F009F4A77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 842C3F4F1D56D60F009F4A77 /* DelayButton */;
+			targetProxy = 842C3F6A1D56D60F009F4A77 /* PBXContainerItemProxy */;
+		};
+		842C3F761D56D60F009F4A77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 842C3F4F1D56D60F009F4A77 /* DelayButton */;
+			targetProxy = 842C3F751D56D60F009F4A77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		842C3F5C1D56D60F009F4A77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842C3F5D1D56D60F009F4A77 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		842C3F611D56D60F009F4A77 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842C3F621D56D60F009F4A77 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		842C3F7B1D56D60F009F4A77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		842C3F7C1D56D60F009F4A77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		842C3F7E1D56D60F009F4A77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DelayButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.DelayButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		842C3F7F1D56D60F009F4A77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DelayButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.DelayButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		842C3F811D56D60F009F4A77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DelayButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.DelayButtonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DelayButton.app/DelayButton";
+			};
+			name = Debug;
+		};
+		842C3F821D56D60F009F4A77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DelayButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.DelayButtonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DelayButton.app/DelayButton";
+			};
+			name = Release;
+		};
+		842C3F841D56D60F009F4A77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DelayButtonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.DelayButtonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DelayButton;
+			};
+			name = Debug;
+		};
+		842C3F851D56D60F009F4A77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DelayButtonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.DelayButtonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DelayButton;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		842C3F4B1D56D60F009F4A77 /* Build configuration list for PBXProject "DelayButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842C3F7B1D56D60F009F4A77 /* Debug */,
+				842C3F7C1D56D60F009F4A77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842C3F7D1D56D60F009F4A77 /* Build configuration list for PBXNativeTarget "DelayButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842C3F7E1D56D60F009F4A77 /* Debug */,
+				842C3F7F1D56D60F009F4A77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		842C3F801D56D60F009F4A77 /* Build configuration list for PBXNativeTarget "DelayButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842C3F811D56D60F009F4A77 /* Debug */,
+				842C3F821D56D60F009F4A77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		842C3F831D56D60F009F4A77 /* Build configuration list for PBXNativeTarget "DelayButtonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842C3F841D56D60F009F4A77 /* Debug */,
+				842C3F851D56D60F009F4A77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842C3F481D56D60F009F4A77 /* Project object */;
+}
