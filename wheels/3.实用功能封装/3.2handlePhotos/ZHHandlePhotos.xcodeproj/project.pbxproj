@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840EE6D61D5B5BD0009634F7 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 840EE6D51D5B5BD0009634F7 /* 2.jpeg */; };
 		842C3F971D58C1BC009F4A77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F961D58C1BC009F4A77 /* main.m */; };
 		842C3F9A1D58C1BC009F4A77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F991D58C1BC009F4A77 /* AppDelegate.m */; };
 		842C3F9D1D58C1BC009F4A77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3F9C1D58C1BC009F4A77 /* ViewController.m */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840EE6D51D5B5BD0009634F7 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		842C3F921D58C1BC009F4A77 /* ZHHandlePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHHandlePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C3F961D58C1BC009F4A77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		842C3F981D58C1BC009F4A77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				842C3F9B1D58C1BC009F4A77 /* ViewController.h */,
 				842C3F9C1D58C1BC009F4A77 /* ViewController.m */,
 				F000BD711D597AD7006BF7EA /* 1.jpg */,
+				840EE6D51D5B5BD0009634F7 /* 2.jpeg */,
 				842C3F9E1D58C1BC009F4A77 /* Main.storyboard */,
 				842C3FA11D58C1BC009F4A77 /* Assets.xcassets */,
 				842C3FA31D58C1BC009F4A77 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840EE6D61D5B5BD0009634F7 /* 2.jpeg in Resources */,
 				842C3FA51D58C1BC009F4A77 /* LaunchScreen.storyboard in Resources */,
 				F000BD721D597AD7006BF7EA /* 1.jpg in Resources */,
 				842C3FA21D58C1BC009F4A77 /* Assets.xcassets in Resources */,

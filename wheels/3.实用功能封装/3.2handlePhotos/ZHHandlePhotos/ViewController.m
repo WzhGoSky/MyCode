@@ -21,11 +21,10 @@
     
     NSMutableArray *images = [NSMutableArray array];
     
-    for (int i = 0; i < 4; i++) {
-        
-        UIImage *image = [UIImage imageNamed:@"1.jpg"];
-        [images addObject:image];
-    }
+    UIImage *image1 = [UIImage imageNamed:@"1.jpg"];
+    [images addObject:image1];
+    UIImage *image2 = [UIImage imageNamed:@"2.jpeg"];
+    [images addObject:image2];
     
     //1.创建对象
     ZHImagesView *imagesView = [ZHImagesView imagesView];

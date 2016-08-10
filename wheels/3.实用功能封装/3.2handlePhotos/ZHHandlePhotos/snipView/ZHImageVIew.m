@@ -92,8 +92,17 @@
     
     self.snipButton.center = CGPointMake(self.imageView.width/2, self.imageView.height/2);
     
-    self.topOrLeftView.frame = CGRectMake(CGRectGetMinX(self.snipButton.frame) - self.topOrLeftView.width, 0,self.topOrLeftView.width, self.topOrLeftView.height);
-    self.bottomOrRightView.frame = CGRectMake(CGRectGetMaxX(self.snipButton.frame), 0, self.bottomOrRightView.width,self.bottomOrRightView.height);
+    if (width < height) { //竖
+        
+        self.topOrLeftView.frame = CGRectMake(0, CGRectGetMinY(self.snipButton.frame) - self.topOrLeftView.height,self.topOrLeftView.width, self.topOrLeftView.height);
+        self.bottomOrRightView.frame = CGRectMake(0, CGRectGetMaxY(self.snipButton.frame), self.bottomOrRightView.width,self.bottomOrRightView.height);
+    }else //横
+    {
+        self.topOrLeftView.frame = CGRectMake(CGRectGetMinX(self.snipButton.frame) - self.topOrLeftView.width, 0,self.topOrLeftView.width, self.topOrLeftView.height);
+        self.bottomOrRightView.frame = CGRectMake(CGRectGetMaxX(self.snipButton.frame), 0, self.bottomOrRightView.width,self.bottomOrRightView.height);
+    }
+    
+    NSLog(@"----");
 }
 
 - (void)setUpSnipSizeWithImage:(UIImage *)image
