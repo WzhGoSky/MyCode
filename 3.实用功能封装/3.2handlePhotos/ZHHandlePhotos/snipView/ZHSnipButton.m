@@ -10,7 +10,7 @@
 
 @interface ZHSnipButton()
 
-@property (nonatomic, weak) UIButton *snip;
+
 @property (nonatomic, weak) UIView *topView;
 @property (nonatomic, weak) UIView *bottomView;
 @property (nonatomic, weak) UIView *leftView;
@@ -23,31 +23,35 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-
-        self.clipsToBounds = YES;
+        
         UIButton *snip = [UIButton buttonWithType:UIButtonTypeCustom];
-        snip.layer.borderColor = [UIColor whiteColor].CGColor;
+        snip.layer.borderColor = [UIColor clearColor].CGColor;
         snip.layer.borderWidth = 1;
+        [snip addTarget:self action:@selector(snipImage:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:snip];
         self.snip = snip;
         
         UIView *topView = [[UIView alloc] init];
-        topView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        topView.backgroundColor = [UIColor blackColor];
+        topView.alpha = 0.3;
         [self addSubview:topView];
         self.topView = topView;
         
         UIView *bottomView = [[UIView alloc] init];
-        bottomView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        bottomView.backgroundColor = [UIColor blackColor];
+        bottomView.alpha = 0.3;
         [self addSubview:bottomView];
         self.bottomView = bottomView;
         
         UIView *leftView = [[UIView alloc] init];
-        leftView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        leftView.backgroundColor = [UIColor blackColor];
+        leftView.alpha = 0.3;
         [self addSubview:leftView];
         self.leftView = leftView;
         
         UIView *rightView = [[UIView alloc] init];
-        rightView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        rightView.backgroundColor = [UIColor blackColor];
+        rightView.alpha = 0.3;
         [self addSubview:rightView];
         self.rightVIew = rightView;
     
@@ -56,20 +60,31 @@
     return self;
 }
 
-- (void)layoutSubviews
+- (void)setSnipButtonSize:(CGSize)snipButtonSize
 {
-    [super layoutSubviews];
+    _snipButtonSize = snipButtonSize;
     
     self.snip.size = self.snipButtonSize;
+    
     self.snip.x = (self.width - self.snip.width)/2;
     self.snip.y = (self.height - self.snip.height)/2;
     
-    self.leftView.frame = CGRectMake(CGRectGetMinX(self.snip.frame) - kScreenW, self.centerY - 0.5*kScreenH, kScreenW, kScreenH);
-    self.rightVIew.frame = CGRectMake(CGRectGetMaxX(self.snip.frame), self.leftView.y, kScreenW, kScreenH);
+    self.leftView.frame = CGRectMake(CGRectGetMinX(self.snip.frame) - kScreenW, self.snip.y, kScreenW, self.snip.height);
+    self.rightVIew.frame = CGRectMake(CGRectGetMaxX(self.snip.frame), self.leftView.y, kScreenW, self.snip.height);
     
-    self.topView.frame = CGRectMake(CGRectGetMinX(self.snip.frame), CGRectGetMinY(self.snip.frame) - kScreenH, self.snip.width, kScreenH);
-    self.bottomView.frame = CGRectMake(CGRectGetMinY(self.snip.frame), CGRectGetMaxY(self.snip.frame), self.snip.width, kScreenH);
+    self.topView.frame = CGRectMake(CGRectGetMinX(self.snip.frame) - kScreenW, CGRectGetMinY(self.snip.frame) - kScreenH, self.snip.width + 2 * kScreenW, kScreenH);
     
-    NSLog(@"---");
+    self.bottomView.frame = CGRectMake(self.topView.x, CGRectGetMaxY(self.snip.frame), self.topView.width, kScreenH);
 }
+
+
+- (void)snipImage:(UIButton *)button
+{
+    if ([self.delegate respondsToSelector:@selector(snipButton:didClickSnip:)]) {
+        
+        [self.delegate snipButton:self didClickSnip:button];
+    }
+}
+
+
 @end

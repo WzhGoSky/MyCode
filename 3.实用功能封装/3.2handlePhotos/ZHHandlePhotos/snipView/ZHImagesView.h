@@ -10,8 +10,9 @@
 
 @interface ZHImagesView : UIScrollView
 
+//需要截图的像素大小
+@property (nonatomic, assign) CGSize snipSize;
 //图片数组
 @property (nonatomic, strong) NSArray *images;
-
 
 @end
