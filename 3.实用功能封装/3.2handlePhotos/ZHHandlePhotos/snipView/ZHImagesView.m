@@ -30,43 +30,59 @@
 {
     if (self = [super initWithFrame:frame]) {
         
+        self.userInteractionEnabled = YES;
         self.pagingEnabled = YES;
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.backgroundColor = [UIColor blackColor];
         self.scrollEnabled = NO;
-        
-        //页码显示
-        UILabel *pageNum = [[UILabel alloc] init];
-        pageNum.textColor = [UIColor whiteColor];
-        pageNum.backgroundColor = [UIColor blackColor];
-        pageNum.textAlignment = NSTextAlignmentCenter;
-        pageNum.frame = CGRectMake(0, kScreenH - 20, kScreenW, 20);
-        self.pageNum = pageNum;
     }
     
     return self;
+}
+
++ (instancetype)imagesView
+{
+    ZHImagesView *imagesView = [[ZHImagesView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    return imagesView;
 }
 
 - (void)setImages:(NSArray *)images
 {
     _images = images;
     
-    
     for (int i = 0; i < images.count; i++) {
         
-        CGFloat width = image.size.width/2;
-        CGFloat height = image.size.height/2;
+        UIImage *image = self.images[i];
         
+        ZHImageVIew *imageView = [[ZHImageVIew alloc] initWithFrame:CGRectMake(kScreenW *i, 0, kScreenW, kScreenH)];
+        imageView.snipScale = self.snipScale;
+        imageView.image = image;
+        imageView.tag = i;
+        [self addSubview:imageView];
         
-        if (i == 0) {
+        __weak typeof(self) weakSelf = self;
+        imageView.snipResultBlock = ^(UIImage *image,NSInteger tag){
+        
+            [weakSelf.imageArr addObject:image];
             
-            self.pageNum.text = [NSString stringWithFormat:@"%d/%ld",i+1,(unsigned long)self.photos.count];
-        }
+            if (tag == weakSelf.images.count - 1) { //最后一张
+                
+                if ([weakSelf.imagesDelegate respondsToSelector:@selector(imagesView:handleImagesResult:)]) {
+                    
+                    [weakSelf.imagesDelegate imagesView:weakSelf handleImagesResult:weakSelf.imageArr];
+                }
+                
+                [weakSelf removeFromSuperview];
+            }else
+            {
+                 weakSelf.contentOffset = CGPointMake((tag+1) * kScreenW, 0);
+            }
+        };
        
     }
-    
-    [self addSubview:self.pageNum];
+
     self.contentSize = CGSizeMake(kScreenW * self.images.count, kScreenH);
 }
 
@@ -80,7 +96,5 @@
     
     return _imageArr;
 }
-
-#pragma mark ------------------------privateFunc------------------------
 
 @end

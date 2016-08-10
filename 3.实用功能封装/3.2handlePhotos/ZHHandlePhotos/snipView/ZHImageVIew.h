@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^snipResult)(UIImage *image);
+typedef void(^snipResult)(UIImage *image, NSInteger tag);
 
 @interface ZHImageVIew : UIView
 
