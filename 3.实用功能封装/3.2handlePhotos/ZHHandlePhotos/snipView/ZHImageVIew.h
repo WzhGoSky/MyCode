@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^snipResult)(UIImage *image);
+
 @interface ZHImageVIew : UIView
 
 //裁剪的比例
@@ -16,5 +18,7 @@
 @property (nonatomic, assign) CGSize snipSize;
 
 @property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, copy) snipResult snipResultBlock;
 
 @end

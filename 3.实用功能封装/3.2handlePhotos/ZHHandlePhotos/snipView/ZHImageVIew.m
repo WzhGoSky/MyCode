@@ -9,16 +9,17 @@
 #define kScreenH [UIScreen mainScreen].bounds.size.height
 #define KScale [UIScreen mainScreen].scale
 #import "ZHImageVIew.h"
-#import "ZHSnipButton.h"
+#import "UIView+Extension.h"
 
-@interface ZHImageVIew()<ZHSnipButtonDelegate>
+@interface ZHImageVIew()<UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 //展示的图片
 @property (nonatomic, weak) UIImageView *imageView;
 
 //裁剪按钮
-@property (nonatomic, weak) ZHSnipButton *snipButton;
+//@property (nonatomic, weak) ZHSnipButton *snipButton;
 
+@property (nonatomic, weak) UIButton *snipButton;
 
 @end
 
@@ -33,11 +34,20 @@
         [self addSubview:imageView];
         self.imageView = imageView;
         
-        ZHSnipButton *button = [[ZHSnipButton alloc] init];
-        button.delegate = self;
-        button.backgroundColor = [UIColor clearColor];
-        [imageView addSubview:button];
-        self.snipButton = button;
+        UIButton *snipButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        snipButton.backgroundColor = [UIColor whiteColor];
+        [snipButton addTarget:self action:@selector(snipButton:) forControlEvents:UIControlEventTouchUpInside];
+        snipButton.alpha = 0.3;
+        [imageView addSubview:snipButton];
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
+        //设置需要的最少，多的手指
+        pan.minimumNumberOfTouches = 1;
+        pan.maximumNumberOfTouches = 3;
+        pan.delegate = self;
+        //将手势添加到imageView
+        [snipButton addGestureRecognizer:pan];
+        
+        self.snipButton = snipButton;
     }
     
     return self;
@@ -49,14 +59,11 @@
     _image = [ZHImageVIew image:image ByScale:(kScreenW * KScale) / image.size.width];
     self.imageView.image = _image;
 
-    //2.判断一下是否设置裁剪的尺寸
+    //2.设置裁剪的尺寸
     [self setUpSnipSizeWithImage:_image];
     
     //3.设定snipButton尺寸
-    self.snipButton.size = CGSizeMake(2 * kScreenW + self.snipSize.width, 2 * kScreenH + self.snipSize.height);
-    
-    //4.将图片裁剪尺寸赋值
-    self.snipButton.snipButtonSize = self.snipSize;
+    self.snipButton.size = CGSizeMake(self.snipSize.width, self.snipSize.height);
 }
 
 - (void)layoutSubviews
@@ -136,7 +143,7 @@
 }
 
 #pragma mark --------------------------ZHSnipButtonDelegate-----------------------------------------
-- (void)snipButton:(ZHSnipButton *)SnipButton didClickSnip:(UIButton *)button
+- (void)snipButton:(UIButton *)button
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否确定截图" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alertView show];
@@ -151,30 +158,94 @@
         
         CGFloat width = _imageView.width;
         CGFloat height = _imageView.height;
-        
-        UIButton *button = self.snipButton.snip;
-        
-        //坐标系转换 A 有一个控件B 想知道 转换到C上的坐标  [A convertRect:B.frame toView:C]
-        CGRect snipRect = [self.snipButton convertRect:self.snipButton.snip.frame toView:self.imageView];
+
+        self.snipButton.alpha = 1;
+        self.snipButton.backgroundColor = [UIColor clearColor];
         
         if (width <= height) { //竖照片
             
-            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(0, snipRect.origin.y * KScale ,button.width * KScale, button.height *KScale)];
+            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(0, self.snipButton.y * KScale ,self.snipButton.width * KScale, self.snipButton.height *KScale)];
             
         }else
         {
-            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(snipRect.origin.x * KScale, 0 , button.width * KScale, button.height * KScale)];
+            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(self.snipButton.x * KScale, 0 , self.snipButton.width * KScale, self.snipButton.height * KScale)];
   
         }
         
-//        self.imageView.size = CGSizeMake(image.size.width / KScale, image.size.height/KScale);
-//        self.imageView.image = image;
+          if(self.snipResultBlock)
+          {
+              self.snipResultBlock(image);
+          }
         
-        [self.snipButton.snip setBackgroundImage:image forState:UIControlStateNormal];
-//        [self.snipButton removeFromSuperview];
+         [self removeFromSuperview];
     }
     
 }
 
+#pragma mark --------------------------delegate-----------------------------------------
+- (void)handlePan:(UIPanGestureRecognizer *)sender
+{
+    if(sender.state==UIGestureRecognizerStateBegan||sender.state==UIGestureRecognizerStateChanged)
+    {
+        CGFloat width = self.snipSize.width;
+        CGFloat height = self.snipSize.height;
+        
+        UIView *view = sender.view;
+        CGPoint pt = [sender translationInView:sender.view];
+        CGPoint c = view.center;
+        
+        if (width <= height) { //竖照片
+            
+            c.x +=0;
+            c.y +=pt.y;
+            
+            
+            CGFloat halfSnipHeight = 0.4*kScreenW;
+            CGFloat y = c.y - halfSnipHeight;
+            
+            if (y < 0) {//靠上
+                
+                c.y = halfSnipHeight;
+                
+            }else if(c.y + halfSnipHeight > height)//靠下
+            {
+                c.y =  height - halfSnipHeight;
+            }
+        }else //横照片
+        {
+            c.x += pt.x;
+            c.y += 0;
+            
+            
+            CGFloat halfSnipWidth = (height * 5)/8;
+            CGFloat x = c.x - halfSnipWidth;
+            
+            if (x < 0) {//靠左
+                
+                c.x = halfSnipWidth;
+                
+            }else if(c.x + halfSnipWidth > kScreenW)//靠右
+            {
+                c.x =  kScreenW - halfSnipWidth;
+            }
+        }
+        
+        view.center = c;
+        
+        [sender setTranslation:CGPointZero inView:sender.view];
+    }
+}
+
+//手势识别器的协议方法：设置是否同时识别多个手势
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    //判断两个手势是否对同一个视图的操作，如果是，可以同时识别
+    if (gestureRecognizer.view==otherGestureRecognizer.view) {
+        
+        return YES;
+    }
+    return NO;
+    
+}
 
 @end

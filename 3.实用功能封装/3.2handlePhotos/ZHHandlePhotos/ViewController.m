@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ZHImageVIew.h"
-#import "ZHSnipButton.h"
+
 
 @interface ViewController ()
 

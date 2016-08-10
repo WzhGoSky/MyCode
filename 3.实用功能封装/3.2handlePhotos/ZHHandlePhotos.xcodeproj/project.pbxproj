@@ -16,7 +16,6 @@
 		842C3FB01D58C1BC009F4A77 /* ZHHandlePhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3FAF1D58C1BC009F4A77 /* ZHHandlePhotosTests.m */; };
 		842C3FBB1D58C1BC009F4A77 /* ZHHandlePhotosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3FBA1D58C1BC009F4A77 /* ZHHandlePhotosUITests.m */; };
 		842C3FD21D58C41B009F4A77 /* ZHImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3FD11D58C41B009F4A77 /* ZHImagesView.m */; };
-		842C3FD51D58C4AE009F4A77 /* ZHSnipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3FD41D58C4AE009F4A77 /* ZHSnipButton.m */; };
 		842C3FD81D58CC3C009F4A77 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3FD71D58CC3C009F4A77 /* UIView+Extension.m */; };
 		842C3FDB1D58D4C8009F4A77 /* ZHImageVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C3FDA1D58D4C8009F4A77 /* ZHImageVIew.m */; };
 		F000BD721D597AD7006BF7EA /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F000BD711D597AD7006BF7EA /* 1.jpg */; };
@@ -58,8 +57,6 @@
 		842C3FBC1D58C1BC009F4A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		842C3FD01D58C41B009F4A77 /* ZHImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHImagesView.h; sourceTree = "<group>"; };
 		842C3FD11D58C41B009F4A77 /* ZHImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHImagesView.m; sourceTree = "<group>"; };
-		842C3FD31D58C4AE009F4A77 /* ZHSnipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHSnipButton.h; sourceTree = "<group>"; };
-		842C3FD41D58C4AE009F4A77 /* ZHSnipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHSnipButton.m; sourceTree = "<group>"; };
 		842C3FD61D58CC3C009F4A77 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		842C3FD71D58CC3C009F4A77 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		842C3FD91D58D4C8009F4A77 /* ZHImageVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHImageVIew.h; sourceTree = "<group>"; };
@@ -165,8 +162,6 @@
 				842C3FD11D58C41B009F4A77 /* ZHImagesView.m */,
 				842C3FD91D58D4C8009F4A77 /* ZHImageVIew.h */,
 				842C3FDA1D58D4C8009F4A77 /* ZHImageVIew.m */,
-				842C3FD31D58C4AE009F4A77 /* ZHSnipButton.h */,
-				842C3FD41D58C4AE009F4A77 /* ZHSnipButton.m */,
 			);
 			path = snipView;
 			sourceTree = "<group>";
@@ -304,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				842C3FD81D58CC3C009F4A77 /* UIView+Extension.m in Sources */,
-				842C3FD51D58C4AE009F4A77 /* ZHSnipButton.m in Sources */,
 				842C3F9D1D58C1BC009F4A77 /* ViewController.m in Sources */,
 				842C3F9A1D58C1BC009F4A77 /* AppDelegate.m in Sources */,
 				842C3FD21D58C41B009F4A77 /* ZHImagesView.m in Sources */,
