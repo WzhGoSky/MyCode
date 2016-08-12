@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     NSMutableArray *images = [NSMutableArray array];
     
     UIImage *image1 = [UIImage imageNamed:@"1.jpg"];
@@ -37,7 +39,6 @@
     //5.添加到视图上
     [self.view addSubview:imagesView];
     
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)imagesView:(ZHImagesView *)imagesView handleImagesResult:(NSArray *)resultImages
