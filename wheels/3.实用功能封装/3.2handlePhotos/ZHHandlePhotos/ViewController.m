@@ -2,7 +2,7 @@
 //  ViewController.m
 //  ZHHandlePhotos
 //
-//  Created by Hayder on 16/8/8.
+//  Created by Hayder on 16/7/8.
 //  Copyright © 2016年 wangzhenhai. All rights reserved.
 //
 
@@ -27,11 +27,18 @@
     [images addObject:image1];
     UIImage *image2 = [UIImage imageNamed:@"2.jpeg"];
     [images addObject:image2];
+    UIImage *image3 = [UIImage imageNamed:@"3.jpg"];
+    [images addObject:image3];
+    UIImage *image4 = [UIImage imageNamed:@"4.jpg"];
+    [images addObject:image4];
+    UIImage *image5 = [UIImage imageNamed:@"5.jpeg"];
+    [images addObject:image5];
+    
     
     //1.创建对象
     ZHImagesView *imagesView = [ZHImagesView imagesView];
     //2.设置截取的比例 高/宽
-    imagesView.snipScale = 1;
+    imagesView.snipScale = 0.8;
     //3.设置要处理的图片数组
     imagesView.images = images;
     //4.设置代理

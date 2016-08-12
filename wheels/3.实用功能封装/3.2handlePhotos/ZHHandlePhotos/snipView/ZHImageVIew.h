@@ -2,8 +2,8 @@
 //  ZHImageVIew.h
 //  ZHHandlePhotos
 //
-//  Created by Hayder on 16/8/8.
-//  Copyright © 2016年 wangzhenhai. All rights reserved.
+//  Created by Hayder on 15/8/8.
+//  Copyright © 2015年 wangzhenhai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

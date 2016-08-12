@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  ZHHandlePhotos
 //
-//  Created by Hayder on 16/8/8.
+//  Created by Hayder on 16/7/8.
 //  Copyright © 2016年 wangzhenhai. All rights reserved.
 //
 

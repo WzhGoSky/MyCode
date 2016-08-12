@@ -2,14 +2,16 @@
 //  ZHImageVIew.m
 //  ZHHandlePhotos
 //
-//  Created by Hayder on 16/8/8.
-//  Copyright © 2016年 wangzhenhai. All rights reserved.
+//  Created by Hayder on 15/8/8.
+//  Copyright © 2015年 wangzhenhai. All rights reserved.
 //
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define kScreenH [UIScreen mainScreen].bounds.size.height
-#define KScale [UIScreen mainScreen].scale
+
+
 #import "ZHImageVIew.h"
 #import "UIView+Extension.h"
+
+//边框宽度
+static CGFloat const borderWidth = 1;
 
 @interface ZHImageVIew()<UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
@@ -42,6 +44,9 @@
         snipButton.backgroundColor = [UIColor clearColor];
         [snipButton addTarget:self action:@selector(snipButton:) forControlEvents:UIControlEventTouchUpInside];
         [imageView addSubview:snipButton];
+        snipButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        snipButton.layer.borderWidth = borderWidth;
+        
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
         
         //设置需要的最少，多的手指
@@ -54,13 +59,13 @@
         
         //上侧阴影
         UIView *topOrLeftView = [[UIView alloc] init];
-        topOrLeftView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6];
+        topOrLeftView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
         [self.imageView addSubview:topOrLeftView];
         self.topOrLeftView = topOrLeftView;
         
         //下侧阴影
         UIView *bottomOrRightView = [[UIView alloc] init];
-        bottomOrRightView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6];
+        bottomOrRightView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
         [self.imageView addSubview:bottomOrRightView];
         self.bottomOrRightView = bottomOrRightView;
     }
@@ -71,7 +76,7 @@
 - (void)setImage:(UIImage *)image
 {
     //1.压缩图片
-    _image = [ZHImageVIew image:image ByScale:(kScreenW * KScale) / image.size.width];
+    _image = [ZHImageVIew image:image ByScale:([UIScreen mainScreen].bounds.size.width * [UIScreen mainScreen].scale) / image.size.width];
     self.imageView.image = _image;
 
     //2.设置裁剪的尺寸
@@ -85,10 +90,10 @@
 {
     [super layoutSubviews];
     
-    CGFloat width = _image.size.width/KScale;
-    CGFloat height = _image.size.height/KScale;
+    CGFloat width = _image.size.width/[UIScreen mainScreen].scale;
+    CGFloat height = _image.size.height/[UIScreen mainScreen].scale;
     
-    self.imageView.frame = CGRectMake((kScreenW - width)/2, (self.height - height)/2, width, height);
+    self.imageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - width)/2, (self.height - height)/2, width, height);
     
     self.snipButton.center = CGPointMake(self.imageView.width/2, self.imageView.height/2);
     
@@ -101,13 +106,11 @@
         self.topOrLeftView.frame = CGRectMake(CGRectGetMinX(self.snipButton.frame) - self.topOrLeftView.width, 0,self.topOrLeftView.width, self.topOrLeftView.height);
         self.bottomOrRightView.frame = CGRectMake(CGRectGetMaxX(self.snipButton.frame), 0, self.bottomOrRightView.width,self.bottomOrRightView.height);
     }
-    
-    NSLog(@"----");
 }
 
 - (void)setUpSnipSizeWithImage:(UIImage *)image
 {
-    CGFloat height = image.size.height/KScale;
+    CGFloat height = image.size.height/[UIScreen mainScreen].scale;
     
     if (self.snipSize.width == 0 || self.snipSize.height == 0) { //没有设置裁剪的尺寸
         
@@ -115,21 +118,21 @@
             
             self.snipSize = CGSizeMake(1/self.snipScale * height, height);
             
-            self.topOrLeftView.width = kScreenW;
+            self.topOrLeftView.width = [UIScreen mainScreen].bounds.size.width;
             self.topOrLeftView.height = self.snipSize.height;
             
-            self.bottomOrRightView.width = kScreenW;
+            self.bottomOrRightView.width = [UIScreen mainScreen].bounds.size.width;
             self.bottomOrRightView.height = self.snipSize.height;
             
         }else //竖照片
         {
-            self.snipSize = CGSizeMake(kScreenW, self.snipScale * kScreenW);
+            self.snipSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, self.snipScale * [UIScreen mainScreen].bounds.size.width);
             
             self.topOrLeftView.width = self.snipSize.width;
-            self.topOrLeftView.height = kScreenH;
+            self.topOrLeftView.height = [UIScreen mainScreen].bounds.size.height;
             
             self.bottomOrRightView.width = self.snipSize.width;
-            self.bottomOrRightView.height = kScreenH;
+            self.bottomOrRightView.height = [UIScreen mainScreen].bounds.size.height;
         }
     }
 }
@@ -154,11 +157,11 @@
         
         if (width <= height) { //竖照片
             
-            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(0, self.snipButton.y * KScale ,self.snipButton.width * KScale, self.snipButton.height *KScale)];
+            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(0, (self.snipButton.y + borderWidth) * [UIScreen mainScreen].scale ,(self.snipButton.width - borderWidth * 2) * [UIScreen mainScreen].scale, (self.snipButton.height - borderWidth * 2) *[UIScreen mainScreen].scale)];
             
         }else
         {
-            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake(self.snipButton.x * KScale, 0 , self.snipButton.width * KScale, self.snipButton.height * KScale)];
+            image = [ZHImageVIew imageFromView:self.imageView atFrame:CGRectMake((self.snipButton.x + borderWidth) * [UIScreen mainScreen].scale, 0 , (self.snipButton.width - borderWidth * 2)* [UIScreen mainScreen].scale, (self.snipButton.height - borderWidth * 2) * [UIScreen mainScreen].scale)];
   
         }
         
@@ -177,8 +180,8 @@
 {
     if(sender.state==UIGestureRecognizerStateBegan||sender.state==UIGestureRecognizerStateChanged)
     {
-        CGFloat width = self.image.size.width / KScale;
-        CGFloat height = self.image.size.height / KScale;
+        CGFloat width = self.image.size.width / [UIScreen mainScreen].scale;
+        CGFloat height = self.image.size.height / [UIScreen mainScreen].scale;
         
         UIView *view = sender.view;
         CGPoint pt = [sender translationInView:sender.view];
@@ -237,12 +240,12 @@
                 topOrLeftViewC.x = - self.topOrLeftView.width * 0.5;
                 bottomOrRightViewC.x = 2 * halfSnipWidth + 0.5 * self.bottomOrRightView.width;
                 
-            }else if(c.x + halfSnipWidth > kScreenW)//靠右
+            }else if(c.x + halfSnipWidth > [UIScreen mainScreen].bounds.size.width)//靠右
             {
-                c.x =  kScreenW - halfSnipWidth;
+                c.x =  [UIScreen mainScreen].bounds.size.width - halfSnipWidth;
                 
-                topOrLeftViewC.x = kScreenW - 2 * halfSnipWidth - 0.5 * self.topOrLeftView.width;
-                bottomOrRightViewC.x = kScreenW + 0.5 * self.bottomOrRightView.width;
+                topOrLeftViewC.x = [UIScreen mainScreen].bounds.size.width - 2 * halfSnipWidth - 0.5 * self.topOrLeftView.width;
+                bottomOrRightViewC.x = [UIScreen mainScreen].bounds.size.width + 0.5 * self.bottomOrRightView.width;
 
             }
         }

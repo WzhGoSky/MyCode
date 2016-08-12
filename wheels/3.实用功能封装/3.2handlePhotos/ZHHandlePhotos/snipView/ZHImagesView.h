@@ -2,7 +2,7 @@
 //  ZHHandleView.h
 //  ZHHandlePhotos
 //
-//  Created by Hayder on 16/8/8.
+//  Created by Hayder on 15/8/8.
 //  Copyright © 2016年 wangzhenhai. All rights reserved.
 //
 
@@ -20,7 +20,7 @@
 
 //需要截图的像素大小
 @property (nonatomic, assign) CGSize snipSize;
-//截取的比例  (高/宽) 比如0.8  就是宽:高 5:4
+//截取的比例  (高/宽)  比如0.8  就是宽:高 5:4
 @property (nonatomic, assign) CGFloat snipScale;
 //图片数组
 @property (nonatomic, strong) NSArray *images;

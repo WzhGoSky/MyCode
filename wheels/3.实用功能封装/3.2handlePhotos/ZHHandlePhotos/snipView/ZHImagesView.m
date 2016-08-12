@@ -2,11 +2,10 @@
 //  ZHHandleView.m
 //  ZHHandlePhotos
 //
-//  Created by Hayder on 16/8/8.
-//  Copyright © 2016年 wangzhenhai. All rights reserved.
+//  Created by Hayder on 15/8/8.
+//  Copyright © 2015年 wangzhenhai. All rights reserved.
 //
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define kScreenH [UIScreen mainScreen].bounds.size.height
+
 #import "ZHImagesView.h"
 #import "ZHImageVIew.h"
 
@@ -56,7 +55,7 @@
         
         UIImage *image = self.images[i];
         
-        ZHImageVIew *imageView = [[ZHImageVIew alloc] initWithFrame:CGRectMake(kScreenW *i, 0, kScreenW, kScreenH)];
+        ZHImageVIew *imageView = [[ZHImageVIew alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width *i, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         imageView.snipScale = self.snipScale;
         imageView.image = image;
         imageView.tag = i;
@@ -77,13 +76,13 @@
                 [weakSelf removeFromSuperview];
             }else
             {
-                 weakSelf.contentOffset = CGPointMake((tag+1) * kScreenW, 0);
+                 weakSelf.contentOffset = CGPointMake((tag+1) * [UIScreen mainScreen].bounds.size.width, 0);
             }
         };
        
     }
 
-    self.contentSize = CGSizeMake(kScreenW * self.images.count, kScreenH);
+    self.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * self.images.count, [UIScreen mainScreen].bounds.size.height);
 }
 
 #pragma mark ------------------------lazyLoading------------------------
