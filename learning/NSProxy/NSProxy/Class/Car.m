@@ -16,7 +16,7 @@
     skillProxy *skill = [skillProxy dealerProxy];
     
     [skill flySkill];
-    [skill swimSkill];
+//    [skill swimSkill];
     
 }
 @end

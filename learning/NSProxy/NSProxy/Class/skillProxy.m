@@ -56,6 +56,32 @@
 }
 
 #pragma mark ------------------------NSProxy------------------------
+//消息转发机制
+//1.resolveInstanceMethod 是否动态添加方法 YES class_addMethod 添加动态方法  返回NO 进入第二步
+//2.进入forwardingTargetForSelector 用于指定哪个对象响应这个方法 返回某个对象就会调用该对象的方法。如果返回的是空，就会调用第三步
+
+////3.方法签名 返回方法的前面不为空就会调用 forwardInvocation
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel
+{
+    NSString *methodName = NSStringFromSelector(sel);
+    
+    id target = _methodsMap[methodName];
+    
+    //检查target
+    if (target && [target respondsToSelector:sel]) {
+        
+        return [target methodSignatureForSelector:sel];
+        
+    } else {
+        
+        return [super methodSignatureForSelector:sel];
+    }
+    
+}
+
+/**
+    4.调用forwardInvocation之前会先调用methodSignatureForSelector 有方法签名 就会调用forwardInvocation
+ */
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
     SEL sel = invocation.selector;
@@ -74,19 +100,6 @@
     
 }
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel
-{
-    NSString *methodName = NSStringFromSelector(sel);
-    
-    id target = _methodsMap[methodName];
-    
-    //检查target
-    if (target && [target respondsToSelector:sel]) {
-        
-        return [target methodSignatureForSelector:sel];
-    } else {
-        return [super methodSignatureForSelector:sel];
-    }
+//如果第三，第4步没有得到响应，整个代码就会crash
 
-}
 @end
