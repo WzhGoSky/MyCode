@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSArray *(^modelClassBlock)();
+
 @interface NSObject (keyValues)
 
-//@property (nonatomic, strong) NSDictionary *keyValues;
+//模型转字典
+@property (nonatomic, strong, readonly) NSDictionary *keyValues;
 
-- (NSDictionary *)modelToKeyValues;
+//数组中带模型
++ (void)arrayObjectClass:(modelClassBlock) modelClassBlock;
+//字典转模型
++ (instancetype)objectWithKeyValues:(NSDictionary *)dict;
 
 @end

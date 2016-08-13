@@ -21,15 +21,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    School *school = [[School alloc] init];
-    school.age = 100;
-    school.name = @"要塞";
+    NSMutableArray *sts = [NSMutableArray array];
     student *st = [[student alloc] init];
-//    st.age = 10;
     st.name = @"wzh";
-    school.st = st;
+    [sts addObject:st];
+    student *st2 = [[student alloc] init];
+    st2.name = @"wss";
+    [sts addObject:st2];
     
-    NSLog(@"%@",[school modelToKeyValues]);
+    School *school = [[School alloc] init];
+    school.age = @(100);
+    school.name = @"要塞";
+    school.st = sts;
+    
+    NSLog(@"%@",school.keyValues);
 }
 
 - (void)didReceiveMemoryWarning {
