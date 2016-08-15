@@ -16,7 +16,7 @@ typedef NSArray *(^modelClassBlock)();
 @property (nonatomic, strong, readonly) NSDictionary *keyValues;
 
 //数组中带模型
-+ (void)arrayObjectClass:(modelClassBlock) modelClassBlock;
++ (void)arrayObjectClass:(modelClassBlock)modelClassBlock;
 //字典转模型
 + (instancetype)objectWithKeyValues:(NSDictionary *)dict;
 
