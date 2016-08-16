@@ -1,0 +1,50 @@
+//
+//  EPCycleCell.m
+//  FisheryMarket
+//
+//  Created by WZH on 16/5/19.
+//  Copyright © 2016年 王振海. All rights reserved.
+//
+
+#import "EPCycleCell.h"
+
+@interface EPCycleCell()
+
+@property (nonatomic, weak) UIImageView *imageview;
+
+@end
+@implementation EPCycleCell
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        
+        UIImageView *imageview = [[UIImageView alloc] init];
+        [self addSubview:imageview];
+        self.imageview = imageview;
+    }
+    
+    return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.imageview.frame = self.bounds;
+}
+
+- (void)setShowImage:(NSString *)showImage
+{
+    _showImage = showImage;
+    
+    if ([showImage containsString:@"http"]) {
+        
+        [self.imageview sd_setImageWithURL:[NSURL URLWithString:(NSString *)showImage] placeholderImage:[UIImage imageNamed:@"arrow"]];
+        
+    }else{
+    
+        self.imageview.image = [UIImage imageNamed:showImage];
+    }
+}
+@end
