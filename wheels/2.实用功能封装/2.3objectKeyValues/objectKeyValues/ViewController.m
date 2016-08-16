@@ -22,17 +22,23 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSMutableArray *sts = [NSMutableArray array];
-    student *st = [[student alloc] init];
-    st.name = @"wzh";
-    [sts addObject:st];
-    student *st2 = [[student alloc] init];
-    st2.name = @"wss";
-    [sts addObject:st2];
+//    student *st = [[student alloc] init];
+//    st.name = @"wzh";
+//    [sts addObject:st];
+//    student *st2 = [[student alloc] init];
+//    st2.name = @"wss";
+//    [sts addObject:st2];
     
     School *school = [[School alloc] init];
-    school.age = @(100);
-    school.name = @"要塞";
-    school.st = sts;
+//    school.age = @(100);
+//    school.name = @"要塞";
+//    school.st = sts;
+    school.bo = YES;
+    school.doub = 80.1000;
+    school.inter = 10;
+    school.Uinter = 20;
+    school.cgfloat = 1000;
+    school.f  = 2000.00;
     
     NSLog(@"%@",school.keyValues);
 }

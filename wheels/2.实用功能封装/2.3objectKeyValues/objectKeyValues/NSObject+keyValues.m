@@ -45,7 +45,6 @@
                 Class cls = NSClassFromString(compontents[1]);
                 id value = ((id (*) (id,SEL)) objc_msgSend)(self, getter);
                 
-                
                 //2.2.1判断value是不是model
                 if ([self isCustomClass:cls] && value) {
                     
@@ -61,10 +60,34 @@
                 }
             }else //基本类型
             {
-                NSLog(@"数据中有不能识别的基本数据类型");
-                NSNull *value = [NSNull null];
-//                NSLog(@"propertyName ------%@ className---%@",[NSString stringWithUTF8String:propertyName],className);
-//
+//                NSLog(@"数据中有不能识别的基本数据类型");
+                id value  = nil;
+                NSLog(@"propertyName ------%@ className---%@",[NSString stringWithUTF8String:propertyName],className);
+                NSString *valueType = [className substringWithRange:NSMakeRange(1, 1)];
+                
+                Ivar var = class_getInstanceVariable([self class], propertyName);
+                
+//                if ([valueType isEqualToString:@"q"]) { //NSInter
+//                    
+//                    value = [NSNumber numberWithBool:];
+//                    
+//                }else if([valueType isEqualToString:@"Q"]) //NSUInter
+//                {
+//                    
+//                }else if([valueType isEqualToString:@"B"])
+//                {
+//                    
+//                }else if([valueType isEqualToString:@"d"])
+//                {
+//                    
+//                }else if([valueType isEqualToString:@"f"])
+//                {
+//                    
+//                }else
+//                {
+//                    value = [NSNull null];
+//                }
+                
                 NSString *key = [NSString stringWithUTF8String:propertyName];
                 [dict setObject:value forKey:key];
             }
