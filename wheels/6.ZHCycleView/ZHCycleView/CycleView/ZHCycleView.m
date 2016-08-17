@@ -90,9 +90,6 @@ static CGFloat pageControlHieght = 30;
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
-
-
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.delegate respondsToSelector:@selector(cycleView:didSelectedViewAtIndex:)]) {
@@ -201,8 +198,8 @@ static CGFloat pageControlHieght = 30;
     if (!_pageControl) {
         
         _pageControl = [[UIPageControl alloc] init];
-        _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-        _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
         _pageControl.userInteractionEnabled = NO;
     }
     
