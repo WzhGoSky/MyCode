@@ -34,17 +34,12 @@ static CGFloat pageControlHieght = 30;
 {
     if (self = [super initWithFrame:frame]) {
         
-        [self setUp];
+        [self addSubview:self.collectionView];
+        
+        [self addSubview:self.pageControl];
     }
     
     return self;
-}
-
-- (void)setUp
-{
-    [self addSubview:self.collectionView];
-    
-    [self addSubview:self.pageControl];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
@@ -58,7 +53,8 @@ static CGFloat pageControlHieght = 30;
     
     // 添加定时器
     [self addTimer];
-
+    
+    [self setUpPageControl];
 }
 
 - (void)layoutSubviews
@@ -95,21 +91,53 @@ static CGFloat pageControlHieght = 30;
 }
 
 
-- (NSIndexPath *)resetIndexPath
-{
-    // 当前正在展示的位置
-    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
-    // 马上显示回最中间那组的数据
-    NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:Section/2];
-    [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    return currentIndexPathReset;
-}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.delegate respondsToSelector:@selector(cycleView:didSelectedViewAtIndex:)]) {
         
         [self.delegate cycleView:self didSelectedViewAtIndex:indexPath.row];
+    }
+}
+#pragma mark --------------------------scrollviewDelegate----------------------------------------
+
+/**
+ *  当用户即将开始拖拽的时候就调用
+ */
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self removeTimer];
+    
+}
+
+/**
+ *  当用户停止拖拽的时候就调用
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self addTimer];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSInteger count = self.imageArr.count == 0?self.urlArr.count : self.imageArr.count;
+    int page = (int)(scrollView.contentOffset.x/scrollView.frame.size.width + 0.5)%count;
+    self.pageControl.currentPage = page;
+}
+
+#pragma mark --------------------------privateFunc-----------------------------------------
+- (void)setUpPageControl
+{
+    //pageControl 颜色
+    if(self.currentTintColor)
+    {
+        self.pageControl.currentPageIndicatorTintColor = self.currentTintColor;
+    }
+    
+    if (self.indicatorTintColor) {
+        
+        self.pageControl.pageIndicatorTintColor = self.indicatorTintColor;
     }
 }
 /**
@@ -138,30 +166,14 @@ static CGFloat pageControlHieght = 30;
     self.pageControl.currentPage = nextItem;
 }
 
-
-
-/**
- *  当用户即将开始拖拽的时候就调用
- */
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+- (NSIndexPath *)resetIndexPath
 {
-    [self removeTimer];
-    
-}
-
-/**
- *  当用户停止拖拽的时候就调用
- */
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    [self addTimer];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    NSInteger count = self.imageArr.count == 0?self.urlArr.count : self.imageArr.count;
-    int page = (int)(scrollView.contentOffset.x/scrollView.frame.size.width + 0.5)%count;
-    self.pageControl.currentPage = page;
+    // 当前正在展示的位置
+    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
+    // 马上显示回最中间那组的数据
+    NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:Section/2];
+    [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    return currentIndexPathReset;
 }
 
 /**

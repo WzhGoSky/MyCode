@@ -19,6 +19,9 @@
 @interface ZHCycleView : UIView
 
 /**
+ *  images
+ */
+/**
  *  网络图片 (数组中元素类型 ： NSString)
  */
 @property (nonatomic, strong) NSArray *urlArr;
@@ -31,5 +34,14 @@
 
 @property (nonatomic, weak) id<ZHCycleViewDelegate> delegate;
 
+
+/**
+ *  pageController
+ */
+//未选中的颜色
+@property (nonatomic, strong) UIColor *indicatorTintColor;
+
+//当前页的颜色
+@property (nonatomic, strong) UIColor *currentTintColor;
 
 @end
