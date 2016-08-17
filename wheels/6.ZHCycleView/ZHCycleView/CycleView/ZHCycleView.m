@@ -15,7 +15,10 @@ static CGFloat pageControlWith = 120;
 static CGFloat pageControlHieght = 30;
 
 @interface ZHCycleView()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-
+{
+    NSInteger _currentItem;
+    NSInteger _currentSection;
+}
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSTimer *timer;
@@ -50,6 +53,8 @@ static CGFloat pageControlHieght = 30;
     
     // 默认显示最中间的那组
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:Section/2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    
+    _currentItem = 0;
     
     // 添加定时器
     [self addTimer];
@@ -115,19 +120,22 @@ static CGFloat pageControlHieght = 30;
     // 1.马上显示回最中间那组的数据
     NSIndexPath *currentIndexPathReset = [self resetIndexPath];
     
+    
     // 2.计算出下一个需要展示的位置
     NSInteger nextItem = currentIndexPathReset.item + 1;
     NSInteger nextSection = currentIndexPathReset.section;
-    self.pageControl.currentPage = nextItem;
+    
     if (nextItem ==  (self.urlArr == nil ? self.imageArr.count : self.urlArr.count)) {
         nextItem = 0;
-        self.pageControl.currentPage = 0;
         nextSection++;
     }
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
     
-    // 3.通过动画滚动到下一个位置
+    // 3通过动画滚动到下一个位置
     [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    
+    //4.设置页码
+    self.pageControl.currentPage = nextItem;
 }
 
 
@@ -138,6 +146,7 @@ static CGFloat pageControlHieght = 30;
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self removeTimer];
+    
 }
 
 /**
@@ -146,6 +155,13 @@ static CGFloat pageControlHieght = 30;
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self addTimer];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSInteger count = self.imageArr.count == 0?self.urlArr.count : self.imageArr.count;
+    int page = (int)(scrollView.contentOffset.x/scrollView.frame.size.width + 0.5)%count;
+    self.pageControl.currentPage = page;
 }
 
 /**
@@ -175,6 +191,7 @@ static CGFloat pageControlHieght = 30;
         _pageControl = [[UIPageControl alloc] init];
         _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+        _pageControl.userInteractionEnabled = NO;
     }
     
     return _pageControl;
