@@ -38,7 +38,11 @@
 	dispatch_queue_t queue = dispatch_get_main_queue();
 	
 	2.获取并发队列
-	GCD默认提供全局并发队列，供整个应用使用，不需要手动创建
+	方式1:使用dispatch_queue_create创建并发队列
+	dispatch_queue_t queue = dispatch_queue_create(“laowang”,
+    DISPATCH_QUEUE_CONCURRENT);
+    
+	方式2:GCD默认提供全局并发队列，供整个应用使用，不需要手动创建
 	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 	
 ####各种队列执行效果
@@ -63,3 +67,78 @@
 	异步函数具备开线程的能力，但是不一定会开启线程。
 	
 ##2.dispatch_group
+
+###dispatch_group 使用函数
+
+####1.dispatch_group_async
+	dispatch_group_async(dispatch_group_t group, dispatch_queue_t queue,dispatch_block_t block);
+	将任务（block）放入队列queue,然后和调度组group关联
+####2.dispatch_group_enter(group)  dispatch_group_leave(group)
+	标志着一个block(任务)被加入了group，调用dispatch_group_enter,dispatch_group_leave 可	以非常适合处理异步任务同步，当异步任务开始前调用dispatch_group_enter，异步任务结束后调用	dispatch_group_leave
+	
+	例:
+	dispatch_group_t group = dispatch_group_create();
+	
+	//1.任务开始调用enter
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        sleep(5);
+        NSLog(@"任务一完成");
+        
+        //2.任务结束调用leave
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        sleep(8);
+        NSLog(@"任务二完成");
+        dispatch_group_leave(group);
+    });
+    dispatch_group_notify(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"任务完成");
+    });
+	
+	
+####3.dispatch_group_notify
+	void dispatch_group_notify(dispatch_group_t group,dispatch_queue_t queue,
+	dispatch_block_t block);
+	当group上所有的任务被执行完毕以后，就会调用 dispatch_group_notify
+####4.
+    
+####应用场景
+	场景1：
+	  某个页面加载时通过网络请求获得相应的数据，有的时候加载的内容需要通过好几个接口的数据组合而成，比如2个请求A和B，通常将B请求放在A请求成功回调中发起，在B的成功回调中组合起来。
+	  
+	  会产生的问题：
+	  1.请求多了，要写多层的嵌套。
+	  2.如果在除了最后一个请求前的某个请求失败了，不会执行后面的请求。
+	  3.请求变成同步的，网络差的情况下，如果有n个请求，以为着用户要等待n倍于并发请求的时间才能看到内容。
+	  
+	  假设要上传4张图片
+	NSMutableArray *imageURLs= [NSMutableArray array];
+	
+	//1.创建dispatch_group任务组
+	dispatch_group_t group =dispatch_group_create();              
+	
+	for (UIImage *image in images) {
+	
+		//2.往group里面增加一个block任务,这边的block任务就是上传一张图片
+    	dispatch_group_enter(group);                                  
+    sendPhoto(image, success:^(NSString *url) {
+    
+        [imageURLs addObject:url];
+        
+        //3.表示任务已经完成 需要移除
+        dispatch_group_leave(group);                           
+    });
+	}
+		//4.当group中的block任务都执行完毕以后，dispatch_group_notify 会被执行
+		dispatch_group_notify(group, dispatch_get_global_queue(), ^{       
+	        
+	        postFeed(imageURLs, text);
+	});
+	
+	http://www.cnblogs.com/ziyi--caolu/p/4900650.html
+	  			  
+	  
