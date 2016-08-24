@@ -40,9 +40,54 @@
 	 		缺点:无法对线程属性进行设置
 ###2.主线程的相关用法
 	
-	+(NSThread)mainThread;   获得主线程
+	+ (NSThread)mainThread;   获得主线程
 	+ (BOOL)isMainThread;    是否为主线程
 	- (BOOL)isMainThread;    是否为主线程
 	
 	在主线程中执行某些方法
-	[self performSelectorOnMainThread:@selector(run) withObject:nil waitUntilDone:NO];
+	方式1
+	[self performSelectorOnMainThread:@selector(settingImage:) withObject:image waitUntilDone:NO];
+	方式2
+	[self.imageView performSelector:@selector(setImage:) onThread:[NSThread mainThread] withObject:image waitUntilDone:NO];
+	方式3
+	[self.imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
+	
+###3.NSThread应用例子（线程之间的通讯）
+####应用场景：
+	1.一个线程传数据给另外一个线程
+	2.在一个线程中执行完特定的任务后，转到另外一个线程继续执行任务
+####线程间通讯常用方法
+	在主线程中执行某个方法
+	- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;
+	在子线程中执行某个方法
+	- (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(id)arg waitUntilDone:(BOOL)wait;
+
+####应用场景
+	点击屏幕开始下载图片
+	-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+	{
+		 [self performSelectorInBackground:@selector(download) withObject:nil];
+	}
+	
+	-(void)download
+	{
+		1.下载图片
+		NSURL *urlstr=[NSURL URLWithString:@"bigSea"];
+		
+		2.把图片转换为二进制的数据
+		NSData *data=[NSData dataWithContentsOfURL:urlstr];//这一行操作会比较耗时
+	
+		3.把数据转换成图片
+	 	UIImage *image=[UIImage imageWithData:data];
+	 	
+	 	4.回到主线程设置图片
+	 	[self performSelectorOnMainThread:@selector(settingImage:) withObject:image waitUntilDone:NO];
+	}
+	
+	
+	-(void)settingImage:(UIImage *)image
+	{
+		self.iconView.image=image;
+	}
+	
+	
