@@ -142,6 +142,7 @@
 	void dispatch_group_notify(dispatch_group_t group,dispatch_queue_t queue,
 	dispatch_block_t block);
 	当group上所有的任务被执行完毕以后，就会调用 dispatch_group_notify
+	
 ####4.dispatch_group_wait
 	dispatch_group_wait会同步地等待group中所有的block执行完毕后才继续执行,类似于dispatch barrier
     
