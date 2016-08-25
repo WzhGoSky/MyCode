@@ -67,14 +67,34 @@
 	异步函数具备开线程的能力，但是不一定会开启线程。
 	
 ##2.dispatch_group
-
+	如果想在dispatch_queue中所有的任务执行完成后在做某种操作，在串行队列中，可以把该操作放到最后一个任务执行完成后继续，但是在并行队列中怎么做呢。这就有dispatch_group 成组操作。
 ###dispatch_group 使用函数
 
 ####1.dispatch_group_async
 	dispatch_group_async(dispatch_group_t group, dispatch_queue_t queue,dispatch_block_t block);
 	将任务（block）放入队列queue,然后和调度组group关联
+	
+	dispatch_queue_t dispatchQueue = dispatch_queue_create("laowang", DISPATCH_QUEUE_CONCURRENT);
+	dispatch_group_t dispatchGroup = dispatch_group_create();
+	dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
+    NSLog(@"dispatch-1");
+	});
+	dispatch_group_async(dispatchGroup, dispatchQueue, ^(){
+    NSLog(@"dspatch-2");
+	});
+	dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^(){
+	    NSLog(@"end");
+	});
+	
+	上面的 log1 和log2输出顺序不定，因为是在并发队列上执行，当并发队列全部执行完成后，最后到main队列上执行一个操作，保证“end”是最后输出。
+	
 ####2.dispatch_group_enter(group)  dispatch_group_leave(group)
-	标志着一个block(任务)被加入了group，调用dispatch_group_enter,dispatch_group_leave 可	以非常适合处理异步任务同步，当异步任务开始前调用dispatch_group_enter，异步任务结束后调用	dispatch_group_leave
+	标志着一个block(任务)被加入了group。
+	
+	dispatch_group_enter:增加当前group执行block数
+	dispatch_group_leave:减少当前group执行block数
+	
+	调用dispatch_group_enter,dispatch_group_leave 可以非常适合处理异步任务同步(当有多个异步请求时，需要等待异步请求都结束时做些事情)，当异步任务开始前调用dispatch_group_enter，异步任务结束后调用dispatch_group_leave
 	
 	例:
 	dispatch_group_t group = dispatch_group_create();
@@ -91,7 +111,7 @@
     
     dispatch_group_enter(group);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        sleep(8);
+        
         NSLog(@"任务二完成");
         dispatch_group_leave(group);
     });
@@ -99,12 +119,31 @@
         NSLog(@"任务完成");
     });
 	
+###注意
+	假如我们不想使用dispatch_group_async异步的将任务丢到group中去执行，这时候就需要用到dispatch_group_enter跟dispatch_group_leave方法，这两个方法要配对出现，以下这两种方法是等价的：
+
+	dispatch_group_async(group, queue, ^{ 
+	
+		任务
+	});
+	
+	等价于:
+	
+	dispatch_group_enter(group);
+	
+	dispatch_async(queue, ^{
+	
+		//任务
+		dispatch_group_leave(group);
+	
+	});
 	
 ####3.dispatch_group_notify
 	void dispatch_group_notify(dispatch_group_t group,dispatch_queue_t queue,
 	dispatch_block_t block);
 	当group上所有的任务被执行完毕以后，就会调用 dispatch_group_notify
-####4.
+####4.dispatch_group_wait
+	dispatch_group_wait会同步地等待group中所有的block执行完毕后才继续执行,类似于dispatch barrier
     
 ####应用场景
 	场景1：
@@ -139,6 +178,6 @@
 	        postFeed(imageURLs, text);
 	});
 	
-	http://www.cnblogs.com/ziyi--caolu/p/4900650.html
+	
 	  			  
 	  
