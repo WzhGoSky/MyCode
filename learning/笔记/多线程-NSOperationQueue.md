@@ -101,5 +101,39 @@
 	依赖关系会影响到NSOperation在queue中的执行顺序。
 
 ####NSOperation的执行顺序
+#####1.NSOperation执行顺序由依赖决定
+	依赖是最先决定NSOperation执行顺序的，如果没有设置依赖，就看NSOpeartion的相对优先级。
+#####2.NSOperation执行顺序由相对优先级决定
+	优先级只适用于相同Queue中的NSOperation。、
+	如果应用有多个opeation queue,每个queue的优先级等级是相互独立的。因此不同queue中的低优先级操作仍然可能比高优先中的要高。
+	
+####设置队列的最大并发操作数量
+NSOperationQueue可以设置并发数量，（不过并不是设置的并发数越多越好，设置过多就会影响性能。系统默认为5，一般不会进行修改）。如果设置为1，则最大并发数为1。Queue内部为串行执行。
+	
+	设置方法
+	queue.maxConcurrentOperationCount = 1;  
+	或者
+	[queue setMaxConcurrentOperationCount:1];  
+
+####取消Operations
+一旦添加到operation queue,queue就拥有了这个Operation对象并且不能被删除,唯一能做的事情是取消。可以调用OPeration的单次取消操作。也可以调用Queue的批量取消操作。
+	
+	//单次取消
+	[operation cancel];  
+	
+	//取消queue中的所有操作
+	[queue cancelAllOperations];
+	
+####暂停和继续queue
+暂停一个queue不会导致正在执行的operation在任务中途暂停，只是简单的阻止调度新的operation执行。
+比如暂停一个queue来暂停queue还在等待中的任务。等待当前的operation执行完毕后再继续queue中operation的执行。
+
+	//暂停queue  
+	[queue setSuspended:YES];  
+	
+	//继续queue  
+	[queue setSuspended:NO];  
+	
+	
 	
 	
