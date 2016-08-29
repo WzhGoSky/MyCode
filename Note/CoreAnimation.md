@@ -144,7 +144,8 @@ fillMode属性值（要想fillMode有效，最好设置removedOnCompletion=NO）
 >注意： 如果fillMode=kCAFillModeForwards和removedOnComletion=NO，那么在动画执行完毕后，图层会保持显示动画执行后的状态。
 但在实质上，图层的属性值还是动画执行前的初始值，并没有真正被改变。
 比如，CALayer的position初始值为(0,0)，CABasicAnimation的fromValue为(10,10)，toValue为(100,100)，虽然动画执行完毕后图层保持在(100,100)这个位置，实质上图层的position还是为(0,0)。
-    
+ 
+ CABasicAnimation使用:	   
 	//平移动画
 	CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position"];
 	// 动画持续1秒
@@ -171,8 +172,7 @@ fillMode属性值（要想fillMode有效，最好设置removedOnCompletion=NO）
 	anim.duration = 1;
 	[layer addAnimation:anim forKey:nil];
 	
-CABasicAnimation使用:	
-
+	
 ####　　2.1.2 CAKeyframeAnimation 	
 >特点: CABasicAnimation只能从一个数值(fromValue)变到另一个数值(toValue)，而CAKeyframeAnimation会使用一个NSArray保存这些数值。可以实现某一个属性在多个值之间的变化。(CABasicAnimation 可以看做是只有2个关键帧的动画)
 
@@ -190,7 +190,25 @@ CABasicAnimation使用:
     
     keyTimes：可以为对应的关键帧指定对应的时间点,其取值范围为0到1.0,keyTimes中的每一个时间值都对应values中的每一帧.当keyTimes没有设置的时候,各个关键帧的时间是平分的 .
 
-CAKeyframeAnimation使用:    
+CAKeyframeAnimation使用:   
+	 
+	CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    anim.keyPath = @"position";
+    
+    NSValue *v1 = [NSValue valueWithCGPoint:CGPointZero];
+    NSValue *v2 = [NSValue valueWithCGPoint:CGPointMake(100, 0)];
+    NSValue *v3 = [NSValue valueWithCGPoint:CGPointMake(100, 200)];
+    NSValue *v4 = [NSValue valueWithCGPoint:CGPointMake(0, 200)];
+    anim.values = @[v1, v2, v3, v4];
+    
+    //每个步骤的时间
+    anim.keyTimes = @[@(0.5), @(0.25), @(0.25)];
+    anim.duration = 2.0;
+    
+    anim.removedOnCompletion = NO;
+    anim.fillMode = kCAFillModeForwards;
+    
+    [self.redView.layer addAnimation:anim forKey:nil]; 
    
 ###　　2.2 CAAnimationGroup
 >特点:可以保存一组动画对象，将CAAnimationGroup对象加入层后，组中所有动画对象可以同时并发运行.
@@ -199,7 +217,29 @@ CAKeyframeAnimation使用:
 	
 CAAnimationGroup使用:
 	
-	
+	// 1.创建旋转动画对象
+    CABasicAnimation *rotate = [CABasicAnimation animation];
+    rotate.keyPath = @"transform.rotation";
+    rotate.toValue = @(M_PI);
+    
+    // 2.创建缩放动画对象
+    CABasicAnimation *scale = [CABasicAnimation animation];
+    scale.keyPath = @"transform.scale";
+    scale.toValue = @(0.0);
+    
+    // 3.平移动画
+    CABasicAnimation *move = [CABasicAnimation animation];
+    move.keyPath = @"transform.translation";
+    move.toValue = [NSValue valueWithCGPoint:CGPointMake(100, 100)];
+    
+    // 4.将所有的动画添加到动画组中
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.animations = @[rotate, scale, move];
+    group.duration = 2.0;
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
+    
+    [self.myvie.layer addAnimation:group forKey:nil];
 
 ###　　2.3 CATransition
 >特点:CAAnimation的子类，用于做转场动画，能够为层提供移出屏幕和移入屏幕的动画效果。
