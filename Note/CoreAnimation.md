@@ -5,10 +5,13 @@
 >　　　　UIView 能显示内容，全靠它内部有一个CALayer。
 	
 ####　　UIView显示过程:  
-　　在创建一个UIView的时候，内部会自动创建一个图层(即CALayer对象)。通过UIView的layer属性可以访问到这个对象。当UIView需要显示到屏幕上时，会调用drawRect:方法进行绘图，并且会将所有内容绘制在自己的图层上，绘图完毕后，系统会将图层拷贝到屏幕上，于是就完成了UIView的显示。
+　　在创建一个UIView的时候，内部会自动创建一个图层(即CALayer对象)。通过UIView的layer属性可以访问到这个对象。
+　　当UIView需要显示到屏幕上时，会调用drawRect:方法进行绘图，并且会将所有内容绘制在自己的图层上，绘图完毕后，
+　　系统会将图层拷贝到屏幕上，于是就完成了UIView的显示。
 	  
 ####　　小结:　　
-　　 UIView本身不具备显示的功能，是它内部的层才有显示功能。 因此，通过调节CALayer对象，可以很方便的调整UIView的一些外观属性。
+　　 UIView本身不具备显示的功能，是它内部的层才有显示功能。 因此，通过调节CALayer对象，可以很方便的调整UIView
+　　 的一些外观属性。
 	  
 ###　　1.2 CALayer基本属性　
 
@@ -42,7 +45,8 @@
 　    　　　在CALayer众多属性中，Postion与anchorPoint 这两个属性比较让人困惑。
 
 	　　　　postion属性主要是用来确定当前图层在父图层(super CALayer)上的位置。
-	　　　　archorPoint属性是用来确定当前图层上面的哪个点在position上。以自己的左上角为原点(0, 0)。它的x、y取值范围都是0~1，默认值为中心点（0.5, 0.5）
+	　　　　archorPoint属性是用来确定当前图层上面的哪个点在position上。以自己的左上角为原
+	　　　　点(0, 0)。它的x、y取值范围都是0~1，默认值为中心点（0.5, 0.5）
 ###　　1.4 隐式动画
 ####　　1.4.1 根层与非根层
 #####　　根层: 每一个UIView内部都默认关联着一个CALayer，我们可用称这个Layer为Root Layer（根层）
@@ -68,11 +72,12 @@
 ####灰色虚线是继承关系，红色表示遵守协议。 核心动画中所有类都遵守CAMediaTiming协议。
 
 ####动画开发步骤
-	1>初始化一个动画对象(CAAnimation)并设置一些动画相关的属性
+	1>初始化一个动画对象(CAAnimation)并设置一些动画相关的属性。CALayer中很多属性都可以通过CAAnimation实现动画效
+	果, 包括opacity, position, transform, bounds, contents等(可以在API文档中搜索:CALayer Animatable Properties).
 	
-	　　CALayer中很多属性都可以通过CAAnimation实现动画效果, 包括opacity, position, transform, bounds, contents等(可以在API文档中搜索:CALayer Animatable Properties).
-	
-	2>添加动画对象到层(CALayer)中，开始执行动画。通过调用CALayer的addAnimation:forKey:增加动画到层(CALayer)中,这样就能触发动画了.通过调用removeAnimationForKey:可以停止层中的动画.Core Animation的动画执行过程都是在后台操作的,不会阻塞主线程.
+	2>添加动画对象到层(CALayer)中，开始执行动画。通过调用CALayer的addAnimation:forKey:增加动画到层(CALayer)中,
+	这样就能触发动画了.通过调用removeAnimationForKey:可以停止层中的动画.CoreAnimation的动画执行过程都是在后台
+	操作的,不会阻塞主线程.
 
 ####CAAnaimation是个抽象类，不具备动画效果，必须用它的子类才有动画效果。
 	所有动画对象的父类,负责控制动画的持续时间和速度,是个抽象类,不能直接使用,应该使用它具体的子类.
@@ -85,7 +90,8 @@
 
     repeatDuration：动画的重复时间 .
 
-    removedOnCompletion：默认为YES，代表动画执行完毕后就从图层上移除，图形会恢复到动画执行前的状态。如果想让图层保持显示动画执行后的状态，那就设置为NO，不过还要设置fillMode为kCAFillModeForwards .
+    removedOnCompletion：默认为YES，代表动画执行完毕后就从图层上移除，图形会恢复到动画执行前的状态。
+    如果想让图层保持显示动画执行后的状态，那就设置为NO，不过还要设置fillMode为kCAFillModeForwards .
 
     fillMode：决定当前对象在非active时间段的行为.比如动画开始之前,动画结束之后 .
 
