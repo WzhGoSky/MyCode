@@ -59,10 +59,10 @@
 
 ##2.Core Animation
 ###在iOS中Core Animation层的动画是依赖CAAnimation类实现的。既然有Core Animation层动画那就应该有其他层动画。(越底层的层动画自由度越高，比如手游的动画，用coreAnimation实现许多特效是没法完成的)
-![images](https://github.com/WzhGoSky/MyCode/blob/master/imgaes/%E5%8A%A8%E7%94%BB/1.png)
+![images](https://github.com/WzhGoSky/MyCode/blob/master/NoteImages/%E5%8A%A8%E7%94%BB/1.png)
 
 ### CoreAnimation 结构图
-![images](https://github.com/WzhGoSky/MyCode/blob/master/imgaes/%E5%8A%A8%E7%94%BB/2.png)
+![images](https://github.com/WzhGoSky/MyCode/blob/master/NoteImages/%E5%8A%A8%E7%94%BB/2.png)
 
 ####说明:
 ####灰色虚线是继承关系，红色表示遵守协议。 核心动画中所有类都遵守CAMediaTiming协议。
