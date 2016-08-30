@@ -9,5 +9,8 @@
 　　对于相同图片、相同服务器下载，在HTTP/1.1和HTTP/2协议下的对比图:  
 　　![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B05-NSURLSession/1.jpg)
 　　
+　  HTTP/2比HTTP/1.1在速度上快很多，iOS9开始，NSURLSession开始全面的支持HTTP/2。
+　  
 ##2.NSURLSession介绍。
+
 ##3.NSURLSession具体使用。
