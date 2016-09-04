@@ -21,7 +21,7 @@
   
 ##2.NSURLSession介绍。
 ####2.1NSURLSession类继承关系
-![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B05-NSURLSession/2.jpg)
+![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B05-NSURLSession/2.png)
 
 >在NSURLSession中，网络请求基本由3个任务完成:  
 　　1.NSURLSessionData：请求数据任务  
@@ -29,7 +29,7 @@
 　　3.NSURLSessionDownloadTask：请求下载任务
 
 ####2.2NSURL代理协议类继承关系
-![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B05-NSURLSession/3.jpg)
+![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B05-NSURLSession/3.png)
 
 ####2.3NSURLSession使用步骤
 1.创建一个URL
@@ -54,11 +54,35 @@
 	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:@{@"userid":@"123456"} options:NSJSONWritingPrettyPrinted error:nil];
 	request.HTTPBody = jsonData;
 
-3.创建会话:NSURLSession
-4.通过会话创建务:NSURLSessionDataTask,NSURLSessionUploadTask,NSURLSessionDownloadTask
+3.创建会话:NSURLSession  
+4.通过会话创建务:NSURLSessionDataTask,NSURLSessionUploadTask,NSURLSessionDownloadTask  
 5.调用resume方法启动任务。（每一个任务都是默认挂起的，需要调用resume方法）
 
 ##3.NSURLSession具体使用。
-####3.1NSURLSessionDataTask进行Post请求
-	//1.创建url
+####3.1 NSURLSessionDataTask进行GET请求
+	 //1.创建URL
+    NSURL *url = [NSURL URLWithString:@"http://test.igenshang.com:8001/openapi/api/event/addEventRecord?"];
+    
+    //2.NSMutableURLRequest
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.f];
+    request.HTTPMethod = @"GET";
+    
+    //3.创建NSURLSession对象(使用一个全局会话对象)
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    //4.通过会话创建任务
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (!error) {
+            
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            
+            NSLog(@"%@",dict);
+        }
+        
+    }];
+    
+    //5.启动任务
+    [task resume];
+####3.2 NSURLSession
 	
