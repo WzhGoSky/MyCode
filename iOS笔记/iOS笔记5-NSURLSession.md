@@ -3,6 +3,7 @@
 1.NSURLSession优势在哪。(为什么苹果要使用NSURLSession来替代NSURLConnection)  
 2.NSURLSession介绍。  
 3.NSURLSession具体使用。
+4.关于Session的控制
 
 ##1.NSURLSession优势在哪。(为什么要使用NSURLSession来替代NSURLConnection) 
 ####1.1 下载速度
@@ -160,6 +161,8 @@
             }
         }
     }];
-    //5.启动任务
-    [downloadTask resume];
-}
+    	//5.启动任务
+    	[downloadTask resume];
+	}
+##4.会话Session控制。
+

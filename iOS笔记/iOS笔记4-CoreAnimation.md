@@ -59,10 +59,10 @@
 
 ##2.Core Animation
 ###在iOS中Core Animation层的动画是依赖CAAnimation类实现的。既然有Core Animation层动画那就应该有其他层动画。(越底层的层动画自由度越高，比如手游的动画，用coreAnimation实现许多特效是没法完成的)
-![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B02-coreAnimation/1.png)
+![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B04-coreAnimation/1.png)
 
 ### CoreAnimation 结构图
-![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B02-coreAnimation/2.png)
+![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B04-coreAnimation/2.png)
 
 ####说明:
 ####灰色虚线是继承关系，红色表示遵守协议。 核心动画中所有类都遵守CAMediaTiming协议。
@@ -139,7 +139,7 @@ fillMode属性值（要想fillMode有效，最好设置removedOnCompletion=NO）
       toValue：keyPath相应属性的结束值 .
      
 ####　　keyPath的选择
-![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B02-coreAnimation/3.png)
+![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B04-coreAnimation/3.png)
 
 >注意： 如果fillMode=kCAFillModeForwards和removedOnComletion=NO，那么在动画执行完毕后，图层会保持显示动画执行后的状态。
 但在实质上，图层的属性值还是动画执行前的初始值，并没有真正被改变。
