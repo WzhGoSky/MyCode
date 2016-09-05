@@ -84,5 +84,82 @@
     
     //5.启动任务
     [task resume];
-####3.2 NSURLSession
+####3.2 NSURLSessionUploadTask进行文件上传
+>与NSURLConnection的文件上传相比的好处:简单，不需要我们自己构建上传请求，主要是不用拼接上传的表单。
+
+#####常用的创建上传任务的方法
+	1.fromFile: 传入参数是上传文件所在的URL路径，这个方法长配合'PUT'请求使用
+	- (NSURLSessionUploadTask *)uploadTaskWithRequest:(NSURLRequest *)request fromFile:(NSURL *)fileURL completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler ;
 	
+	2.fromData: 传入的参数是上传文件的二进制数据 (常用)
+	- (NSURLSessionUploadTask *)uploadTaskWithRequest:(NSURLRequest *)request fromData:(nullable NSData *)bodyData completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+	
+上传文件也和dataTask一样分成5步
+
+	- (void) NSURLSessionBinaryUploadTaskTest {
+    // 1.创建url，采用Apache本地服务器进行测试
+    NSString *urlStr = @"http://localhost/upload.php";
+    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    // 2.创建请求，这里要设置POST请求
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";// 文件上传使用post
+    // 3.获取全局会话Session
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    // 4.创建上传任务，Request的Body Data将被忽略，而由fromData提供
+    NSData *data = [NSData dataWithContentsOfFile:@"/Users/userName/Desktop/IMG_0359.jpg"];
+    NSURLSessionUploadTask *upload =
+           [session uploadTaskWithRequest:request 
+                                 fromData:data     
+                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"upload success：%@",result);
+        } else {
+            NSLog(@"upload error:%@",error);
+        }
+    }]
+    // 5.启动任务
+    [upload resume];
+}
+
+####3.３ NSURLSessionDownloadTask进行文件下载
+#####常用的创建下载任务的方法
+	1.利用request 进行下载任务
+	- (NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURL *location, NSURLResponse *response, NSError *error))completionHandler;
+	2.对于不需要设置请求属性的下载任务来说 传入URL即可进行下载请求
+	- (NSURLSessionDownloadTask *)downloadTaskWithURL:(NSURL *)url completionHandler:(void (^)(NSURL *location, NSURLResponse *response, NSError *error))completionHandler;
+	
+	进行下载
+	
+	-(void)downloadTask{
+    //1.创建url
+    NSString *fileName = @"1.jpg";
+    NSString *urlStr = [NSString stringWithFormat: @"http://192.168.1.208/FileDownload.aspx?file=%@",fileName];
+    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    //2.创建请求
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    //3.创建会话（这里使用了一个全局会话）
+    NSURLSession *session = [NSURLSession sharedSession];
+    //4.创建文件下载任务
+    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request 
+          completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            //注意location是下载后的临时保存路径,需要将它移动到需要保存的位置
+            NSError *saveError;
+            NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *savePath = [cachePath stringByAppendingPathComponent:fileName];
+            NSURL *saveUrl = [NSURL fileURLWithPath:savePath];
+            
+            //将location路径下的文件移动到需要保存的路径下
+            [[NSFileManager defaultManager] copyItemAtURL:location toURL:saveUrl error:&saveError];
+            if (!saveError) {
+                NSLog(@"save sucess.");
+            }
+        }
+    }];
+    //5.启动任务
+    [downloadTask resume];
+}
