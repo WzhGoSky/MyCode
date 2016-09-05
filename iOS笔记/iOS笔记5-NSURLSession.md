@@ -2,7 +2,7 @@
 >主要从3个方面对NSURLSession进行学习  
 1.NSURLSession优势在哪。(为什么苹果要使用NSURLSession来替代NSURLConnection)  
 2.NSURLSession介绍。  
-3.NSURLSession具体使用。
+3.NSURLSession具体使用。  
 4.关于Session的控制
 
 ##1.NSURLSession优势在哪。(为什么要使用NSURLSession来替代NSURLConnection) 
@@ -165,4 +165,42 @@
     	[downloadTask resume];
 	}
 ##4.会话Session控制。
+>一般情况下全局的Session我们够用了，但是如果遇到两个连接使用不同配置的情况，就得重新配置session
 
+NSURLSession支持的3种会话配置
+
+	1.defaultSessionConfiguration （default）
+	进程内会话（默认会话），用硬盘来缓存数据
+	
+	2.ephemeralSessionConfiguration （ephemeral）
+	临时的进程内会话，不会将cookie,缓存储存到本地，只会放在内存中，当应用程序退出后数据也会消失。（浏览器的无痕浏览模式）
+	
+	3.backgroundSessionConfiguration （background）
+	后台会话，相比默认会话，该会话会在后台开启一个线程进行网络数据处理。
+
+配置一个默认session
+	
+	NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+	sessionConfig.timeoutIntervalForRequest = 5.0f;//请求超时时间
+	sessionConfig.allowsCellularAccess = true;//是否允许蜂窝网络下载（2G/3G/4G）
+	//创建会话，指定配置和代理
+	NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig 
+                                                      delegate:self 
+                                                 delegateQueue:nil];	
+ NSURLSession代理协议
+
+	NSURLSessionDelegate：NSObject
+	会话父协议
+	NSURLSessionTaskDelegate：NSURLSessionDelegate
+	任务协议
+	NSURLSessionDataDelegate：NSURLSessionTaskDelegate
+	数据协议
+	NSURLSessionDownloadDelegate： NSURLSessionTaskDelegate
+	下载协议
+	NSURLSessionStreamDelegate：NSURLSessionTaskDelegate
+	网络流协议
+
+NSURLSessionDelegate 协议（常用）
+                                     
+
+	
