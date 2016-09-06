@@ -4,6 +4,7 @@
 2.NSURLSession介绍。  
 3.NSURLSession具体使用。  
 4.关于Session的控制
+5.session后台开启任务
 
 ##1.NSURLSession优势在哪。(为什么要使用NSURLSession来替代NSURLConnection) 
 ####1.1 下载速度
@@ -200,7 +201,165 @@ NSURLSession支持的3种会话配置
 	NSURLSessionStreamDelegate：NSURLSessionTaskDelegate
 	网络流协议
 
-NSURLSessionDelegate 协议（常用）
-                                     
-
+NSURLSessionDownloadDelegate 协议（常用）
+    
+    /**
+	 *  1.下载中会多次调用
+	 *
+	 *  @param session                   会话
+	 *  @param downloadTask              下载任务
+	 *  @param bytesWritten              此次下载完成的字节数
+	 *  @param totalBytesWritten         已经下载完成的总字节数
+	 *  @param totalBytesExpectedToWrite 需要下载完成的总字节数
+	 */
+	- (void)URLSession:(NSURLSession *)session
+                    downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask
+                    didWriteData:(int64_t)bytesWritten
+                    totalBytesWritten:(int64_t)totalBytesWritten
+                    totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite  
+                     
+     /**
+     *  2.成功下载后调用
+     */
+	- (void)URLSession:(NSURLSession *)session
+                    downloadTask:(NSURLSessionDownloadTask *)downloadTask
+                    didFinishDownloadingToURL:(NSURL *)location                                         
 	
+	/**
+	 * 3.任务完成后调用,不管下载是否成功
+	 */
+	- (void)URLSession:(NSURLSession *)session
+              task:(NSURLSessionTask *)task
+                didCompleteWithError:(NSError *)error
+              
+NSURLSessionTask 任务操作方法
+	
+	1.取消任务            
+	- (void)cancel;
+	
+	2.挂起任务(暂停任务)
+	- (void)suspend;
+	
+	3.启动任务
+	- (void)resume;
+	
+
+使用DownloadTask 自制Configuration 代码
+	
+	-(void)downloadFile{
+	
+		1.创建url
+		NSString *fileName = _textField.text;
+		NSString *urlStr = [NSString stringWithFormat: @"http://192.168.1.208/FileDownload.aspx?file=%@",fileName];
+    	urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    	NSURL *url = [NSURL URLWithString:urlStr];
+    	2.创建request
+    	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+		3.创建session
+		3.1创建configuration
+		NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+		sessionConfig.timeoutIntervalForRequest = 5.0f;//请求超时时间
+		sessionConfig.allowsCellularAccess = true;//是否允许蜂窝网络下载（2G/3G/4G）
+    
+		3.2创建session
+		NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig 
+                                                          delegate:self 
+                                                     delegateQueue:nil];
+		4.创建任务
+		_downloadTask = [session downloadTaskWithRequest:request];
+    	5.启动任务
+		[_downloadTask resume];
+		
+	}
+
+pragma mark 点击取消下载
+
+	-(void)cancelDownload{
+	
+    	[_downloadTask cancel];
+	}
+pragma mark 点击挂起下载
+
+	-(void)suspendDownload{
+	
+    	[_downloadTask suspend];
+	}
+pragma mark 点击恢复下载
+
+	-(void)resumeDownload{
+
+    	[_downloadTask resume];
+	}
+pragma mark - 下载任务代理
+
+pragma mark 下载中(会多次调用，可以记录下载进度)
+
+	-(void)URLSession:(NSURLSession *)session 
+                downloadTask:(NSURLSessionDownloadTask *)downloadTask 
+                didWriteData:(int64_t)bytesWritten             
+           totalBytesWritten:(int64_t)totalBytesWritten
+           totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite    
+			{    
+    			[self setUIStatus:totalBytesWritten expectedToWrite:totalBytesExpectedToWrite];//设置界面状态
+			}
+pragma mark 下载完成
+				
+	-(void)URLSession:(NSURLSession *)session 
+                   downloadTask:(NSURLSessionDownloadTask *)downloadTask 
+      didFinishDownloadingToURL:(NSURL *)location
+	{
+    	NSError *error;
+    	NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    	NSString *savePath = [cachePath stringByAppendingPathComponent:_textField.text];
+    	NSURL *saveUrl = [NSURL fileURLWithPath:savePath];
+    	[[NSFileManager defaultManager] copyItemAtURL:location toURL:saveUrl error:&error];
+	}
+	
+pragma mark 任务完成，不管是否下载成功
+	
+	-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task 
+                          didCompleteWithError:(NSError *)error
+	{
+    	[self setUIStatus:0 expectedToWrite:0];//设置界面状态
+	}
+#5.session后台开启任务
+session后台开启任务的意义：
+	
+	场景: APP下载一个比较大的文件，用户开始下载后，让APP进入后台，他去做别的事情。
+		当程序进入后台后，下载继续进行，下载完成后，用户正常打开应该为100%位置。但是程序在后台无法更新UI，此时可以通过应用程序的代理进行UI更新。
+		
+AppDelegate.m添加函数
+
+	/* 
+    	有其中几个任务完成后，系统会调用此应用程序的该方法
+    	此方法会包含一个competionHandler，通常我们会保存此对象
+    	competionHandler此操作表示应用完成所有处理工作
+	**/
+	
+	- (void)application:(UIApplication *)application 
+        handleEventsForBackgroundURLSession:(NSString *)identifier 
+                          completionHandler:(void (^)())completionHandler
+	{
+		//backgroundSessionCompletionHandler是自定义的一个属性
+    	self.backgroundSessionCompletionHandler = completionHandler;
+	}
+
+在实现NSURLSessionDelegate代理方法
+
+	/* 
+    直到最后一个任务完成，系统会调用该方法。
+    在这个方法中通常可以进行UI更新，并调用completionHandler通知系统已经完成所有操作。
+	*/
+	- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session
+	{
+    	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    	//这中间就可以写更新UI的代码了
+
+    	if (appDelegate.backgroundSessionCompletionHandler) {
+        	void (^completionHandler)() = appDelegate.backgroundSessionCompletionHandler;
+        	appDelegate.backgroundSessionCompletionHandler = nil;
+        	completionHandler();  
+    	}
+	}
