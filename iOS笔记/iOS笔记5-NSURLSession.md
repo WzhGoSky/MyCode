@@ -1,9 +1,9 @@
 #NSURLSession
->主要从3个方面对NSURLSession进行学习  
+>主要从5个方面对NSURLSession进行学习  
 1.NSURLSession优势在哪。(为什么苹果要使用NSURLSession来替代NSURLConnection)  
 2.NSURLSession介绍。  
 3.NSURLSession具体使用。  
-4.关于Session的控制
+4.关于Session的控制  
 5.session后台开启任务
 
 ##1.NSURLSession优势在哪。(为什么要使用NSURLSession来替代NSURLConnection) 
