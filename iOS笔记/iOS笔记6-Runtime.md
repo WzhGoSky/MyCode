@@ -141,7 +141,7 @@ cache必要性:
 SEL是selector在Objct-C中的表示类型。selector可以理解为区别方法的ID。
 SEL就是对方法的一种包装。包装的SEL类型数据它对应相应的方法地址，找到方法地址就可以调用方法。
 	
-	typedefstructobjc_selector *SEL;
+	typedef struct objc_selector *SEL;
 
 objc_selector的定义如下:
 	
@@ -155,4 +155,27 @@ objc_selector的定义如下:
 
 通过SEL可以迅速的定位到IMP。
 
+####IMP
+在objc.h中IMP有如下定义:
+	
+	typedef id (*IMP)(id, SEL,...);
+	
+IMP是“implementation”的缩写，它是一个有编译器生成的一个函数指针。这个函数指针决定了最终执行哪段代码。
+
+####Method
+Method的定义:
+	
+	typedef struct objc_method *Method;
+	
+objc_method的定义如下:
+	
+	struct obj_method{
+		
+		SEL method_name       OBJC2_UNAVAILABLE;//方法名
+		
+		char *method_types    OBJC2_UNAVAILABLE;//方法类型；
+		
+		method_imp            OBJC2_UNAVAILABLE;//方法实现 IMP类型
+	}
+	
 
