@@ -1,21 +1,24 @@
 #Runtime
 ####本章笔记总共分为以下几个部分:  
 
-1 Runtime基础  <runtime1,2,3>  
+1 Runtime基础  
 　　1.1 Class, Meta Class,objc_object与id  
 　　1.2 methodLists 和 cache  
 　　1.3 SEL, IMP, Method   
-　　1.4 调用方法时大致流程 <装逼指南>  
+　　1.4 调用方法时大致流程  
+　　1.5 objc_msgSendSuper
 
-2.成员变量和属性 <三分钟>  
-　　2.1 成员变量和属性到底是什么  
+2.成员变量和属性 
+　　2.1 成员变量和属性定义  
 　　2.2 通过runtime获取属性和成员变量  
 　　2.3 变量和属性的区别  
 
 3.消息机制  
 
-4.Runtime具体使用场景
-
+4.Runtime具体使用场景  
+　　4.1 设置分类属性  
+　　4.2 交换方法
+　　
 ##1.Runtime基础
 ###1.1 Class, Meta Class,objc_object与id
 
@@ -178,4 +181,78 @@ objc_method的定义如下:
 		method_imp            OBJC2_UNAVAILABLE;//方法实现 IMP类型
 	}
 	
+在method中 method_name,method_imp, method_types三者的关系。SEL是一个key，IMP为一个value，而Method可以想成key到value的映射方法。这样就可以通过SEL迅速的定位到IMP。
 
+###1.4 调用方法时大致流程
+关于消息发送的runtime函数 objc_msgSend原型
+	
+	OBJC_EXPORT void objc_msgSend(void /* id self, SEL op, ... */ )
+	
+	
+1.Runtime系统会把方法调用转换为消息发送，即objc_msgSend,并且把方法的调用者和方法选择器当做参数传递过去。
+2.方法的调用者会通过isa指针找到其所属的类，然后在cache或者mothodLists中查找该方法。如果找到了该方法就执行，如果找不到该方法就通过super_class往上一级的超类查找。如果一直找到NSObject都没有找到该方法的话，就会进行消息转发。
+
+###1.5 objc_msgSendSuper
+
+当[super selector]调用时，就不是转换为objc_msgSend函数了，而是转换为objc_msgSendSuper
+
+	OBJC_EXPORT void objc_msgSendSuper(void /* struct objc_super *super, SEL op, ... */ )
+
+super是一个objc_super结构体指针，objc_super结构体定义如下
+	
+	struct objc_super {
+	 
+	    __unsafe_unretained id receiver;
+	
+	    __unsafe_unretained Class super_class;
+	};
+	
+	参数1 receiver 类似objc_msg的第一个参数receiver,第二个成员记录写super这个类的父类是什么。
+
+如以下例子:
+
+	@implementation Son : Father
+	- (id)init
+	{
+	    self = [super init];
+	    if (self)
+	    {
+	        NSLog(@"%@", NSStringFromClass([self class]));
+	        NSLog(@"%@", NSStringFromClass([super class]));
+	    }
+	    return self;
+	}
+	@end
+	
+	打印结果:都是“Son”
+
+[super class] 调用时开始做了这几个事情  
+　　1.构建objc_super,此时结构体的第一个参数receiver 就是self(Son对象),第二个成员变量super_class就是Son类的父类Father。  
+　　2.调用objc_msgSenfSuper的方法，将构造的objc_super结构体和 class的sel传递过去。从objc_super结构体指向的superClass的方法列表开始找class的selector,找到以后再已objc_super->receiver去调用这个selector,可能也会使用objc_msgSend这个函数，不过此时的第一个参数就是objc_receiver，第二个参数就是从objc_super->super_class中吵到的selector。  
+　　
+#####关于[super init],为什么要调用self = [super init];
+符合oc 继承类 初始化规范 super 同样也是这样，[super init]  去self 的super 中调用init,super 调用 superSuper 的init 。直到根类 NSObject 中的init ,
+
+根类中init 负责初始化内存区域  向里面添加一些必要的属性，返回内存指针,这样 延着继承链 初始化的内存指针 被从上 到 下 传递，在不同的子类中向块内存添加子类必要的属性，直到 我们的 A类 中得到内存指针，赋值给slef 参数， 在if (slef){//添加A 的属性 }
+
+##2.成员变量和属性
+###2.1 成员变量和属性定义
+####成员变量
+成员变量定义：
+	
+	Ivar:实例变量类型，是一个指向objc_ivar结构体的指针。
+	typedef struct objc_ivar *Ivar;
+
+成员变量用到的函数
+	
+	class_copyIvarList   //获取所有的成员变量
+	
+	ivar_getName  //获取成员变量名
+	
+	ivar_getTypeEncoding //获取成员变量类型编码
+	
+	class_getInstanceVariable  //获取指定名称的成员变量
+	
+	
+###2.2 通过runtime获取属性和成员变量  
+###2.3 变量和属性的区别 
