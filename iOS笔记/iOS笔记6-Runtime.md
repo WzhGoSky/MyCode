@@ -245,14 +245,31 @@ super是一个objc_super结构体指针，objc_super结构体定义如下
 
 成员变量用到的函数
 	
-	class_copyIvarList   //获取所有的成员变量
+	class_copyIvarList   //获取类中所有的成员变量
+	class_getInstanceVariable  //获取类中指定名称的成员变量
 	
 	ivar_getName  //获取成员变量名
-	
 	ivar_getTypeEncoding //获取成员变量类型编码
 	
-	class_getInstanceVariable  //获取指定名称的成员变量
+	object_getIvar     // 获取某个对象成员变量的值
+	object_setIvar     //设置某个对象成员变量的值
+	
+####成员属性
+成员属性定义:  
+　　objc_property_t: 声明属性的类型，是一个指向objc_property结构体的指针。
+	
+	typedef struct objc_property *objc_property_t;
+	
+成员属性相关函数
+	
+	class_copyPropertyList    //获取所有属性 说明:并不会获取无@property声明的成员变量
+	
+	property_name         //获取成员属性名
+	property_copyAttributeList //获取所有属性特性
+	
+	property_getAttributes //获取成员属性特性描述字符串
 	
 	
+
 ###2.2 通过runtime获取属性和成员变量  
 ###2.3 变量和属性的区别 
