@@ -15,7 +15,7 @@
 
 3.消息机制  
 　　3.1 消息机制介绍  
-　　3.2 NSPoxy   
+　　3.2 NSProxy   
 
 4.Runtime具体使用场景  
 　　4.1 设置分类属性  
@@ -405,3 +405,127 @@ super是一个objc_super结构体指针，objc_super结构体定义如下
 在前面说到，如果向某个对象发消息，从对象的isa指针指向的类中寻找没有找到，到super_class中寻找,如果一直找到NSObject都没有找到，就会进行消息转发。如图:  
 ![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B06-Runtime/2.jpg)
 
+#####1.对象在收到无法解读的消息后，首先会调用所属类
+	
+	+（BOOL）resolveInstanceMethod:(SEL)sel
+	
+在这个方法在运行时，没有找到SEL的IMP时就会执行。如果实现了添加函数代码返回YES，未实现返回NO。
+
+	- (void)viewDidLoad {
+    	[super viewDidLoad];
+    
+    	[self performSelector:@selector(doSomething)];
+    
+	}
+
+	+ (BOOL)resolveInstanceMethod:(SEL)sel
+	{
+	    if (sel == @selector(doSomething)) {
+	        
+	        //add code here
+	        NSLog(@"do something");
+	        
+	        return YES;
+	    }
+	    
+	    return [super resolveInstanceMethod:sel];
+	}
+
+代码中执行@selector(doSomething)方法，但是并没有实现，会首先执行resolveInstanceMethod。
+
+######应用场景:动态添加方法。
+
+实现了resolveInstanceMethod 方法还是会崩溃，需要在打印的地方做一些操作，使这个方法得到响应，不至于走到 - (void)doesNotRecognizeSelector:(SEL)aSelector 这个方法中崩溃。
+
+	- (void)viewDidLoad {
+	
+	    [super viewDidLoad];
+	    
+	    [self performSelector:@selector(doSomething)];
+    
+	}
+
+	+ (BOOL)resolveInstanceMethod:(SEL)sel
+	{
+	    if (sel == @selector(doSomething)) {
+	    
+	        class_addMethod([self class], sel, (IMP)addMethod, "v@:");
+	        
+	        return YES;
+	    }
+	    
+	    return [super resolveInstanceMethod:sel];
+	}
+
+	void addMethod(id self, SEL _cmd)
+	{
+		NSLog(@"添加方法");
+	}
+
+关于class_addMethod方法:
+	
+	OBJC_EXPORT BOOL class_addMethod(Class cls, SEL name, IMP imp,  const char *types)
+	
+	其中:
+	cls :在哪个类中添加方法，也就是方法所添加的类
+	name :方法名，这个随便起
+	imp :实现这个方法的函数
+	types :定义改书返回值类型和参数类型的字符串。
+	
+	比如: v就是void,代表返回类型就是空，@代表参数,这里指的是id(self),这里:指的是方法SEL(_cmd)。
+	
+	比如：
+	int Method (id self, SEL _cmd, NSString *str) {
+
+		  return 100;
+	}
+	
+	此时添加这个函数的方法就应该是
+	class_addMethod([self class],@selector(Method),(IMP)Method,@"i@:@");
+
+#####2.如果在+ (BOOL)resolveInstanceMethod:(SEL)sel中没有找到或者添加方法，消息就会传递到- (id)forwardingTargetForSelector:(SEL)aSelector方法。
+
+	- (id)forwardingTargetForSelector:(SEL)aSelector;
+	这个方法返回的是可以执行aSelector的对象。
+	
+比如:
+	
+	#import "ViewController.h"
+	#import <objc/runtime.h>
+	
+	@interface ViewController ()
+
+	@end
+
+	@implementation ViewController
+
+	- (void)viewDidLoad {
+	    [super viewDidLoad];
+	    
+	    [self performSelector:@selector(secondVCMethod)];
+	}
+	
+	//第一步转发
+	+ (BOOL)resolveInstanceMethod:(SEL)sel {
+
+    	return [super resolveInstanceMethod:sel];
+	}
+	
+	//第二步转发
+	- (id)forwardingTargetForSelector:(SEL)aSelector {
+	
+	    Class class = NSClassFromString(@"ViewController2");
+	    UIViewController *vc = class.new;
+	    if (aSelector == NSSelectorFromString(@"secondVCMethod")) {
+	        NSLog(@"secondVC do this !");
+	        return vc;
+	    }
+	
+	    	return nil;
+		}
+	
+	@end
+
+	执行secondVCMethod,并没有实现这个方法。于是消息转发给+(BOOL)resolveInstanceMethod:(SEL)sel,但是第一步转发的消息并没有执行，于是转发给第二步,在这个方法里面创建了一个ViewController2对象,并判断这个方法为secondVCMethod方法时，就返回ViewController2对象。通过forwardingTargetForSelector这个方法就把消息传递给了secondVCMethod。
+	
+###3.2 NSProxy
