@@ -8,10 +8,10 @@
 　　1.4 调用方法时大致流程  
 　　1.5 objc_msgSendSuper
 
-2.成员变量和属性 
+2.成员变量和属性   
 　　2.1 成员变量和属性定义  
 　　2.2 通过runtime获取属性和成员变量  
-　　2.3 变量和属性的区别  
+　　2.3 应用场景  
 
 3.消息机制  
 
@@ -245,14 +245,14 @@ super是一个objc_super结构体指针，objc_super结构体定义如下
 
 成员变量用到的函数
 	
-	class_copyIvarList   //获取类中所有的成员变量
-	class_getInstanceVariable  //获取类中指定名称的成员变量
+	class_copyIvarList   //获取类中所有的成员变量 返回值 Ivar * 
+	class_getInstanceVariable  //获取类中指定名称的成员变量 返回值 Ivar
 	
-	ivar_getName  //获取成员变量名
-	ivar_getTypeEncoding //获取成员变量类型编码
+	ivar_getName  //获取成员变量名   返回值 const char *
+	ivar_getTypeEncoding //获取成员变量类型编码 返回值const char *
 	
-	object_getIvar     // 获取某个对象成员变量的值
-	object_setIvar     //设置某个对象成员变量的值
+	object_getIvar     // 获取某个对象成员变量的值 返回值 id
+	object_setIvar     //设置某个对象成员变量的值  无返回值
 	
 ####成员属性
 成员属性定义:  
@@ -265,11 +265,150 @@ super是一个objc_super结构体指针，objc_super结构体定义如下
 	class_copyPropertyList    //获取所有属性 说明:并不会获取无@property声明的成员变量
 	
 	property_name         //获取成员属性名
+	
 	property_copyAttributeList //获取所有属性特性
 	
 	property_getAttributes //获取成员属性特性描述字符串
-	
-	
 
-###2.2 通过runtime获取属性和成员变量  
-###2.3 变量和属性的区别 
+###2.2 通过runtime获取属性和成员变量 
+
+	#import "Person.h"
+	
+	@interface Person : NSObject
+	{
+    	NSString *_ID;
+	}
+
+	@property (nonatomic, strong) NSString *name;
+
+	@property (nonatomic, assign) NSInteger age;
+
+	----------------------------------------------
+	成员变量：
+	-----------------------------------------------
+	Person *p = [[Person alloc] init];
+    
+    //1.获取名为“_name”的成员变量
+    Ivar ivar = class_getInstanceVariable([Person class], "_name");
+    
+    //2.设置值
+    object_setIvar(p, ivar, @"Hayder");
+   
+    NSLog(@"%@",object_getIvar(p, ivar));
+    
+    打印结果:Hayder;
+    
+    -----------------------------------------------
+    获取成员变量:
+    -----------------------------------------------
+    
+    Ivar *ivars = class_copyIvarList([Person class], &number);
+    
+    for (unsigned int i=0; i < number; i++) {
+        
+        Ivar ivar = ivars[i];
+        
+        const char *name = ivar_getName(ivar);
+        const char *type = ivar_getTypeEncoding(ivar);
+        
+        NSLog(@"name---%s,type-----%s",name,type);
+    }
+    
+    free(ivars);
+    
+	打印结果:
+	name---_ID,type-----@"NSString"
+	name---_name,type-----@"NSString"
+	name---_age,type-----q
+	
+	-----------------------------------------------
+	成员属性:
+	-----------------------------------------------
+	unsigned int number = 0;
+    
+    objc_property_t *propertys = class_copyPropertyList([Person class], &number);
+    
+    for (unsigned int i=0; i < number; i++) {
+        
+        objc_property_t property = propertys[i];
+        
+        //字典转模型里面的key value就是dict[key]
+        const char *name = property_getName(property);        
+        const char *attribute = property_getAttributes(property);
+        
+        NSLog(@"name---%s,type-----%s",name,type);
+    }
+    
+    free(propertys);
+    
+    打印结果:
+    name---name, attribute-----T@"NSString",&,N,V_name
+	name---age, attribute-----Tq,N,V_age
+	
+#####property_getAttribute属性说明
+	
+	property_getAttributes函数返回objc_property_attribute_t结构体列表，objc_property_attribute_t结构体包含name和value，常用的属性如下：
+
+	属性类型  name值：T  value：变化
+	编码类型  name值：C(copy) &(strong) W(weak)空(assign) 等 value：无
+	非/原子性 name值：空(atomic) N(Nonatomic)  value：无
+	变量名称  name值：V  value：变化
+
+	使用property_getAttributes获得的描述是property_copyAttributeList能获取到的所有的name和value的总体描述，如 T@"NSString",&,N,V_name 
+	
+	@property (nonatomic, strong) NSString *name;
+
+ 	
+#####小结:class_copyIvarList 包含成员变量+属性 class_copyPropertyList只包含成员变量
+
+###2.3 应用场景
+#####快速归档
+在model中实现
+	
+	- (id)initWithCoder:(NSCoder *)aDecoder {
+	
+	    if (self = [super init]) {
+	    
+	        unsigned int outCount;
+	        Ivar * ivars = class_copyIvarList([self class], &outCount);
+	        for (int i = 0; i < outCount; i ++) {
+	            Ivar ivar = ivars[i];
+	            NSString * key = [NSString stringWithUTF8String:ivar_getName(ivar)];
+	            [self setValue:[aDecoder decodeObjectForKey:key] forKey:key];
+	        }
+	    }
+	    	return self;
+	}
+	
+	- (void)encodeWithCoder:(NSCoder *)aCoder {
+	    unsigned int outCount;
+	    Ivar * ivars = class_copyIvarList([self class], &outCount);
+	    for (int i = 0; i < outCount; i ++) {
+	        Ivar ivar = ivars[i];
+	        NSString * key = [NSString stringWithUTF8String:ivar_getName(ivar)];
+	        [aCoder encodeObject:[self valueForKey:key] forKey:key];
+	    }
+	}
+#####访问私有变量
+>OC中没有真正意义上面的私有变量和方法，要让成员变量私有，就要放在.m中声明，不要对外暴露。如果我们知道这个成员变量的名称，就可以同过runtime获取成员变量，再通过getIvar来获取它的值。
+
+方法:
+
+	Ivar ivar = class_getInstanceVariable([Model class], "_str1");
+	NSString * str1 = object_getIvar(model, ivar);
+ 
+ 
+##3.消息机制
+
+
+```flow
+st=>start: start:>http://www.baidu.com
+op1=>operation: 操作1
+cond1=>condition: YES or NO?
+sub=>subroutine: 子程序
+e=>end
+
+st->op1->cond1
+cond1(yes)->e
+cond1(no)->sub(right)->op1  
+```
