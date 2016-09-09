@@ -14,6 +14,8 @@
 　　2.3 应用场景  
 
 3.消息机制  
+　　3.1 消息机制介绍  
+　　3.2 NSPoxy   
 
 4.Runtime具体使用场景  
 　　4.1 设置分类属性  
@@ -399,16 +401,7 @@ super是一个objc_super结构体指针，objc_super结构体定义如下
  
  
 ##3.消息机制
+###3.1消息机制介绍
+在前面说到，如果向某个对象发消息，从对象的isa指针指向的类中寻找没有找到，到super_class中寻找,如果一直找到NSObject都没有找到，就会进行消息转发。如图:  
+![images](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B06-Runtime/2.jpg)
 
-
-```flow
-st=>start: start:>http://www.baidu.com
-op1=>operation: 操作1
-cond1=>condition: YES or NO?
-sub=>subroutine: 子程序
-e=>end
-
-st->op1->cond1
-cond1(yes)->e
-cond1(no)->sub(right)->op1  
-```
