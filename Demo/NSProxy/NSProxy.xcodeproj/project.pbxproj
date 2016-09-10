@@ -539,6 +539,7 @@
 				840EE70F1D5B6765009634F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		840EE7101D5B6765009634F7 /* Build configuration list for PBXNativeTarget "NSProxyTests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +548,7 @@
 				840EE7121D5B6765009634F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		840EE7131D5B6765009634F7 /* Build configuration list for PBXNativeTarget "NSProxyUITests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +557,7 @@
 				840EE7151D5B6765009634F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

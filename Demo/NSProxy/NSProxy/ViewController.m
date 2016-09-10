@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Car.h"
+
 @interface ViewController ()
 
 @end
@@ -31,11 +32,13 @@
  
     Car *car = [[Car alloc] init];
     [car getSkillFromProxy];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
+
 
 @end

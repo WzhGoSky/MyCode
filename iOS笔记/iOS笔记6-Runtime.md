@@ -527,5 +527,57 @@ super是一个objc_super结构体指针，objc_super结构体定义如下
 	@end
 
 	执行secondVCMethod,并没有实现这个方法。于是消息转发给+(BOOL)resolveInstanceMethod:(SEL)sel,但是第一步转发的消息并没有执行，于是转发给第二步,在这个方法里面创建了一个ViewController2对象,并判断这个方法为secondVCMethod方法时，就返回ViewController2对象。通过forwardingTargetForSelector这个方法就把消息传递给了secondVCMethod。
-	
+
+#####3.如果不实现forwardingTargetForSelector,系统就会调用methodSignatureForSelector和forwardInvocation这两个方法。
+
+1.methodSignatureForSelector用来生成方法签名
+2.forwardInvocation中的参数NSInvocation使用生成的签名。
+
+	- (void)viewDidLoad {
+	    [super viewDidLoad];
+	     
+	    [self performSelector:@selector(run)];
+	}
+
+	- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+	{
+	    //1.先转成字符串
+	    NSString *sel = NSStringFromSelector(aSelector);
+	    
+	    if ([sel isEqualToString:@"run"]) {
+	        
+	        //如果是则签名，返回类类型 v->void @ -> id(self) :-> SEL _cmd
+	        return [NSMethodSignature signatureWithObjCTypes:"v@:"];
+	    }
+	    return [super methodSignatureForSelector:aSelector];
+	}
+
+	- (void)forwardInvocation:(NSInvocation *)anInvocation
+	{
+		SEL selector = [anInvocation selector];
+	    
+	    Person *person = [[Person alloc] init];
+	    
+	    //如果person实现了这个方法则执行这个方法
+	    if ([person respondsToSelector:selector]) {
+	        
+	        //执行run这个方法
+	        [anInvocation invokeWithTarget:person];
+    	}
+    
+	}
+
 ###3.2 NSProxy
+NSProxy这个类干嘛用的?  
+>NSProxy 负责将消息转发到真正的target的代理类。 作用:OC只支持单继承 NSPorxy可模拟多继承
+
+如何理解NSProxy这个类进行多继承
+>假设类A，类B，类C中各有一个方法类D需要使用，但是OC又是单继承，可以利用NSPorxy作为代理，类D去向NSPorxy类中调用。
+类D是顾客  NSPorxy是经销商 类A，类B，类C是供应商.
+
+需要实现什么方法？
+>- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel;
+- (void)forwardInvocation:(NSInvocation *)anInvocation;
+
+[Demo]()
+

@@ -40,7 +40,6 @@
 - (void)methodMapWithTarget:(id)target
 {
     unsigned int numbersOfMethods = 0;
-    
     //获取target的方法列表
     Method *method_list = class_copyMethodList([target class], &numbersOfMethods);
     
