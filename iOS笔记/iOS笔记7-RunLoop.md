@@ -149,6 +149,9 @@ observe 用来监听RunLoop的状态。
 		 CFRelease(对象);
 	*/
 ##3. RunLoop整体逻辑  
+![image](https://github.com/WzhGoSky/NoteImages/blob/master/iOS%E7%AC%94%E8%AE%B07-RunLoop/1.png)
+
+其实在进入runloop之前，会进行一个非空判断，判断下modes是否为空，如果为空，就会直接退出runloop。
 ##4. RunLoop实践 
 ####4.1 ImageView显示
 #####scrollview滚动的时候加载图片出现卡顿的情况,需要延迟显示，可以利用runloop进行延迟加载
