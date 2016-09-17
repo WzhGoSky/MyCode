@@ -179,6 +179,47 @@
 	        postFeed(imageURLs, text);
 	});
 	
+##GCD定时器
+NStimer是对GCD定时器的包装。GCD定时器更加的高级，且不受runloop的影响。
+
+	@interface ViewController ()
 	
+	@property (nonatomic, strong) dispatch_source_t timer;
+	
+	@end
+	
+	int count = 0;
+	- (void)GCDTimer{
+		
+		1.获得队列
+	    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+	    
+	    2.创建一个定时器(dispatch_source_t本质是一个OC对象)
+	    self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+	    
+	    3.设置定时器的各种属性(几时开始任务，每个多长时间执行一次)
+	    GCD的时间参数，一般是纳秒(1秒 == 10的9次方纳秒)
+	    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, 3.0 * NSEC_PER_SEC);//何时开始第一个任务
+	    dispatch_time_t interval = 2.0 * NSEC_PER_SEC; //何时开始重复任务
+	    dispatch_source_set_timer(self.timer, start, interval, 0);
+	    
+	    4.设置回调
+	    dispatch_source_set_event_handler(self.timer, ^{
+	       
+	        NSLog(@"-------%@",[NSThread currentThread]);
+	       	count ++;
+	       	
+	       	if(count == 5)
+	       	{
+	       		//取消定时器
+	       		dispatch_cancel(self.timer);
+	       		self.timer = nil;
+	       	}
+	    });
+	    
+	    5.启动timer
+	    dispatch_resume(self.timer);
+	}
+
 	  			  
 	  

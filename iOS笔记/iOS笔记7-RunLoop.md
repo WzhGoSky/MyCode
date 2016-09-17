@@ -2,21 +2,26 @@
 
 主要分为几个内容:  
 1. RunLoop基础  
-　　1.1 RunLoop是什么;
-　　1.2 RunLoop是作用; 
-　　1.3 RunLoop对象;  
-　　1.4 RunLoop与线程;
-　　1.5 RunLoop模式;
+　　1.1 RunLoop是什么;  
+　　1.2 RunLoop是作用;   
+　　1.3 RunLoop对象;    
+　　1.4 RunLoop与线程;  
+　　1.5 RunLoop模式;  
 2. RunLoop组成   
 　　2.1 RunLoop - timer;  
 　　2.2 RunLoop - source;  
-　　2.3 RunLoop - observe;
-3. RunLoop整体逻辑
-4. RunLoop实践
+　　2.3 RunLoop - observe;  
+3. RunLoop整体逻辑  
+4. RunLoop实践  
+　　4.1 ImageView显示;   
+　　4.2 常驻线程  
 
 ##RunLoop基础
 ####1.1RunLoop是什么
-> 从字面意思看就是运行循环，跑圈。
+> 从字面意思看就是运行循环，跑圈。  
+> 其实它内部就是一个do-while循环，在这个循环内部不断的处理各种事件  
+> 一个线程对应一个Runloop,主线程的RunLoop默认已经启动，子线程的Runloop需要自己启动  
+> RunLoop智能选择一个Mode	启动，如果当前Mode没有任何Source,Timer,observer，那么就是直接退出RunLoop
 
 ####1.2RunLoop主要作用
 >1.保持程序的持续运行  
@@ -109,14 +114,14 @@ source1: 基于Port的，通过内核和其他线程通信，接收，分发系�
 ####2.3RunLoop - observe
 observe 用来监听RunLoop的状态。
 监听的时间点有以下几个:  
->typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
-    kCFRunLoopEntry = (1UL << 0), //即将进入runloop  1
-    kCFRunLoopBeforeTimers = (1UL << 1), //即将处理timer 2
-    kCFRunLoopBeforeSources = (1UL << 2),//即将处理source 4
-    kCFRunLoopBeforeWaiting = (1UL << 5),//即将进入休眠 32
-    kCFRunLoopAfterWaiting = (1UL << 6),//刚从休眠中醒来 64
-    kCFRunLoopExit = (1UL << 7),//即将退出runloop 128
-    kCFRunLoopAllActivities = 0x0FFFFFFFU //上面所有状态
+>typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {  
+　　kCFRunLoopEntry = (1UL << 0), //即将进入runloop  1  
+　　kCFRunLoopBeforeTimers = (1UL << 1), //即将处理timer 2  
+　　kCFRunLoopBeforeSources = (1UL << 2),//即将处理source 4  
+　　kCFRunLoopBeforeWaiting = (1UL << 5),//即将进入休眠 32  
+　　kCFRunLoopAfterWaiting = (1UL << 6),//刚从休眠中醒来 64  
+　　kCFRunLoopExit = (1UL << 7),//即将退出runloop 128  
+　　kCFRunLoopAllActivities = 0x0FFFFFFFU //上面所有状态  
 };
 
 给当前的runloop添加一个观察者，拦截一些事件
@@ -143,3 +148,53 @@ observe 用来监听RunLoop的状态。
 		 2.release函数
 		 CFRelease(对象);
 	*/
+##3. RunLoop整体逻辑  
+##4. RunLoop实践 
+####4.1 ImageView显示
+#####scrollview滚动的时候加载图片出现卡顿的情况,需要延迟显示，可以利用runloop进行延迟加载
+
+	[imageview performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"1"] afterDelay:0.3 inModes:@[NSDefaultRunLoopMode]];
+	
+####4.2 常驻线程  
+#####常驻线程:希望线程一直永远不死，一直在后台运行,避免多次创建线程销毁。比如:在子线程中开启一个定时器，在子线程中进行一些长期监控。
+	
+	@interface ViewController ()
+
+	@property (nonatomic, strong) NSThread *thread;
+
+	@end
+
+	@implementation ViewController
+步骤1: 创建子线程
+
+	- (void)viewDidLoad {
+    [super viewDidLoad];
+
+		//创建一个线程并且启动
+	    self.thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+	    
+	    [self.thread start];
+	}
+步骤2: 创建runloop
+	
+	- (void)run
+	{
+	    //在创建了线程以后创建RunLoop。
+	    //原因:开启子线程后，执行完任务，子线程就会死亡，通过创建runloop可以使子线程常驻。就像主线程一样。
+		//runloop中Mode如果没有source,observe,timer,runloop就会退出。首先先创建一个port(相当于source),第二步运行runloop。
+	    [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
+	    [[NSRunLoop currentRunLoop] run];
+	}
+步骤3: 测试常驻线程
+
+	- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+	{
+	    [self performSelector:@selector(test) onThread:self.thread withObject:nil waitUntilDone:NO];
+	}
+
+	- (void)test
+	{
+	    NSLog(@"%@----thread",[NSThread currentThread]);
+	    NSLog(@"test");
+	}
+  
