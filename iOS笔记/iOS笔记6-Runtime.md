@@ -593,7 +593,7 @@ NSProxy这个类干嘛用的?
 	    // 给系统NSObject类动态添加属性name
 	
 	    NSObject *objc = [[NSObject alloc] init];
-	    objc.name = @"小码哥";
+	    objc.name = @"Hayder";
 	    NSLog(@"%@",objc.name);
 
 	}
