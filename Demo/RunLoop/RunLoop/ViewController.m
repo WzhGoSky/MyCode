@@ -28,6 +28,7 @@
 //    
 //    [self.thread start];
     
+
     //获得队列
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     
