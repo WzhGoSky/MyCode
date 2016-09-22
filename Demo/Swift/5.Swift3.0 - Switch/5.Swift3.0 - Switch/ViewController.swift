@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     /**
     1.OC中 Switch() 中的值必须是整数
     2.每个语句都需要一个 break
-    3.
+    3.如果要定义局部变量，需要{}
+    4.OC中{}可以限定变量的作用域。
      */
     override func viewDidLoad() {
         super.viewDidLoad()
