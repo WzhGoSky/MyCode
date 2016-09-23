@@ -19,8 +19,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Demo(num: "10")
+    }
+    
+    /**
+     1.Swift 可以针对任意类型的值进行分支，不再局限整数
+     2.Swift 一般不需要break
+     3.Swift 如果需要多值,使用‘,’
+     4.所有的分支至少需要一条指令，如果什么都不干，才使用break
+     */
+    func Demo(num : String){
+        
+        switch num {
+        case "10","9":
+            
+            print("优")
+            
+        default:
+            print("一般")
+        }
         
     }
-
 }
 
