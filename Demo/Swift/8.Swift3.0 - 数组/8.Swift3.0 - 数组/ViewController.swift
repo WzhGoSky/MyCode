@@ -15,6 +15,56 @@ class ViewController: UIViewController {
        
     }
     
+    //MARK: - 数组的遍历
+    func demo2()  {
+        
+        let arr = ["张三","小芳","小羊"];
+        
+        //1.按照下标遍历
+        for i in 0..<arr.count {
+            
+            print(arr[i])
+        }
+        
+        //2,for in 遍历元素
+        print("---- for in 遍历元素")
+        
+        for s in arr {
+            
+            print(s)
+        }
+        
+        //3.enum block遍历 ，同时遍历下标和内容
+        print("----同时遍历下标和内容 ")
+        
+        //元组 (offset: Int, element: String)
+        for e in arr.enumerated() {
+            
+            print(e)
+        }
+        
+        //4.遍历下标和内容2
+        // n 就是索引下标
+        // s 就是[String] 数组 n 对应的 String 元素
+        // 其中n/s 的名字可以随便写
+        for (n,s) in arr.enumerated() {
+            
+            print("\(n) ---- \(s)")
+        }
+        
+        //5.反序遍历
+        for s in arr.reversed() {
+            
+            print(s);
+        }
+        
+        //6.反序索引 & 内容(必须是enum在前， reve在后)
+        for (n,s) in arr.enumerated().reversed() {
+            
+             print("\(n) ---- \(s)")
+        }
+    }
+    
     //MARK: - 数组的定义
     func demo1() -> () {
         
