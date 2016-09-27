@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         let x: Optional = 10
         
         //2.简单定义
-        //'?' 用来定义y是一个可选的Int类型，可能没有纸，也可能是一个整数
+        //'?' 用来定义y是一个可选的Int类型，可能没有值，也可能是一个整数
         // 常量y 使用之前必须初始化
         let y: Int? = 20
         

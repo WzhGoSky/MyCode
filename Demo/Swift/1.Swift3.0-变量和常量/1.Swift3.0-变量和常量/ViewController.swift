@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         //关于 var  和 let 的选择
         //不可变的会更加安全，开发的时候，通常会先使用let，在需要变化的时候，再改成var
         
-        
         var x = 10
         let y = 20
         
@@ -50,7 +49,7 @@ class ViewController: UIViewController {
         let y = 10.5
         
         //1. 将y装换成整数
-        //OC中的写法（int）y - > 类型墙砖
+        //OC中的写法（int）y - > 类型强转
         //Swift 中 Int() 结构体的构造函数
         print(x + Int(y))
         
