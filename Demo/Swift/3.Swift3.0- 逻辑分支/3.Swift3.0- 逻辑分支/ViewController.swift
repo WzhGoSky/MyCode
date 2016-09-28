@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         let x = 10
         
         /**
-            1.条件不需要{}
+            1.条件不需要()
             2.语句必须有{}
          
         */

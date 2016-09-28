@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         
         
         //guard let & if let 的技巧
-        //使用同名的变量接受值，在后续使用的都是非控制，不需要解包
+        //使用同名的变量接受值，在后续使用的都是非空，不需要解包
         //好处，可以避免起名字的烦恼
         guard let name = name, let age = age else {
             
