@@ -10,9 +10,24 @@
   - 3.2 switch   
 - 4.循环   
 - 5.字符串  
+  - 5.1 字符串遍历
+  - 5.2 字符串长度
+  - 5.3 拼接
+  - 5.4 格式化
+  - 5.5 字符串的子串
 - 6.集合  
   - 6.1 数组
+    - 6.1.1 数组的定义
+    - 6.1.2 数组的遍历
+    - 6.1.3 数组的增/删/改
+    - 6.1.4 数组的容量
+    - 6.1.5 数组的合并
   - 6.2 字典
+    - 6.2.1 字典的定义
+    - 6.2.2 字典的增删改
+    - 6.2.3 字典的遍历
+    - 6.2.4 字典的合并
+    
 
 ###1.变量和常量
 注意点:
@@ -236,7 +251,282 @@ __逆序循环__
         }
           
 ###5.字符串  
+__Swift中String的特点:__
+	
+	1.String 是一个结构体，性能更高
+	2.String 目前具有绝大多数NSString功能
+	3.String 支持直接遍历
+	4.NSString 是一个OC对象，性能略差
+	
+####5.1 字符串遍历
+	
+	 let str = "hayder"
+        
+        for c in str.characters {
+            
+            print(c)
+        }
+####5.2 字符串长度 
 
-- 6.集合  
-  - 6.1 数组
-  - 6.2 字典
+__方法1__:返回指定编码的对应的字节数量
+	
+	 let str = "hello world"
+       
+     //UTF8的编码{0-4个}，每个汉字是3个字节
+     print(str.lengthOfBytes(using: .utf8))
+     
+__方法2__:字符串长度 -> 返回字符的个数
+
+	let str = "hello world"
+	
+    print(str.characters.count);
+    
+__方法3__:使用NSString 中转  
+
+	let str = "hello world"
+  	    
+    let ocStr = str as NSString
+    
+    print(ocStr.length)
+####5.3 字符串拼接
+字符串拼接需要注意: 可选项 Optional
+	
+	let name = "Hayder"
+    let age = 18
+    let title: String? = "BOSS"
+    let point = CGPoint(x: 100, y: 100)
+
+    //\(变量/常量)
+    //NSStringFromCGPoint(point)
+    let str = "\(name) is \(age) \(title ?? "") \(point)"
+    
+    print(str)
+####5.4 格式化
+	
+	 let h = 8
+     let m = 9
+     let s = 6
+     
+     //使用格式字符串格式化
+     let dateStr = String(format: "%02d:%02d:%02d", h,m,s)
+     print(dateStr)
+####5.5 字符串的子串 -> 截取范围字符串
+推荐使用:将NSString 作为中转，Swift中的取子串的一直在优化
+	
+	 let str = "我们一起飞"
+     let ocstr = str as NSString
+     
+     let s1 = ocstr.substring(with: NSMakeRange(2, 3))
+     
+     print(s1)
+###6.集合  
+####6.1 数组
+	
+	 1. OC使用[] 定义数组。Swift一样， 但是没有“@”
+     2. 自动推导的结果[String] -> 表示数组中存放的都是String
+     3. Swift中的基本数据类型不需要包装
+#####6.1.1 数组的定义
+
+	 let arr = ["张三","小芳","小羊"]
+        
+        print(arr)
+        
+        //CG结构体[CGPoint]
+        let p = CGPoint(x: 10, y: 300)
+        let arr3 = [p]
+        print(arr3)
+        
+        //混合数组:开发中几乎不用，因为数组是靠下标索引
+        //如果数组中的类型不一致，自动推导的结果[NSObject]
+        //在Swift中还有一种类型[AnyObject] -> 任意对象
+        //在Swift中一个类可以没有任何‘父类’
+        //***在混合的数据中，CG机构体需要包装
+        let arr4 = ["张三", 1] as [Any]
+        print(arr4)
+
+#####6.1.2 数组的遍历
+
+      let arr = ["张三","小芳","小羊"];
+
+__1.按照下标遍历__  
+
+	    for i in 0..<arr.count {
+	        
+	        print(arr[i])
+	    }
+__2.for in 遍历元素__         
+      
+        
+	    for s in arr {
+	        
+	        print(s)
+	    }
+        
+__3.enum block遍历 ，同时遍历下标和内容__
+        
+        
+	    元组 (offset: Int, element: String)
+	    for e in arr.enumerated() {
+	        
+	        print(e)
+	    }
+	        
+__4.遍历下标和内容2__
+
+		 1. n 就是索引下标
+	     2. s 就是[String] 数组 n 对应的 String 元素
+	     3. 其中n/s 的名字可以随便写
+	      
+	    for (n,s) in arr.enumerated() {
+	       
+	       print("\(n) ---- \(s)")
+	    }
+        
+__5.反序遍历__
+    
+  
+		for s in arr.reversed() {
+	       
+	       print(s);
+		}
+        
+__6.反序索引 & 内容(必须是enum在前， reve在后)__
+
+	    for (n,s) in arr.enumerated().reversed() {
+	        
+	         print("\(n) ---- \(s)")
+	    }
+
+#####6.1.3 数组的增/删/改
+__OC中数组分可变 NSMutableArray(var) / 不可变 NSArray(let)__
+        
+        var arr = ["张三","小芳","小羊"];
+        
+        //追加元素(增)
+        arr.append("老王")
+        print(arr)
+        
+        //修改，通过下标定位(改)
+        arr[0] = "小王"
+        print(arr)
+        
+        //数组越界,不能修改
+        arr[5] = "xxx"
+        print(arr)
+        
+        //删除(删)
+        arr.remove(at: 3)
+        
+        //删除全部，并且保留空间
+        arr.removeAll(keepingCapacity: true)
+
+#####6.1.4 数组的容量
+
+__设定容量可以略微的提高性能。__
+        
+        //定义一个数组，指定类型是 存放Int的数组，但是没有初始化
+        var array: [Int]
+        
+        //给数组初始化
+        array = [Int]()
+        
+        //以上两句代码可以合并成一句
+        var arr = [Int]()
+        
+        for i in 0..<8 {
+            
+            arr.append(i)
+            
+            //插入元素时，如果容量不够，会*2（初始0） 0 ,2,4,8,16
+        }
+
+#####6.1.5 数组的合并 
+__注意:要合并数组的两个类型必须一致__
+	
+	   //var arr: [String]
+       var arr = ["张三","小芳","小羊"] as [Any];
+       
+       //let arr2: [Any]
+       let arr2 = ["Hayder",10] as [Any]
+       
+       //将array2的内容合并到array中
+       //
+       arr += arr2
+       
+       print(arr)
+####6.2 字典
+#####6.2.1 字典的定义
+		1.OC 定义字典使用{}
+		2.Swift中使用[]
+        
+		[KEY: VALUE] -> [String : Any]
+		let dic = ["name" : "张","age" : 10] as [String : Any]
+		
+		print(dic)
+		
+		//定义字典的数组
+		let array:[[String : Any]] = [
+		
+			["name" : "张","age" : 10],
+			["name" : "张","age" : 10]
+		]
+#####6.2.2 字典的增删改
+	
+		//可变 var / 不可变 let
+		var dic = ["name" : "张","age" : 10] as [String : Any]
+		
+		//新增 - 如果 KEY 不存在，就是新增
+		dic["title"] = "大哥"
+		print(dic)
+		
+		//修改 - 字典中是通过KEY取值，KEY在字典中必须是唯一的
+		//如果KEY值存在就是修改
+		dic["name"] = "大西瓜"
+		print(dic)
+		
+		//删除 - 直接给定KEY
+		// *** 科普，字典是通过 KEY 来定位值的， KEY 必须是可以 'hash 哈希' MD5一种
+		//hash 就是将字符串变成唯一的‘整数’，便于查找， 提高字典遍历的素组
+		dic.removeValue(forKey: "age")
+		print(dic)
+
+#####6.2.3 字典的遍历
+
+		let dic = ["name" : "hayder","age": 10,"title":"老王"] as [String : Any]
+		
+		方式1：
+		//元组 (key: Sting , value: Any)
+		for e in dic {
+		
+			print("\(e.key),\(e.value)")
+		}
+		
+		print("-----")
+		
+		/**
+		前面的是 KEY
+		后面的 是 VALUE
+		
+		具体的名字可以随便
+		*/
+		方式2:
+		for (key, value) in dic
+		{
+			print("\(key),\(value)")
+		}
+#####6.2.4 字典的合并 
+	
+		var dic1 = ["name" : "hayder","age": 10,"title":"老王"] as [String : Any]
+		let dic2 = ["name": "大瓜","height": 1.9] as [String : Any]
+		
+		//将dict2 合并到dict1
+		//字典不能直接相加
+		
+		//思路，遍历 dict 2 依次设置
+		//如果 key 存在，会修改
+		//如果 key 不存在，不会修改
+		for e in dic2
+		{
+			dic1[e.key] = dic2[e.key]
+		}
+        

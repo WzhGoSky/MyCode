@@ -13,13 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        demo5()
     }
     
     //MARK: - 数组合并
     func demo5() {
         
         //var arr: [String]
-        var arr = ["张三","小芳","小羊"];
+        var arr = ["张三","小芳","小羊"] as [Any];
         
         //let arr2: [Any]
         let arr2 = ["Hayder",10] as [Any]
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
         print(arr)
         
     }
+    
     //MARK: - 数组的容量
     func demo4() {
         
