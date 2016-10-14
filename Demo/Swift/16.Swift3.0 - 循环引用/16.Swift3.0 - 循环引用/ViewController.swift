@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         
         //方法2 - Swift 的推荐方法
         //[weak self] 表示 {} 中的所有self 都是弱引用，需要解包
+        //OC __weak
         loadData { [weak self] in
             
             print(self?.view)
