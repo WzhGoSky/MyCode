@@ -111,10 +111,10 @@ class listController: UITableViewController {
             }
         }else //新建个人记录
         {
-            vc.completionCallBack = {
+            vc.completionCallBack = { [weak vc] in
                 
                 //获取明细控制器的person
-                guard let person = vc.person else {
+                guard let person = vc?.person else {
                     
                     return
                 }
