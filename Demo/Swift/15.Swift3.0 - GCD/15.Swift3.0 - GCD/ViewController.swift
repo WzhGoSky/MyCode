@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         
         //将任务添加到队列，指定执行任务的函数
         //翻译:队列调度任务（block/闭包），以同步/异步的方式执行
-        DispatchQueue.global().async { 
+        DispatchQueue.global().async {
             
             print("耗时操作 \(Thread.current)")
             
