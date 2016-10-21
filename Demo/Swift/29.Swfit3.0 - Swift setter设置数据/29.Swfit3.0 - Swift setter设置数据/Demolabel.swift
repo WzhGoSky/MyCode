@@ -28,10 +28,10 @@ class Demolabel: UILabel {
     // 这种动态获取的信息以及动态调用对象的方法的功能成为 java语言的反射机制
     
     //OC中如何利用反射机制
-    //~ 利用NSClassFromString 使用字符串获取类（重要）
-    //~ 利用isMemberOfClass 是否是某一个类
-    //~ 利用isKindOfClass 是否是某一个类的子类
-    //~ 利用performSelector 或者 objc_msgSend 间接调用方法
+//    ~ 利用NSClassFromString 使用字符串获取类（重要）
+//    ~ 利用isMemberOfClass 是否是某一个类
+//    ~ 利用isKindOfClass 是否是某一个类的子类
+//    ~ 利用performSelector 或者 objc_msgSend 间接调用方法
     
     
 }

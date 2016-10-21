@@ -7,17 +7,21 @@
   - 1.3 多线程GCD的变化
   - 1.4 闭包循环引用
   - 1.5 尾随闭包
+  - 1.6 懒加载
 - 2.构造函数
   - 2.1 重载构造函数
   - 2.2 构造函数KVC
   - 2.3 便利构造函数  
-- 3.Swift应用
-  - 3.1 加法计算器
-  - 3.2 加法计算器(便利构造函数)
-  - 3.3 runtime加载属性列表
-  - 3.4 session使用
-  - 3.5 项目零散总结
- 
+- 3.setter和getter
+  - 3.1 计算型属性
+  - 3.2 反射机制
+  - 3.3 利用反射机制设置根控制器
+- 4.Swift应用
+  - 4.1 加法计算器
+  - 4.2 加法计算器(便利构造函数)
+  - 4.3 runtime加载属性列表
+  - 4.4 session使用
+  - 4.5 项目零散总结
 
 ###1.函数
 ####1.1函数的定义
@@ -227,6 +231,26 @@ __什么是尾随闭包__: 如果函数的最后一个参数是闭包，函数�
             
             print(result)
      }
+####1.6懒加载
+__懒加载通常写法__:
+	
+	 lazy var label: DemoLabel =  DemoLabel()
+__懒加载完整写法__;
+	 
+	 lazy var label = { () -> DemoLabel in
+        
+        let l = DemoLabel()
+        
+        //设置label的属性
+        
+        return l
+        
+    }()	 
+  	写代码的时候，使用通常写法，不使用完整写法，因为闭包里面容易出现循环引用的问题
+  	
+__懒加载在Swift和OC中的差别__:
+	
+	OC中，如果懒加载的属性被赋值为nil，再次调用的时候还是会进行懒加载。而Swift中则不行，设置为nil后，懒加载也不会被再次执行。懒加载的代码只会在第一次调用的时候，执行闭包，然后将闭包的结果保存在label的属性中。
 
 ###2.构造函数
 __命名空间__:  在Swift中，默认同一个项目中（同一个命名空间下），所有类都是共享的，可以直接访问，不需要 import,所有对象的属性 var,也可以直接访问到。使用cocapods 可以保证类，方法在不同的命名空间下。  
@@ -373,9 +397,119 @@ __注意点:__
 　　- 没有 convenience 关键字的构造函数是负责创建对象的，反之是用来检查条件的，本身不负责对象的创建  
 
 3.如果要在遍历构造函数中使用当前对象的属性，一定要在self.init之后
+###3.setter和getter
 
-###3.Swift应用
-####3.1 加法计算器
+	private var _name : String?
+    
+    //Swift中不会重写 getter 和 settter  方法
+    var name: String? {
+        
+        get{
+            
+            //返回成员变量
+            return _name
+        }
+        
+        set{
+            
+            _name = newValue
+        }
+    }
+Swift中一般不会重写setter和getter，如果需要对传过来的对象进行赋值
+	
+	 var person: Person?{
+        
+        // 就是替代OC中重写Setter方法
+        //区别，再也不需要考虑 _成员变量 = 值！
+        //OC中如果是copy属性，应该 _成员变量 = 值.copy
+        didSet{
+            
+            //此时name属性已经有值，可以直接使用设置UI内容!
+            text = person?.name
+        }
+    }
+
+
+####3.1 计算型属性
+__readOnly属性__
+只读属性又称为：计算型属性。本身不保存内容，都是通过计算获得结果，类似于一个没有参数，只有固定返回值的函数
+	
+	重写getter方法就是readOnly属性
+    var title: String {
+        
+        //只重写了getter方法,没有重写setter方法，就是readOnly属性
+        get{
+            
+            return "Mr." + (name ?? "")
+        }
+    }
+也可以简写
+	
+	var title: String{
+		
+		 return "Mr." + (name ?? "")	
+	}
+
+__懒加载的title__  
+　　懒加载的title,本质是一个闭包  
+　　懒加载会在第一次访问的时候执行，闭包执行结束后，会把结果保存在title3中  
+　　后续调用，直接返回内容，不会执行  
+　　懒加载的属性会分配空间存储值
+	
+	 lazy var title3: String = {
+        
+       return "Mr." + (self.name ?? "")
+    }()
+
+####3.2 反射机制
+__反射机制概念__:
+	
+	1.对于任意一个类，都能够知道这个类的所有属性和方法
+    2.对于任意一个对象，都能够调用它的任意个方法和属性
+    
+    比如：
+    ~ 利用NSClassFromString 使用字符串获取类（重要）
+    ~ 利用isMemberOfClass 是否是某一个类
+    ~ 利用isKindOfClass 是否是某一个类的子类
+    ~ 利用performSelector 或者 objc_msgSend 间接调用方法
+    
+####3.3 利用反射机制设置根控制器
+
+__在didFinishLaunchingWithOptions方法中__  
+1.设置window的属性，并设置窗口可见
+ 
+	self.window = UIWindow(frame: UIScreen.main.bounds)
+	self.window?.backgroundColor = UIColor.white
+	self.window?.makeKeyAndVisible()
+        
+2.设置 根控制器，需要添加命名空间 -> 默认是项目名称（最好不要有数字和特殊符号）
+
+        //利用计算型属性-从阅读上，计算型属性更加直观
+        let className = Bundle.main.nameSpace+"."+"ViewController"
+        //AnyClass? -> 视图控制器的类型
+        let cls = NSClassFromString(className) as? UIViewController.Type
+        
+        //使用类创建视图控制器
+        let vc = cls?.init()
+        
+        self.window?.rootViewController = vc
+      
+__利用计算型属性抽取命名空间__:  
+创建一个:Bundle+Extension.swift 文件
+	
+	extension Bundle{
+    
+    	//计算型属性，和函数类似，没有参数，有返回值
+	    var nameSpace: String{
+	        
+	        return infoDictionary?["CFBundleName"] as? String ?? ""
+	
+	    }
+    
+	}
+	
+###4.Swift应用
+####4.1 加法计算器
 	
 	class ViewController: UIViewController {
 
@@ -458,7 +592,7 @@ __注意点:__
 
 	}
 
-####3.2 加法计算器(便利构造函数)
+####4.2 加法计算器(便利构造函数)
 使用分类
 
 	extension UITextField{
@@ -556,7 +690,7 @@ __注意点:__
     }
 
 }
-####3.3 runtime加载属性列表
+####4.3 runtime加载属性列表
 
 	class Person: NSObject {
     
@@ -605,7 +739,7 @@ __注意点:__
 1.基本数据类型，在OC中没有可选，如果定义成可选，运行时同样获取不到，使用KVC就会崩溃  
 2.private 的属性，使用运行时，同样获取不到属性(可以获取到ivar),同样会使KVC崩溃
 	
-####3.4 session使用
+####4.4 session使用
 	
 	 if let url = URL(string: "http://www.baidu.com")
        {
@@ -633,7 +767,7 @@ __注意点:__
 
     }
 
-####3.5项目零散总结
+####4.5项目零散总结
 
 在项目中做类型转换一般使用: as
 
