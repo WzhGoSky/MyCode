@@ -19,6 +19,7 @@
 		841388A01DBF9AB200022EB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8413889E1DBF9AB200022EB6 /* LaunchScreen.storyboard */; };
 		841388AB1DBF9AB300022EB6 /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388AA1DBF9AB300022EB6 /* __Tests.swift */; };
 		841388B61DBF9AB300022EB6 /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388B51DBF9AB300022EB6 /* __UITests.swift */; };
+		841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */; };
 		847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B01DBFA5940046D981 /* NSArray+Log.m */; };
 		847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */; };
 		847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */; };
@@ -70,6 +71,7 @@
 		841388B11DBF9AB300022EB6 /* 微博UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "微博UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		841388B51DBF9AB300022EB6 /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
 		841388B71DBF9AB300022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		847F63AE1DBFA5940046D981 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		847F63AF1DBFA5940046D981 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		847F63B01DBFA5940046D981 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8410C7CE1DBFA35200511D72 /* WBHomeViewController.swift */,
+				841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				TargetAttributes = {
 					841388911DBF9AB200022EB6 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3BBQ69D5B7;
 						ProvisioningStyle = Automatic;
 					};
 					841388A51DBF9AB300022EB6 = {
@@ -445,6 +449,7 @@
 				847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */,
 				847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */,
 				847F63CA1DBFA5940046D981 /* NSString+CZBase64.m in Sources */,
+				841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */,
 				8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */,
 				8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */,
 				8410C7CF1DBFA35200511D72 /* WBHomeViewController.swift in Sources */,
@@ -602,10 +607,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 3BBQ69D5B7;
 				INFOPLIST_FILE = "微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wangzhenhai.--";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "微博/weibo-Bridge.h";
 				SWIFT_VERSION = 3.0;
@@ -618,10 +624,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 3BBQ69D5B7;
 				INFOPLIST_FILE = "微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wangzhenhai.--";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "微博/weibo-Bridge.h";
 				SWIFT_VERSION = 3.0;
