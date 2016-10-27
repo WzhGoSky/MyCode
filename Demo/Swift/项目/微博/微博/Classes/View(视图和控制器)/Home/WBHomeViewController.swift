@@ -17,7 +17,7 @@ class WBHomeViewController: WBBaseViewController {
         setUpUI()
     }
     
-    @objc fileprivate func push(){
+    @objc fileprivate func myFriend(){
     
         let friends = WBDemoViewController()
         
@@ -32,7 +32,7 @@ extension WBHomeViewController{
         
         super.setUpUI()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(push))
-        
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(myFriend))
+    
     }
 }

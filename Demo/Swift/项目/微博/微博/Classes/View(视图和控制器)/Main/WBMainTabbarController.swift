@@ -22,6 +22,17 @@ class WBMainTabbarController: UITabBarController {
         
     }
     
+    /**
+        portrait 肖像  竖屏
+        landscape 风景 横屏
+     
+     
+     在主控制器里面实现这个方法 主要是因为当前控制器和子控制器都会遵守
+     */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        
+        return .portrait
+    }
     //private 能够保证方法私有，仅在当前对象访问
     //@objc 允许这个函数在运行时通过OC的消息机制被调用
     

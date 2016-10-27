@@ -13,7 +13,8 @@ class WBDemoViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setUpUI()
+       setUpUI()
+        
        self.title = "好友";
     }
 
