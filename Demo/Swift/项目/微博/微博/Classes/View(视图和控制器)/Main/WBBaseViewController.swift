@@ -17,7 +17,7 @@ class WBBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        automaticallyAdjustsScrollViewInsets = false
         
         //2.设置UI
         setUpUI()
@@ -31,6 +31,7 @@ class WBBaseViewController: UIViewController {
             navItem.title = title
         }
     }
+    
     
     
 }
