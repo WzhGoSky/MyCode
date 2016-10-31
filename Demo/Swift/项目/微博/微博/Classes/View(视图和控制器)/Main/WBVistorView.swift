@@ -27,6 +27,9 @@ class WBVistorView: UIView {
     fileprivate lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     //小房子
     fileprivate lazy var houseIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
+    
+    //遮蔽视图
+    fileprivate lazy var maskIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     //提示标签
     fileprivate lazy var tipLabel: UILabel = UILabel.cz_label(
         withText: "关注一些人，回这里看看有什么惊喜",
@@ -36,16 +39,19 @@ class WBVistorView: UIView {
     fileprivate lazy var registerButton: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
     //登录按钮
       fileprivate lazy var loginButton: UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
+    
+    
 }
 
 extension WBVistorView{
     
     fileprivate func setUpUI() -> () {
         
-        backgroundColor = UIColor.cz_random()
+        backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
         
         //1.添加控件
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseIconView)
         addSubview(tipLabel)
         addSubview(registerButton)
@@ -155,6 +161,12 @@ extension WBVistorView{
                                          attribute: .width,
                                          multiplier: 1.0,
                                          constant: 0))
+        
+        //遮罩图像
+        addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .bottom, relatedBy: .equal, toItem: registerButton, attribute: .bottom, multiplier: 1.0, constant: -15))
+         addConstraint(NSLayoutConstraint(item: maskIconView, attribute: .top, relatedBy: .equal, toItem: houseIconView, attribute: .bottom, multiplier: 1.0, constant: -35))
     }
     
 }
