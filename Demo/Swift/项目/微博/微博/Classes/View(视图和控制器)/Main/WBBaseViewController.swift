@@ -23,7 +23,7 @@ class WBBaseViewController: UIViewController{
     
     var ispull = false
     
-    var userLogin = true
+    var userLogin = false
     
     lazy var navBar : UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
