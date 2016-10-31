@@ -72,13 +72,22 @@ extension WBMainTabbarController{
     
     fileprivate  func setUpChildControllers(){
         
-        let array = [
-            ["clsName" : "WBHomeViewController","title" : "首页","imageName":"home"],
-            ["clsName" : "WBMessageViewController","title" : "消息","imageName":"message_center"],
-           ["clsName" : "","title" : "","imageName":""],
-            ["clsName" : "WBDiscoverViewController","title" : "发现","imageName":"discover"],
-            ["clsName" : "WBPorfileViewController","title" : "我","imageName":"profile"]
+        //界面的创建都依赖网络的json
+        let array:[[String : Any]] = [
+            ["clsName" : "WBHomeViewController","title" : "首页","imageName":"home","visitorInfo":["imageName" :"","message":"关注一些人，回这里看看有什么惊喜"]],
+            
+            ["clsName" : "WBMessageViewController","title" : "消息","imageName":"message_center","visitorInfo":["imageName" :"visitordiscover_image_message","message":"登录后别人评论你的微博，发给你的消息，都会在这边收到通知"]],
+            
+            ["clsName" : "","title" : "","imageName":""],
+
+            ["clsName" : "WBDiscoverViewController","title" : "发现","imageName":"discover","visitorInfo":["imageName" :"visitordiscover_image_message","message":"登录后，最新，最热微博仅在掌握，不再会与事实潮流擦肩而过"]],
+
+            ["clsName" : "WBPorfileViewController","title" : "我","imageName":"profile","visitorInfo":["imageName" :"visitordiscover_image_profile","message":"登录后，你的微博，相册，个人资料都会显示在这里，展示给别人看"]],
+
         ]
+        
+        //存到桌面
+//        (array as NSArray) .write(toFile: "/Users/wangzhenhai/Desktop/status.plist", atomically: true)
      
         var arrayM = [UIViewController]()
         
@@ -91,14 +100,15 @@ extension WBMainTabbarController{
     }
     /// 使用字典创建一个子控制器
     ///
-    /// - parameter dict: 信息字典 [claName , title, imageName]
+    /// - parameter dict: 信息字典 [claName , title, imageName, visitorInfo]
     // returns : 子控制器
-    private func controller(dict:[String : String]) -> UIViewController{
+    private func controller(dict:[String : Any]) -> UIViewController{
         
-        guard let  claName = dict["clsName"],
-                let title = dict["title"],
-            let imageName = dict["imageName"],
-            let cls = NSClassFromString(Bundle.main.nameSpace + "." + claName) as? UIViewController.Type
+        guard let  claName = dict["clsName"] as? String,
+                let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
+            let cls = NSClassFromString(Bundle.main.nameSpace + "." + claName) as? WBBaseViewController.Type,
+        let visitorInfo = dict["visitorInfo"] as? [String : String]
             else {
                 
                 return UIViewController();
@@ -118,7 +128,8 @@ extension WBMainTabbarController{
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .selected)
         vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFont(ofSize: 12)], for: .normal)
         
-        
+        //设置控制器的访客信息字典
+        vc.visitorInfo = visitorInfo
         
         let nav = WBNaviagtionController(rootViewController: vc)
         

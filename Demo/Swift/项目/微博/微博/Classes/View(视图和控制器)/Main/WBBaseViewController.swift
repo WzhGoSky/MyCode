@@ -16,6 +16,10 @@ import UIKit
 //2.extension 中不能重写父类方法!重写父类方法，是子类的职责，扩展是对类的扩展
 
 class WBBaseViewController: UIViewController{
+    
+    //访客视图信息字典
+    var visitorInfo: [String : String]?
+
     //用户没有就不创建
     var tableView: UITableView?
     
@@ -113,6 +117,9 @@ extension WBBaseViewController {
         let vistorView = WBVistorView(frame: view.bounds)
         
         view.insertSubview(vistorView, belowSubview: navBar)
+        
+        //设置访客视图的信息
+        vistorView.visitorInfo = visitorInfo
     }
     
 }

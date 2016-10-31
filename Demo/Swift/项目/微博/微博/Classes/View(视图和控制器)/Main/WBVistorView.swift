@@ -10,6 +10,38 @@ import UIKit
 
 class WBVistorView: UIView {
 
+    
+    /// 访客信息字典
+    /// imageName / message
+    /// 使用字典设置访客视图信息
+    ///
+    /// - Parameter dict: 信息字典
+    ///提示：如果首页 imageName == “”
+    var visitorInfo: [String : String]?{
+        didSet{
+            
+            //1>取字典信息
+            guard  let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"]else {
+                    
+                    return
+            }
+            
+            //设置消息
+            tipLabel.text = message
+            
+            //设置图像
+            if imageName == "" {
+                
+                return
+            }
+            
+            iconView.image = UIImage(named: imageName)
+            
+        }
+    }
+    
+    //MARK: 构造函数
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -21,32 +53,8 @@ class WBVistorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    /// 使用字典设置访客视图信息
-    ///
-    /// - Parameter dict: 信息字典
-    ///提示：如果首页 imageName == “”
-    func setUpInfo(dict:[String : String]) -> () {
-        
-        //1>取字典信息
-        guard  let imageName = dict["imageName"],
-            let message = dict["message"]else {
-            
-                return
-        }
-        
-        //设置消息
-        tipLabel.text = message
-        
-        //设置图像
-        if imageName == "" {
-            
-            return
-        }
-        
-        iconView.image = UIImage(named: imageName)
-        
-    }
-    //MARK: - 私有控件
+   
+      //MARK: - 私有控件
     //懒加载属性只有调用UIkit控件的制定构造函数，其他都需要使用类型
     //图像视图
     fileprivate lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
