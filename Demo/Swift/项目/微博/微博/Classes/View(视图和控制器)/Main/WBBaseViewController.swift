@@ -27,7 +27,7 @@ class WBBaseViewController: UIViewController{
     
     var ispull = false
     
-    var userLogin = true
+    var userLogin = false
     
     lazy var navBar : UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
@@ -58,10 +58,25 @@ class WBBaseViewController: UIViewController{
         
     }
 }
+
+//MARK:- 访客视图监听方法
+extension WBBaseViewController{
+    
+    @objc fileprivate func login(){
+        
+        print("登录")
+    }
+    
+    @objc fileprivate func register(){
+        
+        print("注册")
+    }
+    
+}
 // MARK: - 设置界面
 extension WBBaseViewController {
  
-    func setUpUI(){
+   fileprivate func setUpUI(){
     
         view.backgroundColor = UIColor.cz_random()
         
@@ -82,11 +97,10 @@ extension WBBaseViewController {
         
         navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray];
         
-       
-
     }
     
-    private func setUpTableView(){
+    //子类重写此方法，因为子类不需要关心用户登录之前的逻辑
+    func setUpTableView(){
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         
@@ -118,8 +132,16 @@ extension WBBaseViewController {
         
         view.insertSubview(vistorView, belowSubview: navBar)
         
-        //设置访客视图的信息
+        //1.设置访客视图的信息
         vistorView.visitorInfo = visitorInfo
+        
+        //2.添加范文视图按钮的监听方法
+        vistorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        vistorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+        //3.设置导航陶按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
 }

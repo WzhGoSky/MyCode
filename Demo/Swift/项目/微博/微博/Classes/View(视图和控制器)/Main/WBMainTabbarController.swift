@@ -89,7 +89,22 @@ extension WBMainTabbarController{
         //data一定会有值
         
         //从bundle 加载配置的json
-        //1、路径 2. 加载，3.反序列  化
+        //1、路径 2. 加载，3.反序列化
+        //try 知识点 ： 错误处理 throw 抛出异常 
+        //try? 如果解析成功，就有值，否则为nil 
+        //try！ 如果解析成功就有值， 否则崩溃
+        //处理异常,能够接收到错误，并且输出错误
+        //但是语法结构复杂，而且{}里面的智能提示很不友好
+        /**
+         do{
+         
+            let array = try JSONSerialization.jsonObject(with: data! as Data, options: [])
+         }catch{
+            
+         
+         }
+         */
+        
        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String : Any]]
         else{
         

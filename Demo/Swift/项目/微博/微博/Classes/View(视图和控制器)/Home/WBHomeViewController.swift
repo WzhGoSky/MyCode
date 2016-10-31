@@ -17,9 +17,6 @@ class WBHomeViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        setUpUI()
-        
         loadData()
     }
     
@@ -60,11 +57,12 @@ class WBHomeViewController: WBBaseViewController {
     }
 }
 
+//设置界面
 extension WBHomeViewController{
     
-    override func setUpUI(){
+    override func setUpTableView() {
         
-        super.setUpUI()
+        super.setUpTableView()
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(myFriend))
     
