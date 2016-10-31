@@ -57,16 +57,104 @@ extension WBVistorView{
             v.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        /**
+         addConstraint(NSLayoutConstraint(
+                                         item: 视图,
+                                         attribute: 约束属性, 
+                                         relatedBy: 约束关系, 
+                                         toItem: 参照视图, 
+                                         attribute: 参照属性,
+                                         multiplier: 乘积, 
+                                         constant: 约束数值))
+         
+         如果指定狂傲 参照视图为nil  参照属性 .notAnAttribute
+         */
+        
         //3.自动布局
         //图像视图
-        addConstraint(NSLayoutConstraint(item: iconView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: iconView,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
         addConstraint(NSLayoutConstraint(item: iconView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
         
         //小房子
         addConstraint(NSLayoutConstraint(item: houseIconView, attribute: .centerX, relatedBy: .equal, toItem: iconView, attribute: .centerX, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint(item: houseIconView, attribute: .centerY, relatedBy: .equal, toItem: iconView, attribute: .centerY, multiplier: 1.0, constant: 0))
         
+        let margin : CGFloat = 20
         
+        //提示标签
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: iconView,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: iconView,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: 236))
+
+        //注册按钮
+        addConstraint(NSLayoutConstraint(item: registerButton,
+                                         attribute: .left,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .left,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: registerButton,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: margin))
+        addConstraint(NSLayoutConstraint(item: registerButton,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: 100))
+
+       //登录按钮
+        addConstraint(NSLayoutConstraint(item: loginButton,
+                                         attribute: .right,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .right,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: loginButton,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: margin))
+        addConstraint(NSLayoutConstraint(item: loginButton,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: registerButton,
+                                         attribute: .width,
+                                         multiplier: 1.0,
+                                         constant: 0))
     }
     
 }
