@@ -187,8 +187,7 @@
 		8410C7C21DBFA15400511D72 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */,
-				8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */,
+				F0F2771B1DC2DBC300FDA093 /* 主控制器 */,
 				8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */,
 			);
 			path = Main;
@@ -307,6 +306,15 @@
 				F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F0F2771B1DC2DBC300FDA093 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */,
+				8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */,
+			);
+			name = "主控制器";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

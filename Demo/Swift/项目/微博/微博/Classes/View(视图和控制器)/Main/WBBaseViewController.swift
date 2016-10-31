@@ -8,8 +8,17 @@
 
 import UIKit
 
-class WBBaseViewController: UIViewController {
+//Swift写法更类似于多继承
+//class WBBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+//Swift中利用extension 可以把函数按照功能分类管理，便于阅读和维护
+//注意：
+//1.extension 中不能有属性
+//2.extension 中不能重写父类方法!重写父类方法，是子类的职责，扩展是对类的扩展
 
+class WBBaseViewController: UIViewController{
+    //用户没有就不创建
+    var tableView: UITableView?
+    
     lazy var navBar : UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
     lazy var navItem : UINavigationItem = UINavigationItem()
@@ -17,8 +26,11 @@ class WBBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< Updated upstream
         automaticallyAdjustsScrollViewInsets = false
         
+=======
+>>>>>>> Stashed changes
         //2.设置UI
         setUpUI()
     
@@ -32,15 +44,26 @@ class WBBaseViewController: UIViewController {
         }
     }
     
+<<<<<<< Updated upstream
     
     
+=======
+>>>>>>> Stashed changes
 }
 
+// MARK: - 设置界面
 extension WBBaseViewController {
  
     func setUpUI(){
     
         view.backgroundColor = UIColor.cz_random()
+        
+        setUpTableView()
+        
+        setUPNavigationBar()
+    }
+    
+    private func setUPNavigationBar(){
         
         //添加导航条
         view.addSubview(navBar)
@@ -51,7 +74,33 @@ extension WBBaseViewController {
         navBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         
         navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray];
+
+    }
+    
+    private func setUpTableView(){
+        
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        
+        view.insertSubview(tableView!, belowSubview: navBar);
+        
+        //设置代理方法
+        tableView?.delegate = self;
+        tableView?.dataSource = self;
         
     }
     
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
+    }
 }

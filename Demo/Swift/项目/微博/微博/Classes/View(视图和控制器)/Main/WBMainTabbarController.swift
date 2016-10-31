@@ -39,6 +39,9 @@ class WBMainTabbarController: UITabBarController {
     @objc fileprivate func composeStatus(){
         
         print("撰写微博")
+        
+        
+        
     }
 
 }
