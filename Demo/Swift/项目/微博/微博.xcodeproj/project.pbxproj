@@ -33,6 +33,7 @@
 		847F63D11DBFA5940046D981 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C41DBFA5940046D981 /* UIView+CZAddition.m */; };
 		847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */; };
 		847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */; };
+		F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0849A1DC71430005C734D /* WBVistorView.swift */; };
 		F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		847F63D51DBFA92B0046D981 /* weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weibo-Bridge.h"; sourceTree = "<group>"; };
 		847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		F0D0849A1DC71430005C734D /* WBVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVistorView.swift; sourceTree = "<group>"; };
 		F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 			children = (
 				F0F2771B1DC2DBC300FDA093 /* 主控制器 */,
 				8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */,
+				F0D0849C1DC71434005C734D /* 访客视图 */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -306,6 +309,14 @@
 				F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F0D0849C1DC71434005C734D /* 访客视图 */ = {
+			isa = PBXGroup;
+			children = (
+				F0D0849A1DC71430005C734D /* WBVistorView.swift */,
+			);
+			name = "访客视图";
 			sourceTree = "<group>";
 		};
 		F0F2771B1DC2DBC300FDA093 /* 主控制器 */ = {
@@ -452,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */,
 				847F63CE1DBFA5940046D981 /* UIColor+CZAddition.m in Sources */,
 				847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */,
 				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,

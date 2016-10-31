@@ -21,7 +21,9 @@ class WBBaseViewController: UIViewController{
     
     var refershControl: UIRefreshControl?
     
-    var ispull: Bool = false
+    var ispull = false
+    
+    var userLogin = true
     
     lazy var navBar : UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
@@ -59,7 +61,7 @@ extension WBBaseViewController {
     
         view.backgroundColor = UIColor.cz_random()
         
-        setUpTableView()
+        userLogin ? setUpTableView() : setUpVistorView()
         
         setUPNavigationBar()
     }
@@ -104,6 +106,13 @@ extension WBBaseViewController {
         tableView?.addSubview(refershControl!)
         
         refershControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    private func setUpVistorView(){
+        
+        let vistorView = WBVistorView(frame: view.bounds)
+        
+        view.insertSubview(vistorView, belowSubview: navBar)
     }
     
 }
