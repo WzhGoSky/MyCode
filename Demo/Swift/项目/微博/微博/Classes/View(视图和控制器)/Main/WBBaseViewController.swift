@@ -93,9 +93,12 @@ extension WBBaseViewController {
         //设置item
         navBar.items = [navItem]
         
+        //1.设置NavBar 整个背景的的渲染颜色
         navBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
-        
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray];
+        //2.设置navBar字体颜色
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray]
+        //3.设置系统按钮的文字渲染颜色
+        navBar.tintColor = UIColor.orange
         
     }
     
