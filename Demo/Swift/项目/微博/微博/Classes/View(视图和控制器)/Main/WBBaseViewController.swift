@@ -19,6 +19,10 @@ class WBBaseViewController: UIViewController{
     //用户没有就不创建
     var tableView: UITableView?
     
+    var refershControl: UIRefreshControl?
+    
+    var ispull: Bool = false
+    
     lazy var navBar : UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
     lazy var navItem : UINavigationItem = UINavigationItem()
@@ -26,11 +30,8 @@ class WBBaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< Updated upstream
         automaticallyAdjustsScrollViewInsets = false
-        
-=======
->>>>>>> Stashed changes
+
         //2.设置UI
         setUpUI()
     
@@ -44,13 +45,11 @@ class WBBaseViewController: UIViewController{
         }
     }
     
-<<<<<<< Updated upstream
-    
-    
-=======
->>>>>>> Stashed changes
+    func loadData() -> () {
+        
+        
+    }
 }
-
 // MARK: - 设置界面
 extension WBBaseViewController {
  
@@ -74,6 +73,8 @@ extension WBBaseViewController {
         navBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         
         navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray];
+        
+       
 
     }
     
@@ -87,6 +88,20 @@ extension WBBaseViewController {
         tableView?.delegate = self;
         tableView?.dataSource = self;
         
+        
+        //设置tableViewframe
+        tableView?.contentInset = UIEdgeInsets(top: navBar.bounds.height,
+                                               left: 0,
+                                               bottom:tabBarController?.tabBar.bounds.size.height ?? 49,
+                                               right: 0)
+        
+        
+        //refershControl
+        refershControl = UIRefreshControl()
+        
+        tableView?.addSubview(refershControl!)
+        
+        refershControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
 }
@@ -102,5 +117,31 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return UITableViewCell()
+    }
+    
+    //在显示最后一行的时候，做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        //1.判断indexpath 是否是最后一行
+        //(indexPatch.section (最大) /  indexpatch row最后一个)
+        let row = indexPath.row
+        
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0{
+            
+            return
+        }
+        
+        //3.行数
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !ispull{
+            
+            print("上拉刷新")
+            ispull = true
+            
+            loadData()
+        }
     }
 }
