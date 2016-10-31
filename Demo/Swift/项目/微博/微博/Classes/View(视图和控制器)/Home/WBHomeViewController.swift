@@ -36,13 +36,23 @@ class WBHomeViewController: WBBaseViewController {
         let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: dispatchTime){
             
-            for i in 0..<20
+           
+            for i in 0..<15
             {
-                self.datalist.insert(i.description, at: 0)
+                if(self.ispull)
+                {
+                    self.datalist.append("上拉"+(i.description))
+                    
+                }else
+                {
+                   self.datalist.insert(i.description, at: 0)
+                }
+               
             }
             
             //结束刷新
             self.refershControl?.endRefreshing()
+            self.ispull = false
             
             self.tableView?.reloadData()
         }

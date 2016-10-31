@@ -47,6 +47,8 @@ class WBBaseViewController: UIViewController{
     
     func loadData() -> () {
         
+        //如果子类不实现任何方法，默认关闭刷新控件
+        refershControl?.endRefreshing()
         
     }
 }
