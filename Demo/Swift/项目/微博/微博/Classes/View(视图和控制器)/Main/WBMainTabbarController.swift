@@ -72,32 +72,33 @@ extension WBMainTabbarController{
     
     fileprivate  func setUpChildControllers(){
         
-        //界面的创建都依赖网络的json
-        let array:[[String : Any]] = [
-            ["clsName" : "WBHomeViewController","title" : "首页","imageName":"home","visitorInfo":["imageName" :"","message":"关注一些人，回这里看看有什么惊喜"]],
+        //获取沙盒json 路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+        
+        //加载data
+        var data = NSData(contentsOfFile: jsonPath)
+        //判断data是否有内容，没有文件就说明本地沙盒没有文件
+        if data == nil {
             
-            ["clsName" : "WBMessageViewController","title" : "消息","imageName":"message_center","visitorInfo":["imageName" :"visitordiscover_image_message","message":"登录后别人评论你的微博，发给你的消息，都会在这边收到通知"]],
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
             
-            ["clsName" : "","title" : "","imageName":""],
-
-            ["clsName" : "WBDiscoverViewController","title" : "发现","imageName":"discover","visitorInfo":["imageName" :"visitordiscover_image_message","message":"登录后，最新，最热微博仅在掌握，不再会与事实潮流擦肩而过"]],
-
-            ["clsName" : "WBPorfileViewController","title" : "我","imageName":"profile","visitorInfo":["imageName" :"visitordiscover_image_profile","message":"登录后，你的微博，相册，个人资料都会显示在这里，展示给别人看"]],
-
-        ]
+            data = NSData(contentsOfFile: path!)
+        }
         
-        //存到桌面
-//        (array as NSArray) .write(toFile: "/Users/wangzhenhai/Desktop/status.plist", atomically: true)
-     //数组 -> json序列化
-        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        //data一定会有值
         
-        (data as NSData).write(toFile: "/Users/wangzhenhai/Desktop/main.json", atomically: true)
+        //从bundle 加载配置的json
+        //1、路径 2. 加载，3.反序列  化
+       guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String : Any]]
+        else{
         
-        
+            return
+        } 
         
         var arrayM = [UIViewController]()
         
-        for dict in array
+        for dict in array!
         {
             arrayM.append(controller(dict: dict))
         }
