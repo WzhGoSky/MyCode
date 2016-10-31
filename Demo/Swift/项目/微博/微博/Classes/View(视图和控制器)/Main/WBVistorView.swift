@@ -33,11 +33,16 @@ class WBVistorView: UIView {
             //设置图像
             if imageName == "" {
                 
+                startAnimation()
+                
                 return
             }
             
             iconView.image = UIImage(named: imageName)
             
+            //其他控制器的视图不需要显示小房子
+            houseIconView.isHidden = true
+            maskIconView.isHidden = true
         }
     }
     
@@ -52,7 +57,22 @@ class WBVistorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    ///旋转动画
+    private func startAnimation(){
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue =  2 * M_PI
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        
+        //动画完成不删除，如果iconView被释放，动画会一起销毁！
+        //在设置连续动画非常有用
+        anim.isRemovedOnCompletion = false
+        
+        //将动画添加到图层
+        iconView.layer.add(anim, forKey: nil)
+    }
    
       //MARK: - 私有控件
     //懒加载属性只有调用UIkit控件的制定构造函数，其他都需要使用类型
@@ -88,6 +108,9 @@ extension WBVistorView{
         addSubview(tipLabel)
         addSubview(registerButton)
         addSubview(loginButton)
+        
+        //文本居中
+        tipLabel.textAlignment = .center
         
         //2.取消autoresizing 
         for v in subviews

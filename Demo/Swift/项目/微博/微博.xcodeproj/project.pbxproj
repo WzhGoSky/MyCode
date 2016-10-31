@@ -20,6 +20,7 @@
 		841388AB1DBF9AB300022EB6 /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388AA1DBF9AB300022EB6 /* __Tests.swift */; };
 		841388B61DBF9AB300022EB6 /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388B51DBF9AB300022EB6 /* __UITests.swift */; };
 		841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */; };
+		844937701DC7608B00893737 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 8449376F1DC7608B00893737 /* main.json */; };
 		847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B01DBFA5940046D981 /* NSArray+Log.m */; };
 		847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */; };
 		847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */; };
@@ -74,6 +75,7 @@
 		841388B51DBF9AB300022EB6 /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
 		841388B71DBF9AB300022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		8449376F1DC7608B00893737 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		847F63AE1DBFA5940046D981 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		847F63AF1DBFA5940046D981 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		847F63B01DBFA5940046D981 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		F0F2771B1DC2DBC300FDA093 /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				8449376F1DC7608B00893737 /* main.json */,
 				8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */,
 				8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */,
 			);
@@ -437,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844937701DC7608B00893737 /* main.json in Resources */,
 				841388A01DBF9AB200022EB6 /* LaunchScreen.storyboard in Resources */,
 				8413889D1DBF9AB200022EB6 /* Assets.xcassets in Resources */,
 			);
