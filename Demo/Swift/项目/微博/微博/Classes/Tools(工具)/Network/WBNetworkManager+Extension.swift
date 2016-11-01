@@ -12,12 +12,15 @@ import Foundation
 extension WBNetworkManager{
     
     //加载微博数据 字典
-    func statusList(completion:@escaping (_ list: [[String : Any]]?, _ isSuccess: Bool)->()) {
+    func statusList(since_id: Int64 = 0,max_id: Int64 = 0, completion:@escaping (_ list: [[String : Any]]?, _ isSuccess: Bool)->()) {
         
         //用网络工具加载微博数据
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
-        tokenRequest(urlString: urlString, params: nil, compeletion: {(json, isSuccess) -> () in
+        //Swift中 Int 可以转换为AnyObject / 但是Int64 不行
+        let params = ["since_id" : "\(since_id)","max_id" : "\(max_id)"]
+        
+        tokenRequest(urlString: urlString, params: params as [String : AnyObject]?, compeletion: {(json, isSuccess) -> () in
             
             //如果as?失败, result == nil
             let result = json?["statuses"] as? [[String: Any]]

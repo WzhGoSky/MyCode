@@ -12,7 +12,7 @@ private let cellID = "homeCellID"
 
 class WBHomeViewController: WBBaseViewController {
 
-    var datalist = [String]()
+    fileprivate lazy var listViewModel = WBStatusListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,30 +30,8 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData(){
         
-       WBNetworkManager.shared.statusList { (list, isSuccess) in
-        
-            print("list")
-        
-        }
-        
-        
-        
-        let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime){
-            
-           
-            for i in 0..<15
-            {
-                if(self.ispull)
-                {
-                    self.datalist.append("上拉"+(i.description))
-                    
-                }else
-                {
-                   self.datalist.insert(i.description, at: 0)
-                }
-               
-            }
+      
+        listViewModel.loadStatus { (isSuccess) in
             
             //结束刷新
             self.refershControl?.endRefreshing()
@@ -61,7 +39,6 @@ class WBHomeViewController: WBBaseViewController {
             
             self.tableView?.reloadData()
         }
-
     }
 }
 
@@ -82,14 +59,14 @@ extension WBHomeViewController
 {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return datalist.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         
-        cell?.textLabel?.text = datalist[indexPath.row]
+        cell?.textLabel?.text = listViewModel.statusList[indexPath.row].text
         
         return cell!
     }
