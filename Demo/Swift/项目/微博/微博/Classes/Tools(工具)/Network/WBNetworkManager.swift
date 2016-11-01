@@ -26,11 +26,14 @@ class WBNetworkManager: AFHTTPSessionManager {
     ///访问令牌，所有网络请求，都给此令牌(登录除外)
     var accessToken: String? = "2.00c54PZG8Tsb9Cedbb0b6f96qvNt5E"
     
-    
+    //负责处理token
     func tokenRequest(method: WBHttpMethod = .GET,urlString: String, params: [String : AnyObject]?,compeletion: @escaping ((_ json: AnyObject?, _ isSuccess: Bool) ->())) {
         
         //Token是否为空
         guard let token = accessToken else {
+            
+            // FIXME 提示用户再次登录
+            
             
             compeletion(nil, false)
             
@@ -68,6 +71,16 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         //失败回调
         let failure = { (task: URLSessionDataTask?, error: Error)->() in
+            
+            //正对403 处理用户token
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                
+                print("token 过期了")
+                
+                // FIXME:发送通知(本方法不知道被谁调用, 谁接收到处理，谁处理)
+                
+                
+            }
             
             print("网络请求错误 \(error)")
             

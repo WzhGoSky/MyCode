@@ -22,6 +22,7 @@
 		841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */; };
 		844937701DC7608B00893737 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 8449376F1DC7608B00893737 /* main.json */; };
 		844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */; };
+		844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EC1DC8DAF300893737 /* WBStatus.swift */; };
 		847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B01DBFA5940046D981 /* NSArray+Log.m */; };
 		847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */; };
 		847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */; };
@@ -84,6 +85,7 @@
 		841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		8449376F1DC7608B00893737 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
+		844937EC1DC8DAF300893737 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatus.swift; path = "微博/Classes/Tools(工具)/Network/WBStatus.swift"; sourceTree = SOURCE_ROOT; };
 		847F63AE1DBFA5940046D981 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		847F63AF1DBFA5940046D981 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		847F63B01DBFA5940046D981 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		8410C7BD1DBFA15400511D72 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				844937EC1DC8DAF300893737 /* WBStatus.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */,
 				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,
 				8410C7CD1DBFA34800511D72 /* WBDiscoverViewController.swift in Sources */,
+				844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */,
 				847F63CF1DBFA5940046D981 /* UILabel+CZAddition.m in Sources */,
 				F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */,
 				847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */,
