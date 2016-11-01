@@ -14,17 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-&#24494;&#21338;.xcscheme</key>
+		<key>Pods-微博.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-&#24494;&#21338;Tests.xcscheme</key>
+		<key>Pods-微博Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-&#24494;&#21338;UITests.xcscheme</key>
+		<key>Pods-微博UITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -51,6 +51,42 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>251BAD17812F7EBF6532EACF66F941C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A0F44BC579468B2338E618E5581E1C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3EB5CC80FFE2AC56CCDEA51561252EB7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51BC9732CE64718B8FC30AE32437047A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC9A96C1C892C73F930ACFAFE12D2EAA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF77450A8F0998BCB6174ACFEAF072F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

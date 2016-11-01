@@ -21,6 +21,7 @@
 		841388B61DBF9AB300022EB6 /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388B51DBF9AB300022EB6 /* __UITests.swift */; };
 		841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */; };
 		844937701DC7608B00893737 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 8449376F1DC7608B00893737 /* main.json */; };
+		844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */; };
 		847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B01DBFA5940046D981 /* NSArray+Log.m */; };
 		847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */; };
 		847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */; };
@@ -59,9 +60,9 @@
 
 /* Begin PBXFileReference section */
 		06504A5364E29F0CF2EC811C /* Pods-微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.release.xcconfig"; sourceTree = "<group>"; };
-		51D7BE4794C21032D9085516 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6859906B124F4E928813BD98 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		745F11BC3578EC0EF409FDEF /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D7BE4794C21032D9085516 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6859906B124F4E928813BD98 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		745F11BC3578EC0EF409FDEF /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTabbarController.swift; sourceTree = "<group>"; };
 		8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNaviagtionController.swift; sourceTree = "<group>"; };
 		8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		841388B71DBF9AB300022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		8449376F1DC7608B00893737 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		847F63AE1DBFA5940046D981 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		847F63AF1DBFA5940046D981 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		847F63B01DBFA5940046D981 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				F07715451DC885E9000059AE /* WBNetworkManager.swift */,
+				844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -547,7 +550,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -571,6 +574,7 @@
 				8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */,
 				8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */,
 				F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */,
+				844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */,
 				8410C7CF1DBFA35200511D72 /* WBHomeViewController.swift in Sources */,
 				847F63CD1DBFA5940046D981 /* UIButton+CZAddition.m in Sources */,
 				847F63D01DBFA5940046D981 /* UIScreen+CZAddition.m in Sources */,
