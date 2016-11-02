@@ -11,6 +11,8 @@ import UIKit
 //主控制器
 class WBMainTabbarController: UITabBarController {
 
+    //定时器
+    fileprivate var timer: Timer?
     //MARK: - 私有控件
    fileprivate lazy var composeButton : UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button");
     
@@ -18,10 +20,16 @@ class WBMainTabbarController: UITabBarController {
         super.viewDidLoad()
 
         setUpChildControllers()
-        setUpComposeButton();
+        setUpComposeButton()
+        setUpTimer()
         
     }
     
+    deinit {
+        
+        //销毁时钟
+        timer?.invalidate()
+    }
     /**
         portrait 肖像  竖屏
         landscape 风景 横屏
@@ -46,6 +54,28 @@ class WBMainTabbarController: UITabBarController {
 
 }
 
+//时钟相关方法
+extension WBMainTabbarController{
+    
+    fileprivate func setUpTimer(){
+        
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    ///时钟方法
+    @objc private func updateTimer(){
+     
+       
+        WBNetworkManager.shared.unreadCount { (count) in
+            
+             //设置首页tabbarItm的badgeNumber
+            self.tabBar.items?[0].badgeValue = count == 0 ? nil : "\(count)"
+            
+            //设置APP的badgeNumber 从ios8.0之后要用户授权才能显示
+            UIApplication.shared.applicationIconBadgeNumber = count
+        }
+    }
+}
 //extension  类似于 OC中的分类， 在Swift中 还可以用来切分代码块
 //可以把相近似功能的函数，放在一个extension钟
 //便于代码的维护
