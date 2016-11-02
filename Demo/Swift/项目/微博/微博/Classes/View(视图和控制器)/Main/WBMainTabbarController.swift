@@ -23,12 +23,29 @@ class WBMainTabbarController: UITabBarController {
         setUpComposeButton()
         setUpTimer()
         
+        //设置代理
+        delegate = self
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(UserLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     deinit {
         
         //销毁时钟
         timer?.invalidate()
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //用户登录
+    @objc func UserLogin(n: NSNotification){
+      
+        //展示登录控制器
+        let nav = UINavigationController(rootViewController: WBOAuthController())
+        
+        present(nav, animated: true, completion: nil)
+        
     }
     /**
         portrait 肖像  竖屏
@@ -54,18 +71,69 @@ class WBMainTabbarController: UITabBarController {
 
 }
 
+
+// MARK: - UITabBarControllerDelegate
+extension WBMainTabbarController: UITabBarControllerDelegate{
+    //选择shouldSelected 可以判断与选中的按钮比较
+    /// 将要选择tabbarItem
+    ///
+    /// - Parameters:
+    ///   - tabBarController: tabBarController
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否切换到控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        //1>获取控制器在数组中的索引
+        let index = childViewControllers.index(of: viewController)
+        
+        //2.获取当前索引
+        if selectedIndex == 0 && index == selectedIndex{
+            
+            print("点击首页")
+            
+            //3>让表格滚动到顶部
+            //3.获取到控制器 
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! WBHomeViewController
+            
+            //滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0,y: -64), animated: true)
+            
+            //刷新数据 延迟1秒再加载
+            let deadlineTime = DispatchTime.now() + .seconds(1)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                
+                vc.loadData()
+                
+            }
+            
+        }
+        
+        print("将要切换到 \(viewController)")
+        
+        //判断目标控制器是否是UIViewController
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
+
 //时钟相关方法
 extension WBMainTabbarController{
     
     fileprivate func setUpTimer(){
         
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        //时间间隔
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     ///时钟方法
     @objc private func updateTimer(){
      
-       
+        ///没有登录 不需要进行监测
+        if !WBNetworkManager.shared.userLogin {
+            
+            return
+        }
+        
         WBNetworkManager.shared.unreadCount { (count) in
             
              //设置首页tabbarItm的badgeNumber

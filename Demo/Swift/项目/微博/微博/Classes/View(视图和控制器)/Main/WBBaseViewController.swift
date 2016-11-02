@@ -27,8 +27,6 @@ class WBBaseViewController: UIViewController{
     
     var ispull = false
     
-    var userLogin = true
-    
     lazy var navBar : UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
     lazy var navItem : UINavigationItem = UINavigationItem()
@@ -40,7 +38,9 @@ class WBBaseViewController: UIViewController{
 
         //2.设置UI
         setUpUI()
-    
+        
+        //用户登录了加载数据
+        WBNetworkManager.shared.userLogin ? loadData() : ()
     }
     
     override var title: String?{
@@ -65,6 +65,8 @@ extension WBBaseViewController{
     @objc fileprivate func login(){
         
         print("登录")
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     @objc fileprivate func register(){
@@ -80,7 +82,7 @@ extension WBBaseViewController {
     
         view.backgroundColor = UIColor.cz_random()
         
-        userLogin ? setUpTableView() : setUpVistorView()
+        (WBNetworkManager.shared.userLogin) ? setUpTableView() : setUpVistorView()
         
         setUPNavigationBar()
     }

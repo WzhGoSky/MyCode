@@ -20,6 +20,8 @@
 		841388AB1DBF9AB300022EB6 /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388AA1DBF9AB300022EB6 /* __Tests.swift */; };
 		841388B61DBF9AB300022EB6 /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388B51DBF9AB300022EB6 /* __UITests.swift */; };
 		841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */; };
+		84469D231DCA29620028A69C /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D221DCA29620028A69C /* WBCommon.swift */; };
+		84469D261DCA2BA10028A69C /* WBOAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D251DCA2BA10028A69C /* WBOAuthController.swift */; };
 		844937701DC7608B00893737 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 8449376F1DC7608B00893737 /* main.json */; };
 		844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */; };
 		844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EC1DC8DAF300893737 /* WBStatus.swift */; };
@@ -84,6 +86,8 @@
 		841388B51DBF9AB300022EB6 /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
 		841388B71DBF9AB300022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		84469D221DCA29620028A69C /* WBCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCommon.swift; sourceTree = "<group>"; };
+		84469D251DCA2BA10028A69C /* WBOAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthController.swift; sourceTree = "<group>"; };
 		8449376F1DC7608B00893737 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		844937EC1DC8DAF300893737 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatus.swift; path = "微博/Classes/Tools(工具)/Network/WBStatus.swift"; sourceTree = SOURCE_ROOT; };
@@ -191,6 +195,7 @@
 				F07715441DC885CD000059AE /* Network */,
 				847F63D41DBFA9070046D981 /* Extension */,
 				847F63AD1DBFA5940046D981 /* Additions */,
+				84469D221DCA29620028A69C /* WBCommon.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 		8410C7C21DBFA15400511D72 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				84469D241DCA2B6B0028A69C /* OAuth */,
 				F0F2771B1DC2DBC300FDA093 /* 主控制器 */,
 				8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */,
 				F0D0849C1DC71434005C734D /* 访客视图 */,
@@ -309,6 +315,14 @@
 				841388B71DBF9AB300022EB6 /* Info.plist */,
 			);
 			path = "微博UITests";
+			sourceTree = "<group>";
+		};
+		84469D241DCA2B6B0028A69C /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				84469D251DCA2BA10028A69C /* WBOAuthController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		847F63AD1DBFA5940046D981 /* Additions */ = {
@@ -574,6 +588,7 @@
 				844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */,
 				847F63CF1DBFA5940046D981 /* UILabel+CZAddition.m in Sources */,
 				F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */,
+				84469D231DCA29620028A69C /* WBCommon.swift in Sources */,
 				847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */,
 				847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */,
 				847F63CA1DBFA5940046D981 /* NSString+CZBase64.m in Sources */,
@@ -581,6 +596,7 @@
 				8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */,
 				8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */,
 				F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */,
+				84469D261DCA2BA10028A69C /* WBOAuthController.swift in Sources */,
 				844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */,
 				8410C7CF1DBFA35200511D72 /* WBHomeViewController.swift in Sources */,
 				847F63CD1DBFA5940046D981 /* UIButton+CZAddition.m in Sources */,

@@ -24,10 +24,15 @@ class WBNetworkManager: AFHTTPSessionManager {
     static let shared = WBNetworkManager()
     
     ///访问令牌，所有网络请求，都给此令牌(登录除外)
-    var accessToken: String? = "2.00c54PZG8Tsb9Cedbb0b6f96qvNt5E"
+    var accessToken: String? 
     
     var uid: String? = ""
     
+    ///用户登录标记
+    var userLogin: Bool {
+        
+        return accessToken != nil
+    }
     //负责处理token
     func tokenRequest(method: WBHttpMethod = .GET,urlString: String, params: [String : AnyObject]?,compeletion: @escaping ((_ json: AnyObject?, _ isSuccess: Bool) ->())) {
         
