@@ -19,31 +19,68 @@ import Foundation
  
  任务:1.负责微博的数据处理
  */
+fileprivate let maxPullUpTryTimes = 3
+
 class WBStatusListViewModel {
     
     ///微博模型数组懒加载
     lazy var statusList = [WBStatus]()
     
-    func loadStatus(completion:@escaping(_ isSuccess: Bool)->()) {
+    private var pullErrorTimes = 0
+    
+    //是否刷新表格
+    func loadStatus(pullup:Bool , completion:@escaping(_ isSuccess: Bool, _ shouldRefersh: Bool)->()) {
+        
+        //1.判断是否是上拉刷新，同时检查刷新错误
+        if pullup && (pullErrorTimes > maxPullUpTryTimes) {
+            
+             completion(true, false)
+            
+            return
+        }
         
         //since_id 下拉。 取出数组中第一条微博的id
-        let since_id = statusList.first?.id ?? 0
+        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
         
-        WBNetworkManager.shared.statusList(since_id: since_id, max_id: 0){ (list, isSuccess) in
+        //max_id上拉刷新，取出数组中最后一条微博的id
+        let max_id = pullup ? (statusList.last?.id ?? 0) : 0
+        
+        WBNetworkManager.shared.statusList(since_id: since_id, max_id: max_id){ (list, isSuccess) in
             
             //1.字典转模型
             guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: list ?? []) as? [WBStatus] else{
                
-                completion(isSuccess)
+                completion(isSuccess,false)
                 
                 return
             }
-            //2.FIXME 拼接数据
-            //下拉刷新,应在将结果数组拼接在数组前面
-            self.statusList = array + self.statusList
             
-            //3.完成回调
-            completion(isSuccess)
+            print("刷新了\(array.count)条数据")
+            
+            //2.FIXME 拼接数据
+            
+            if pullup {
+                
+                self.statusList += array
+                
+            }else
+            {
+                //下拉刷新,应在将结果数组拼接在数组前面
+                self.statusList = array + self.statusList
+            }
+            
+           //3.判断上拉刷新的数据量
+            if pullup && array.count == 0{
+                
+                self.pullErrorTimes += 1
+                
+                completion(isSuccess, false)
+                
+            }else
+            {
+                //完成回调
+                completion(isSuccess, true)
+            }
         }
     }
     

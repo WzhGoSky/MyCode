@@ -18,7 +18,7 @@ extension WBNetworkManager{
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
         //Swift中 Int 可以转换为AnyObject / 但是Int64 不行
-        let params = ["since_id" : "\(since_id)","max_id" : "\(max_id)"]
+        let params = ["since_id" : "\(since_id)","max_id" : "\(max_id > 0 ? max_id - 1 : 0)"]
         
         tokenRequest(urlString: urlString, params: params as [String : AnyObject]?, compeletion: {(json, isSuccess) -> () in
             

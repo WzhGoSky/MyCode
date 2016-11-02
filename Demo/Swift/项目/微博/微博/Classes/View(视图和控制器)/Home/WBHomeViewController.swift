@@ -30,14 +30,19 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData(){
         
-      
-        listViewModel.loadStatus { (isSuccess) in
+        print("加载数据结束\(self.listViewModel.statusList.last?.text)")
+        listViewModel.loadStatus(pullup: self.ispull) { (isSuccess, shouldRefersh) in
             
+            print("加载数据结束")
             //结束刷新
             self.refershControl?.endRefreshing()
             self.ispull = false
             
-            self.tableView?.reloadData()
+            if shouldRefersh
+            {
+                self.tableView?.reloadData()
+            }
+            
         }
     }
 }
