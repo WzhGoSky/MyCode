@@ -33,7 +33,7 @@ extension WBNetworkManager{
     //返回微博的未读数量
     func unreadCount(completion:@escaping ((_ count: Int)->())) {
         
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             
             return
         }
@@ -52,4 +52,34 @@ extension WBNetworkManager{
         })
     }
     
+}
+
+
+// MARK: - OAuth相关方法
+extension WBNetworkManager{
+    
+    ///加载AccessToken
+    func loadAccessToken(code: String){
+        
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        let params = ["client_id": WBAppKey,
+                      "client_secret": WBAppSecret,
+                      "grant_type":"authorization_code",
+                      "code": code,
+                      "redirect_uri":WBRedirectURI,
+                      ]
+        
+        request(method: .POST, urlString: urlString, params: params as [String : AnyObject]?, compeletion:{(json, isSuccess) in
+            
+            //直接字典转模型 空字典[:]
+            self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
+            
+            
+            print(self.userAccount)
+            
+            self.userAccount.saveAccount()
+        })
+        
+    }
 }

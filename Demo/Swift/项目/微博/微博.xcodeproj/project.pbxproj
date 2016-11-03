@@ -40,6 +40,7 @@
 		847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */; };
 		847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */; };
 		9BE20936284936540C01A23D /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D7BE4794C21032D9085516 /* Pods___.framework */; };
+		F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0536C511DCB06950029003C /* WBUserAccount.swift */; };
 		F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07715451DC885E9000059AE /* WBNetworkManager.swift */; };
 		F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0849A1DC71430005C734D /* WBVistorView.swift */; };
 		F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */; };
@@ -120,6 +121,7 @@
 		847F63D51DBFA92B0046D981 /* weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weibo-Bridge.h"; sourceTree = "<group>"; };
 		847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
+		F0536C511DCB06950029003C /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		F07715451DC885E9000059AE /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		F0D0849A1DC71430005C734D /* WBVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVistorView.swift; sourceTree = "<group>"; };
 		F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
@@ -366,9 +368,18 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		F0536C501DCB067E0029003C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0536C511DCB06950029003C /* WBUserAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F07715441DC885CD000059AE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F0536C501DCB067E0029003C /* Model */,
 				F07715451DC885E9000059AE /* WBNetworkManager.swift */,
 				844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */,
 			);
@@ -610,6 +621,7 @@
 				847F63D11DBFA5940046D981 /* UIView+CZAddition.m in Sources */,
 				847F63CB1DBFA5940046D981 /* NSString+CZHash.m in Sources */,
 				8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */,
+				F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

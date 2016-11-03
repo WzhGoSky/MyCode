@@ -21,27 +21,33 @@ class WBNetworkManager: AFHTTPSessionManager {
 
     //静态区/常量区
     //在第一次访问时，执行闭包，并且将结果保存在shared中
-    static let shared = WBNetworkManager()
+    static let shared: WBNetworkManager = {
+        
+        //实例化对象
+        let instance = WBNetworkManager()
+        
+        //设置响应的反序列化数据类型
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+    }()
     
-    ///访问令牌，所有网络请求，都给此令牌(登录除外)
-    var accessToken: String? 
     
-    var uid: String? = ""
+    /// 用户账户的懒加载属性
+    lazy var userAccount = WBUserAccount();
     
     ///用户登录标记
     var userLogin: Bool {
         
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     //负责处理token
     func tokenRequest(method: WBHttpMethod = .GET,urlString: String, params: [String : AnyObject]?,compeletion: @escaping ((_ json: AnyObject?, _ isSuccess: Bool) ->())) {
         
         //Token是否为空
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             
             // FIXME 提示用户再次登录
-            
-            
             compeletion(nil, false)
             
             return
