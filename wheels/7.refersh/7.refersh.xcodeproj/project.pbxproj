@@ -15,6 +15,7 @@
 		844937C71DC7854A00893737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844937C51DC7854A00893737 /* LaunchScreen.storyboard */; };
 		844937D21DC7854A00893737 /* __RefershTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 844937D11DC7854A00893737 /* __RefershTests.m */; };
 		844937DD1DC7854A00893737 /* __RefershUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 844937DC1DC7854A00893737 /* __RefershUITests.m */; };
+		848534CA1DCB7DD10008403D /* ZHPullUpFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848534C91DCB7DD10008403D /* ZHPullUpFooterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		844937D81DC7854A00893737 /* 7.RefershUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 7.RefershUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		844937DC1DC7854A00893737 /* __RefershUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __RefershUITests.m; sourceTree = "<group>"; };
 		844937DE1DC7854A00893737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848534C81DCB7DD10008403D /* ZHPullUpFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHPullUpFooterView.h; path = 7.refersh/ZHPullUpFooterView.h; sourceTree = SOURCE_ROOT; };
+		848534C91DCB7DD10008403D /* ZHPullUpFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHPullUpFooterView.m; path = 7.refersh/ZHPullUpFooterView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		844937B61DC7854A00893737 /* 7.Refersh */ = {
 			isa = PBXGroup;
 			children = (
+				848534C81DCB7DD10008403D /* ZHPullUpFooterView.h */,
+				848534C91DCB7DD10008403D /* ZHPullUpFooterView.m */,
 				844937BA1DC7854A00893737 /* AppDelegate.h */,
 				844937BB1DC7854A00893737 /* AppDelegate.m */,
 				844937BD1DC7854A00893737 /* ViewController.h */,
@@ -221,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 844937AF1DC7854A00893737 /* Build configuration list for PBXProject "7.Refersh" */;
+			buildConfigurationList = 844937AF1DC7854A00893737 /* Build configuration list for PBXProject "7.refersh" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844937BF1DC7854A00893737 /* ViewController.m in Sources */,
+				848534CA1DCB7DD10008403D /* ZHPullUpFooterView.m in Sources */,
 				844937BC1DC7854A00893737 /* AppDelegate.m in Sources */,
 				844937B91DC7854A00893737 /* main.m in Sources */,
 			);
@@ -491,7 +497,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		844937AF1DC7854A00893737 /* Build configuration list for PBXProject "7.Refersh" */ = {
+		844937AF1DC7854A00893737 /* Build configuration list for PBXProject "7.refersh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844937DF1DC7854A00893737 /* Debug */,
@@ -507,6 +513,7 @@
 				844937E31DC7854A00893737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		844937E41DC7854A00893737 /* Build configuration list for PBXNativeTarget "7.RefershTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				844937E61DC7854A00893737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		844937E71DC7854A00893737 /* Build configuration list for PBXNativeTarget "7.RefershUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +531,7 @@
 				844937E91DC7854A00893737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
