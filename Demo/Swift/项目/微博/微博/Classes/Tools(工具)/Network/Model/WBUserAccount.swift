@@ -30,6 +30,14 @@ class WBUserAccount: NSObject {
     //过期日期
     var expiresDate: Date?
     
+    //用户信息
+    var screen_name: String?
+    
+    //用户头像地址（大图），180×180像素
+    var avatar_large: String?
+    
+    
+    
     
     override var description: String{
         
@@ -49,7 +57,7 @@ class WBUserAccount: NSObject {
                 print("加载数据失败")
                 return
         }
-        //使用字典设置属性值
+        //使用字典设置属性值 用户是否登陆关键代码
         yy_modelSet(with: dic ?? [:])
         
         //判断 token是否过期

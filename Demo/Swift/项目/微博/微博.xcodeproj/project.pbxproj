@@ -40,6 +40,10 @@
 		847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */; };
 		847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */; };
 		9BE20936284936540C01A23D /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D7BE4794C21032D9085516 /* Pods___.framework */; };
+		F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32541DCC697E000B41D5 /* WBTitleButton.swift */; };
+		F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */; };
+		F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */; };
+		F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */; };
 		F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0536C511DCB06950029003C /* WBUserAccount.swift */; };
 		F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07715451DC885E9000059AE /* WBNetworkManager.swift */; };
 		F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0849A1DC71430005C734D /* WBVistorView.swift */; };
@@ -121,6 +125,10 @@
 		847F63D51DBFA92B0046D981 /* weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weibo-Bridge.h"; sourceTree = "<group>"; };
 		847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
+		F01C32541DCC697E000B41D5 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
+		F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
+		F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		F0536C511DCB06950029003C /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		F07715451DC885E9000059AE /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		F0D0849A1DC71430005C734D /* WBVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVistorView.swift; sourceTree = "<group>"; };
@@ -225,6 +233,7 @@
 		8410C7C11DBFA15400511D72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F01C32531DCC696A000B41D5 /* TitleButton */,
 				8410C7CE1DBFA35200511D72 /* WBHomeViewController.swift */,
 				841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */,
 			);
@@ -234,6 +243,7 @@
 		8410C7C21DBFA15400511D72 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F01C32561DCC7B9B000B41D5 /* NewFeature */,
 				84469D241DCA2B6B0028A69C /* OAuth */,
 				F0F2771B1DC2DBC300FDA093 /* 主控制器 */,
 				8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */,
@@ -366,6 +376,24 @@
 				F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F01C32531DCC696A000B41D5 /* TitleButton */ = {
+			isa = PBXGroup;
+			children = (
+				F01C32541DCC697E000B41D5 /* WBTitleButton.swift */,
+			);
+			path = TitleButton;
+			sourceTree = "<group>";
+		};
+		F01C32561DCC7B9B000B41D5 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */,
+				F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */,
+				F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		F0536C501DCB067E0029003C /* Model */ = {
@@ -518,6 +546,7 @@
 			files = (
 				844937701DC7608B00893737 /* main.json in Resources */,
 				841388A01DBF9AB200022EB6 /* LaunchScreen.storyboard in Resources */,
+				F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */,
 				8413889D1DBF9AB200022EB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,12 +625,15 @@
 				847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */,
 				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,
 				8410C7CD1DBFA34800511D72 /* WBDiscoverViewController.swift in Sources */,
+				F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */,
+				F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */,
 				844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */,
 				847F63CF1DBFA5940046D981 /* UILabel+CZAddition.m in Sources */,
 				F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */,
 				84469D231DCA29620028A69C /* WBCommon.swift in Sources */,
 				847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */,
 				847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */,
+				F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */,
 				847F63CA1DBFA5940046D981 /* NSString+CZBase64.m in Sources */,
 				841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */,
 				8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */,

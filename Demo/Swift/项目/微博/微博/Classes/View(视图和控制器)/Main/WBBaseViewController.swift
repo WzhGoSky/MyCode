@@ -86,12 +86,17 @@ extension WBBaseViewController{
     
     @objc fileprivate func loginSuccess(n: Notification){
         
+        //登录前左边是注册，右边是登录
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
         //更新视图
         //在访问view的getter 时，如果view == nil 会调用 loadView -> viewDidLoad
         view = nil
         
         //注销通知,避免注册两次通知
         NotificationCenter.default.removeObserver(self)
+    
     }
 }
 // MARK: - 设置界面
@@ -141,6 +146,8 @@ extension WBBaseViewController {
                                                bottom:tabBarController?.tabBar.bounds.size.height ?? 49,
                                                right: 0)
         
+        //修改指示器的缩进
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         //refershControl
         refershControl = UIRefreshControl()

@@ -17,7 +17,6 @@ class WBHomeViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadData()
     }
     
     @objc fileprivate func myFriend(){
@@ -57,6 +56,27 @@ extension WBHomeViewController{
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(myFriend))
     
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        setUpNavTitle()
+    }
+    
+    
+    /// 设置导航栏标题
+    private func setUpNavTitle() {
+        
+        let title = WBNetworkManager.shared.userAccount.screen_name
+        
+        let button = WBTitleButton(title: title)
+        
+        navItem.titleView = button
+        
+        button.addTarget(self, action:#selector(clickTitleButton), for: .touchUpInside)
+    }
+    
+    @objc private func clickTitleButton(btn: UIButton){
+        
+        //设置选中状态
+        btn.isSelected = !btn.isSelected
     }
 }
 

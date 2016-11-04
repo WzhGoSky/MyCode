@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 //主控制器
 class WBMainTabbarController: UITabBarController {
@@ -23,6 +24,7 @@ class WBMainTabbarController: UITabBarController {
         setUpComposeButton()
         setUpTimer()
         
+        setupNewFeature()
         //设置代理
         delegate = self
         
@@ -39,12 +41,29 @@ class WBMainTabbarController: UITabBarController {
     }
     
     //用户登录
-    @objc func UserLogin(n: NSNotification){
+    @objc private func UserLogin(n: NSNotification){
       
-        //展示登录控制器
-        let nav = UINavigationController(rootViewController: WBOAuthController())
+        var when = DispatchTime.now()
         
-        present(nav, animated: true, completion: nil)
+        //判断n.object是否有值，如果有值(token 过期)，提示用户重新登录
+        if n.object != nil{
+            
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "用户登录已经超时，需要重新登录")
+            
+            when = DispatchTime.now() + .seconds(2)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            
+             SVProgressHUD.setDefaultMaskType(.clear)
+            //展示登录控制器
+            let nav = UINavigationController(rootViewController: WBOAuthController())
+            
+            self.present(nav, animated: true, completion: nil)
+            
+        }
+        
         
     }
     /**
@@ -64,13 +83,54 @@ class WBMainTabbarController: UITabBarController {
     @objc fileprivate func composeStatus(){
         
         print("撰写微博")
-        
-        
-        
     }
 
 }
 
+// MARK: - 设置新特性视图
+extension WBMainTabbarController{
+    
+    fileprivate func setupNewFeature(){
+        
+        //0.判断是否登陆
+        if !WBNetworkManager.shared.userLogin{
+            
+            return;
+        }
+        
+        //1.检查版本
+        
+        //2.如果更新显示新特性
+        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView.welcomeView()
+        
+        view.addSubview(v)
+    }
+    
+    
+    /// extension 中可以有计算型属性,不会占用存储空间
+    /**
+     版本号 ： 主版本号.次版本号.修订版本号
+     主版本号: 大修改，使用者也需要做大的适应
+     次版本号: 小修改
+     修订版本号: 框架/程序内部bug的修订，不会对使用者造成任何影响
+     
+     */
+    private var isNewVersion: Bool {
+        
+        //1. 去当前的版本号
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        
+        //2. 取出保存的版本号
+        let path: String = ("version" as NSString).cz_appendDocumentDir()
+        let sandboxVersion =  (try? String(contentsOfFile: path)) ?? ""
+        
+        //3.将版本号保存在沙盒
+        _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+        
+        //4.返回两个版本号是否一致
+        return currentVersion != sandboxVersion
+    }
+}
 
 // MARK: - UITabBarControllerDelegate
 extension WBMainTabbarController: UITabBarControllerDelegate{
