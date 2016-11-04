@@ -101,7 +101,7 @@ extension WBMainTabbarController{
         //1.检查版本
         
         //2.如果更新显示新特性
-        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView.welcomeView()
+        let v = isNewVersion ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
         
         view.addSubview(v)
     }
@@ -128,7 +128,8 @@ extension WBMainTabbarController{
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4.返回两个版本号是否一致
-        return currentVersion != sandboxVersion
+//        return currentVersion != sandboxVersion
+        return currentVersion == sandboxVersion
     }
 }
 

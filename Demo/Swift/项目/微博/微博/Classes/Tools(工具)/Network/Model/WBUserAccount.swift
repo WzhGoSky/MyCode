@@ -37,8 +37,6 @@ class WBUserAccount: NSObject {
     var avatar_large: String?
     
     
-    
-    
     override var description: String{
         
         return yy_modelDescription()

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                         <constraint firstAttribute="height" constant="85" id="eQB-BM-6vg"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NX-Zs-o3H">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NX-Zs-o3H">
                     <rect key="frame" x="152.5" y="523" width="69.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -35,7 +35,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="7De-Ek-0g3" secondAttribute="trailing" id="0Ny-9Q-CrI"/>
-                <constraint firstAttribute="bottom" secondItem="lW0-2f-Fb2" secondAttribute="bottom" constant="160" id="1VA-4f-dWi"/>
+                <constraint firstAttribute="bottom" secondItem="lW0-2f-Fb2" secondAttribute="bottom" constant="160" id="1VA-4f-dWi">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="42.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="8NX-Zs-o3H" firstAttribute="top" secondItem="lW0-2f-Fb2" secondAttribute="bottom" constant="16" id="20e-Dp-2Ul"/>
                 <constraint firstItem="7De-Ek-0g3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2kX-MI-jr2"/>
                 <constraint firstAttribute="bottom" secondItem="7De-Ek-0g3" secondAttribute="bottom" id="Dkl-Xh-XIM"/>
@@ -43,6 +49,11 @@
                 <constraint firstItem="lW0-2f-Fb2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YdZ-mF-5Y1"/>
                 <constraint firstItem="8NX-Zs-o3H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qET-o6-ent"/>
             </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="1VA-4f-dWi" id="EVq-aa-ZXs"/>
+                <outlet property="iconView" destination="lW0-2f-Fb2" id="0f2-hR-4l9"/>
+                <outlet property="tipLabel" destination="8NX-Zs-o3H" id="t3f-tQ-JVB"/>
+            </connections>
             <point key="canvasLocation" x="47" y="-83"/>
         </view>
     </objects>
