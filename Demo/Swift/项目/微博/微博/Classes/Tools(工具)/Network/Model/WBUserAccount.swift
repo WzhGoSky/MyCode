@@ -8,6 +8,7 @@
 
 import UIKit
 
+fileprivate let accountFile = "userAccount.json"
 /// 用户账户信息
 class WBUserAccount: NSObject {
     
@@ -35,6 +36,38 @@ class WBUserAccount: NSObject {
         return yy_modelDescription()
     }
     
+    override init() {
+        
+        super.init()
+        
+        //从沙盒加载用户信息
+        //从磁盘加载保存的文件
+        guard  let path = accountFile.cz_appendDocumentDir(),
+            let data = NSData(contentsOfFile: path),
+        let dic = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String : AnyObject]else{
+            
+                print("加载数据失败")
+                return
+        }
+        //使用字典设置属性值
+        yy_modelSet(with: dic ?? [:])
+        
+        //判断 token是否过期
+        if expiresDate?.compare(Date()) != .orderedDescending {
+            
+            print("账户过期")
+            
+            //清空token
+            access_token = nil
+            uid = nil
+            
+            //删除账户文件
+            _ = try? FileManager.default.removeItem(atPath: path)
+            
+        }
+        
+        
+    }
     
     func saveAccount() {
         
@@ -44,7 +77,7 @@ class WBUserAccount: NSObject {
         //删除expires_in
         dict.removeValue(forKey: "expires_in")
         //2.字典序列化 data
-        guard  let data = try? JSONSerialization.data(withJSONObject: dict, options: []),let filePath = ("userAccount.json" as NSString).cz_appendDocumentDir() else{
+        guard  let data = try? JSONSerialization.data(withJSONObject: dict, options: []),let filePath = (accountFile as NSString).cz_appendDocumentDir() else{
             
             return
         }

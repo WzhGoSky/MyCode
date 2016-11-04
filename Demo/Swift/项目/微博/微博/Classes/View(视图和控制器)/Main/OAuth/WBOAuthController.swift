@@ -96,7 +96,19 @@ extension WBOAuthController: UIWebViewDelegate{
         
         print("授权码 -- \(code)")
         
-        WBNetworkManager.shared.loadAccessToken(code: code)
+        WBNetworkManager.shared.loadAccessToken(code: code, competition:{ (isSuccess) in
+            
+            if !isSuccess{
+                
+                SVProgressHUD.showInfo(withStatus: "登陆失败")
+            }else
+            {
+                //成功
+                SVProgressHUD.showInfo(withStatus: "登陆成功")
+                
+                
+            }
+        })
         
         return false
     }
