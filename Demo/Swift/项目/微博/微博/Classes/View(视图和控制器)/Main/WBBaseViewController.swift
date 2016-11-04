@@ -41,6 +41,15 @@ class WBBaseViewController: UIViewController{
         
         //用户登录了加载数据
         WBNetworkManager.shared.userLogin ? loadData() : ()
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: WBUserLoginSuccessNotification), object: nil)
+    }
+    
+    deinit {
+        
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     override var title: String?{
@@ -74,6 +83,16 @@ extension WBBaseViewController{
         print("注册")
     }
     
+    
+    @objc fileprivate func loginSuccess(n: Notification){
+        
+        //更新视图
+        //在访问view的getter 时，如果view == nil 会调用 loadView -> viewDidLoad
+        view = nil
+        
+        //注销通知,避免注册两次通知
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 // MARK: - 设置界面
 extension WBBaseViewController {

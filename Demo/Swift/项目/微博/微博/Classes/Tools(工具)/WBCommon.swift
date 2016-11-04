@@ -21,3 +21,5 @@ let WBRedirectURI = "http://www.baidu.com"
 //用户需要登录通知
 let WBUserShouldLoginNotification = "WBUserShouldLoginNotification"
 
+let WBUserLoginSuccessNotification = "WBUserLoginSuccessNotification"
+
