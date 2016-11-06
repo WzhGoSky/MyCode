@@ -7,13 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "ZHPullUpFooterView.h"
+#import "ZHRefersh.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dataList;
-
-@property (nonatomic, strong) ZHPullUpFooterView *footerView;
 
 @end
 
@@ -27,7 +25,41 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    [self.tableView addSubview: self.footerView];
+    __weak typeof(self) weakSwlf = self;
+    [self.tableView.footerView setFooterRefersh:^{
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [weakSwlf.tableView.footerView endRefershing];
+            
+            for (int i=0; i< 15; i++) {
+                
+                [weakSwlf.dataList addObject:[NSString stringWithFormat:@"添加数据%d",i]];
+            }
+            
+            [weakSwlf.tableView reloadData];
+            
+            
+        });
+    }];
+    
+    [self.tableView.headerView setHeaderRefersh:^{
+       
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [weakSwlf.tableView.headerView endRefershing];
+            
+            for (int i=0; i< 15; i++) {
+                
+                [weakSwlf.dataList insertObject:[NSString stringWithFormat:@"插入数据%d",i] atIndex:0];
+            }
+            
+            [weakSwlf.tableView reloadData];
+            
+            
+        });
+    }];
+   
 }
 
 
@@ -61,13 +93,4 @@
     return _dataList;
 }
 
-- (ZHPullUpFooterView *)footerView
-{
-    if (!_footerView) {
-        
-        _footerView = [[ZHPullUpFooterView alloc] init];
-    }
-    
-    return _footerView;
-}
 @end

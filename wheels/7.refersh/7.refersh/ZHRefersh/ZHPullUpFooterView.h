@@ -10,4 +10,8 @@
 
 @interface ZHPullUpFooterView : UIView
 
+@property (nonatomic, copy) void(^footerRefersh)();
+
+- (void)endRefershing;
+
 @end

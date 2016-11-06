@@ -15,7 +15,9 @@
 		844937C71DC7854A00893737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844937C51DC7854A00893737 /* LaunchScreen.storyboard */; };
 		844937D21DC7854A00893737 /* __RefershTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 844937D11DC7854A00893737 /* __RefershTests.m */; };
 		844937DD1DC7854A00893737 /* __RefershUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 844937DC1DC7854A00893737 /* __RefershUITests.m */; };
-		848534CA1DCB7DD10008403D /* ZHPullUpFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848534C91DCB7DD10008403D /* ZHPullUpFooterView.m */; };
+		84BCC70E1DCF343F0003C666 /* UIScrollView+Refersh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCC7091DCF343F0003C666 /* UIScrollView+Refersh.m */; };
+		84BCC70F1DCF343F0003C666 /* ZHPullDownHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCC70B1DCF343F0003C666 /* ZHPullDownHeaderView.m */; };
+		84BCC7101DCF343F0003C666 /* ZHPullUpFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCC70D1DCF343F0003C666 /* ZHPullUpFooterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,13 @@
 		844937D81DC7854A00893737 /* 7.RefershUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 7.RefershUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		844937DC1DC7854A00893737 /* __RefershUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __RefershUITests.m; sourceTree = "<group>"; };
 		844937DE1DC7854A00893737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		848534C81DCB7DD10008403D /* ZHPullUpFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHPullUpFooterView.h; path = 7.refersh/ZHPullUpFooterView.h; sourceTree = SOURCE_ROOT; };
-		848534C91DCB7DD10008403D /* ZHPullUpFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHPullUpFooterView.m; path = 7.refersh/ZHPullUpFooterView.m; sourceTree = SOURCE_ROOT; };
+		84BCC7081DCF343F0003C666 /* UIScrollView+Refersh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Refersh.h"; sourceTree = "<group>"; };
+		84BCC7091DCF343F0003C666 /* UIScrollView+Refersh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Refersh.m"; sourceTree = "<group>"; };
+		84BCC70A1DCF343F0003C666 /* ZHPullDownHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPullDownHeaderView.h; sourceTree = "<group>"; };
+		84BCC70B1DCF343F0003C666 /* ZHPullDownHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPullDownHeaderView.m; sourceTree = "<group>"; };
+		84BCC70C1DCF343F0003C666 /* ZHPullUpFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPullUpFooterView.h; sourceTree = "<group>"; };
+		84BCC70D1DCF343F0003C666 /* ZHPullUpFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPullUpFooterView.m; sourceTree = "<group>"; };
+		84BCC7111DCF34830003C666 /* ZHRefersh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRefersh.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +111,7 @@
 		844937B61DC7854A00893737 /* 7.Refersh */ = {
 			isa = PBXGroup;
 			children = (
-				848534C81DCB7DD10008403D /* ZHPullUpFooterView.h */,
-				848534C91DCB7DD10008403D /* ZHPullUpFooterView.m */,
+				84BCC7071DCF343F0003C666 /* ZHRefersh */,
 				844937BA1DC7854A00893737 /* AppDelegate.h */,
 				844937BB1DC7854A00893737 /* AppDelegate.m */,
 				844937BD1DC7854A00893737 /* ViewController.h */,
@@ -144,6 +150,21 @@
 			);
 			path = 7.RefershUITests;
 			sourceTree = "<group>";
+		};
+		84BCC7071DCF343F0003C666 /* ZHRefersh */ = {
+			isa = PBXGroup;
+			children = (
+				84BCC7111DCF34830003C666 /* ZHRefersh.h */,
+				84BCC7081DCF343F0003C666 /* UIScrollView+Refersh.h */,
+				84BCC7091DCF343F0003C666 /* UIScrollView+Refersh.m */,
+				84BCC70A1DCF343F0003C666 /* ZHPullDownHeaderView.h */,
+				84BCC70B1DCF343F0003C666 /* ZHPullDownHeaderView.m */,
+				84BCC70C1DCF343F0003C666 /* ZHPullUpFooterView.h */,
+				84BCC70D1DCF343F0003C666 /* ZHPullUpFooterView.m */,
+			);
+			name = ZHRefersh;
+			path = 7.refersh/ZHRefersh;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -278,8 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BCC70E1DCF343F0003C666 /* UIScrollView+Refersh.m in Sources */,
 				844937BF1DC7854A00893737 /* ViewController.m in Sources */,
-				848534CA1DCB7DD10008403D /* ZHPullUpFooterView.m in Sources */,
+				84BCC70F1DCF343F0003C666 /* ZHPullDownHeaderView.m in Sources */,
+				84BCC7101DCF343F0003C666 /* ZHPullUpFooterView.m in Sources */,
 				844937BC1DC7854A00893737 /* AppDelegate.m in Sources */,
 				844937B91DC7854A00893737 /* main.m in Sources */,
 			);
