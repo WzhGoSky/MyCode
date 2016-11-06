@@ -215,9 +215,9 @@
 		8410C7BF1DBFA15400511D72 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				8410C7C21DBFA15400511D72 /* Main(主要的) */,
 				8410C7C01DBFA15400511D72 /* Discover */,
 				8410C7C11DBFA15400511D72 /* Home */,
-				8410C7C21DBFA15400511D72 /* Main */,
 				8410C7C31DBFA15400511D72 /* Message */,
 				8410C7D41DBFA43500511D72 /* Porfile */,
 			);
@@ -242,15 +242,16 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		8410C7C21DBFA15400511D72 /* Main */ = {
+		8410C7C21DBFA15400511D72 /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
-				F01C32561DCC7B9B000B41D5 /* NewFeature */,
-				84469D241DCA2B6B0028A69C /* OAuth */,
+				F01C32561DCC7B9B000B41D5 /* NewFeature(新特性) */,
+				84469D241DCA2B6B0028A69C /* OAuth(授权) */,
 				F0F2771B1DC2DBC300FDA093 /* 主控制器 */,
 				8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */,
 				F0D0849C1DC71434005C734D /* 访客视图 */,
 			);
+			name = "Main(主要的)";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -331,11 +332,12 @@
 			path = "微博UITests";
 			sourceTree = "<group>";
 		};
-		84469D241DCA2B6B0028A69C /* OAuth */ = {
+		84469D241DCA2B6B0028A69C /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
 				84469D251DCA2BA10028A69C /* WBOAuthController.swift */,
 			);
+			name = "OAuth(授权)";
 			path = OAuth;
 			sourceTree = "<group>";
 		};
@@ -388,7 +390,7 @@
 			path = TitleButton;
 			sourceTree = "<group>";
 		};
-		F01C32561DCC7B9B000B41D5 /* NewFeature */ = {
+		F01C32561DCC7B9B000B41D5 /* NewFeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
 				F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */,
@@ -396,6 +398,7 @@
 				F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */,
 				84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */,
 			);
+			name = "NewFeature(新特性)";
 			path = NewFeature;
 			sourceTree = "<group>";
 		};

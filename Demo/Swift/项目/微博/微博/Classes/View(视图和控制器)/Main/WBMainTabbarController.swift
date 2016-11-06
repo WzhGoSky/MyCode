@@ -127,7 +127,7 @@ extension WBMainTabbarController{
         //3.将版本号保存在沙盒
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
-        //4.返回两个版本号是否一致
+        //4.FIXME返回两个版本号是否一致
 //        return currentVersion != sandboxVersion
         return currentVersion == sandboxVersion
     }
@@ -167,6 +167,10 @@ extension WBMainTabbarController: UITabBarControllerDelegate{
                 vc.loadData()
                 
             }
+            
+            //5>清除tabbarItem的badgeNumer
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
             
         }
         
