@@ -152,7 +152,7 @@ extension WBMainTabbarController: UITabBarControllerDelegate{
             
             print("点击首页")
             
-            //3>让表格滚动到顶部
+            //3>让表格滚动到顶部  
             //3.获取到控制器 
             let nav = childViewControllers[0] as! UINavigationController
             let vc = nav.childViewControllers[0] as! WBHomeViewController
