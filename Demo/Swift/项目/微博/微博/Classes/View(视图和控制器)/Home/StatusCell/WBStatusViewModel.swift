@@ -30,6 +30,14 @@ class WBStatusViewModel: CustomStringConvertible {
     //存储型属性(用内存换CPU)
     var memberIcon: UIImage?
     
+    var vipIcon: UIImage?
+    
+    //转发文字
+    var retweetedStr: String?
+    //评论文字
+    var commentStr: String?
+    //点赞文字
+    var likeStr: String?
     
     /// 构造函数
     init(model: WBStatus) {
@@ -45,10 +53,54 @@ class WBStatusViewModel: CustomStringConvertible {
             memberIcon = UIImage(named: imageName)
             
         }
+        
+        switch model.user?.verified_type ?? -1{
+        case 0:
+            
+            vipIcon = UIImage(named:"avatar_vip")
+        case 2,3,5:
+            vipIcon = UIImage(named:"avatar_enterprise_vip")
+        case 220:
+            vipIcon = UIImage(named:"avatar_grassroot")
+        default:
+            break
+        }
+        
+        retweetedStr = countString(count: model.reposts_count, defaultString: "转发")
+        commentStr = countString(count: model.comments_count, defaultString: "评论")
+        likeStr = countString(count: model.attitudes_count, defaultString: "赞")
     }
     
     var description: String{
         
         return status.description
+    }
+    
+    
+    /// 给定一个数字，返回对应的描述结果
+    ///
+    /// - Parameters:
+    ///   - count: 数字
+    ///   - defaultString: 默认字符串
+    /// - Returns: 返回对应的字符串
+    /**
+        == 0 显示默认标题
+        超过10000 显示 x.xx万
+        如果数量 < 10000，显示实际数字
+     */
+    private func countString(count: Int, defaultString: String) -> String{
+        
+        if count == 0 {
+            
+            return defaultString
+        }
+        
+        if count < 10000 {
+            
+            return count.description
+        }
+        
+        return String(format: "%.02f万", Double(count) / 10000)
+    
     }
 }

@@ -40,6 +40,11 @@
 		847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */; };
 		847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */; };
 		84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */; };
+		84E477E51DD0A79500B6A046 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477E41DD0A79500B6A046 /* UIImageView+WebImage.swift */; };
+		84E477E71DD0AAF700B6A046 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477E61DD0AAF600B6A046 /* UIImage+Extensions.swift */; };
+		84E477EC1DD0B3C700B6A046 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */; };
+		84E477EE1DD0BDA100B6A046 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477ED1DD0BDA100B6A046 /* Date+Extensions.swift */; };
+		84E477F01DD0C0AD00B6A046 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */; };
 		9BE20936284936540C01A23D /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D7BE4794C21032D9085516 /* Pods___.framework */; };
 		F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32541DCC697E000B41D5 /* WBTitleButton.swift */; };
 		F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */; };
@@ -130,6 +135,11 @@
 		847F63D51DBFA92B0046D981 /* weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weibo-Bridge.h"; sourceTree = "<group>"; };
 		847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
+		84E477E41DD0A79500B6A046 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
+		84E477E61DD0AAF600B6A046 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
+		84E477ED1DD0BDA100B6A046 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
 		F01C32541DCC697E000B41D5 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
@@ -390,6 +400,9 @@
 			children = (
 				847F63D61DBFA9C40046D981 /* Bundle+Extension.swift */,
 				F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */,
+				84E477E41DD0A79500B6A046 /* UIImageView+WebImage.swift */,
+				84E477E61DD0AAF600B6A046 /* UIImage+Extensions.swift */,
+				84E477ED1DD0BDA100B6A046 /* Date+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -444,6 +457,8 @@
 			isa = PBXGroup;
 			children = (
 				F0DC3A341DD010F800FED38F /* WBStatusCell.swift */,
+				84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */,
+				84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */,
 				F0DC3A361DD0110B00FED38F /* WBNormalStatusCell.xib */,
 			);
 			path = StatusCell;
@@ -662,6 +677,7 @@
 				F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */,
 				84469D231DCA29620028A69C /* WBCommon.swift in Sources */,
 				847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */,
+				84E477E51DD0A79500B6A046 /* UIImageView+WebImage.swift in Sources */,
 				847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */,
 				F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */,
 				847F63CA1DBFA5940046D981 /* NSString+CZBase64.m in Sources */,
@@ -675,15 +691,19 @@
 				8410C7CF1DBFA35200511D72 /* WBHomeViewController.swift in Sources */,
 				F0DC3A351DD010F800FED38F /* WBStatusCell.swift in Sources */,
 				847F63CD1DBFA5940046D981 /* UIButton+CZAddition.m in Sources */,
+				84E477EE1DD0BDA100B6A046 /* Date+Extensions.swift in Sources */,
 				847F63D01DBFA5940046D981 /* UIScreen+CZAddition.m in Sources */,
 				844937EF1DC8DCF500893737 /* WBStatusListViewModel.swift in Sources */,
+				84E477F01DD0C0AD00B6A046 /* WBStatusPictureView.swift in Sources */,
 				8410C7C91DBFA1AF00511D72 /* WBNaviagtionController.swift in Sources */,
 				847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */,
 				841388961DBF9AB200022EB6 /* AppDelegate.swift in Sources */,
+				84E477EC1DD0B3C700B6A046 /* WBStatusToolBar.swift in Sources */,
 				8410C7D61DBFA43500511D72 /* WBPorfileViewController.swift in Sources */,
 				847F63CC1DBFA5940046D981 /* NSString+CZPath.m in Sources */,
 				847F63D11DBFA5940046D981 /* UIView+CZAddition.m in Sources */,
 				847F63CB1DBFA5940046D981 /* NSString+CZHash.m in Sources */,
+				84E477E71DD0AAF700B6A046 /* UIImage+Extensions.swift in Sources */,
 				8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */,
 				F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */,
 			);
