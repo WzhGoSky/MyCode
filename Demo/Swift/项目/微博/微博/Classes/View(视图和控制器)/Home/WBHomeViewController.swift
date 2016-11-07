@@ -28,8 +28,7 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadData(){
-        
-        print("加载数据结束\(self.listViewModel.statusList.last?.text)")
+    
         listViewModel.loadStatus(pullup: self.ispull) { (isSuccess, shouldRefersh) in
             
             print("加载数据结束")
@@ -98,9 +97,9 @@ extension WBHomeViewController
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! WBStatusCell
         
-        cell.statusLabel.text = listViewModel.statusList[indexPath.row].text
-        
-        
+        let model: WBStatusViewModel = listViewModel.statusList[indexPath.row]
+        cell.statusLabel.text = model.status.text
+        cell.nameLabel.text = model.status.user?.screen_name
         
         return cell
     }

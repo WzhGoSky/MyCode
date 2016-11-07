@@ -51,6 +51,8 @@ class WBStatusListViewModel {
             if !isSuccess{
                 
                 completion(false, false)
+                
+                return
             }
             
             //1.定义结果可变数组

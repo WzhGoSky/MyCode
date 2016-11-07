@@ -128,8 +128,8 @@ extension WBMainTabbarController{
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4.FIXME返回两个版本号是否一致
-//        return currentVersion != sandboxVersion
-        return currentVersion == sandboxVersion
+        return currentVersion != sandboxVersion
+//        return currentVersion == sandboxVersion
     }
 }
 
