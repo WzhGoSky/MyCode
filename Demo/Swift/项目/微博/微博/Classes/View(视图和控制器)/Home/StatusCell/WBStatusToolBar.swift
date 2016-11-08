@@ -20,7 +20,6 @@ class WBStatusToolBar: UIView {
         }
     }
     
-    
     ///转发
     @IBOutlet weak var retweetedButton: UIButton!
     

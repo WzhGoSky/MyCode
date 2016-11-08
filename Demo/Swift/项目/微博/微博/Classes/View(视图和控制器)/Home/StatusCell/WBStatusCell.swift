@@ -34,7 +34,9 @@ class WBStatusCell: UITableViewCell {
             
             toolBar.viewModel = viewModel
             
-            pictureView.heightcons.constant = 100
+            pictureView.heightcons.constant = viewModel?.pictureViewSize.height ?? 0
+            
+            pictureView.urls = viewModel?.status.pic_urls
         }
     }
     

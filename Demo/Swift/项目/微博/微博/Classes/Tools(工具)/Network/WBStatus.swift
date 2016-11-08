@@ -29,6 +29,15 @@ class WBStatus: NSObject {
     ///点赞数
     var attitudes_count: Int = 0
     
+    ///微博配图模型数组
+    var pic_urls: [WBStatusPicture]?
+    
+    //类函数 -> 告诉第三方框架，如果遇到数组类型的属性，数组中存放的对象是什么类
+    class func modelContainerPropertyGenericClass() -> [String : AnyClass]{
+        
+        return ["pic_urls" : WBStatusPicture.self]
+    }
+    
     //重写description的计算型属性
     override var description: String{
         
