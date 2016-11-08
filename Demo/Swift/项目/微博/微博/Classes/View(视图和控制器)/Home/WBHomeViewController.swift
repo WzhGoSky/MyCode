@@ -8,7 +8,9 @@
 
 import UIKit
 
-private let cellID = "homeCellID"
+///原创微博可重用cellID
+private let originalCellId = "originalCellId"
+private let retweetedCellId = "retweetedCellId"
 
 class WBHomeViewController: WBBaseViewController {
 
@@ -54,7 +56,8 @@ extension WBHomeViewController{
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(myFriend))
     
-        tableView?.register(UINib(nibName: "WBNormalStatusCell", bundle: nil), forCellReuseIdentifier: cellID)
+        tableView?.register(UINib(nibName: "WBNormalStatusCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        tableView?.register(UINib(nibName:"WBStatusRetweetedCell的", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         
         //设置行高
         tableView?.rowHeight = UITableViewAutomaticDimension
@@ -95,7 +98,8 @@ extension WBHomeViewController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! WBStatusCell
+        //FIXME
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId) as! WBStatusCell
         
         let model: WBStatusViewModel = listViewModel.statusList[indexPath.row]
         
