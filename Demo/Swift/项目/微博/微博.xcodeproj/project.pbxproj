@@ -218,8 +218,8 @@
 		8410C7BD1DBFA15400511D72 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
-				844937EC1DC8DAF300893737 /* WBStatus.swift */,
 				F0DC3A381DD01EAD00FED38F /* WBUser.swift */,
+				844937EC1DC8DAF300893737 /* WBStatus.swift */,
 				F015CCCE1DD15AC50085A48A /* WBStatusPicture.swift */,
 			);
 			path = "Model(模型)";
@@ -291,8 +291,8 @@
 		8410C7C51DBFA15400511D72 /* ViewMode(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
-				844937EE1DC8DCF500893737 /* WBStatusListViewModel.swift */,
 				F0DC3A3A1DD026D700FED38F /* WBStatusViewModel.swift */,
+				844937EE1DC8DCF500893737 /* WBStatusListViewModel.swift */,
 			);
 			name = "ViewMode(视图模型)";
 			path = "ViewMode(视图模型)l";

@@ -17,8 +17,6 @@ class WBStatusCell: UITableViewCell {
             let status = viewModel?.status
             let user = status?.user
             
-            
-            
             //微博文本
             statusLabel.text = status?.text
             //姓名
@@ -36,7 +34,11 @@ class WBStatusCell: UITableViewCell {
             
             pictureView.heightcons.constant = viewModel?.pictureViewSize.height ?? 0
             
-            pictureView.urls = viewModel?.status.pic_urls
+            ///设置配图
+            pictureView.urls = viewModel?.picUrls
+            
+            //设置转发微博的文字
+            retweetedLabel?.text = viewModel?.retweetedText
         }
     }
     
@@ -59,6 +61,9 @@ class WBStatusCell: UITableViewCell {
     
     ///配图视图
     @IBOutlet weak var pictureView: WBStatusPictureView!
+    
+    //原创微博没有此控件  一定要用？表示可选
+    @IBOutlet weak var retweetedLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

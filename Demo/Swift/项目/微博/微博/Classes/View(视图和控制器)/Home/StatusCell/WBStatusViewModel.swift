@@ -39,7 +39,20 @@ class WBStatusViewModel: CustomStringConvertible {
     //点赞文字
     var likeStr: String?
     
+    ///配图视图大小
     var pictureViewSize = CGSize()
+    
+    ///如果被转发的微博，原创微博一定没有图
+    var picUrls: [WBStatusPicture]?{
+        
+        //如果有被转发微博，返回被转发微博的配图
+        //如果没有被转发的微博，返回原创微博的配图
+        //如果都没有，返回nil
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
+    ///被转发微博的文字
+    var retweetedText: String?
     
     /// 构造函数
     init(model: WBStatus) {
@@ -72,8 +85,12 @@ class WBStatusViewModel: CustomStringConvertible {
         commentStr = countString(count: model.comments_count, defaultString: "评论")
         likeStr = countString(count: model.attitudes_count, defaultString: "赞")
         
-        //计算配图模型大小
-        pictureViewSize = calcPictureViewSize(count: status.pic_urls?.count)
+        //计算配图模型大小(有原创的就计算原创的，有转发的就计算转发的)
+        pictureViewSize = calcPictureViewSize(count: picUrls?.count)
+        
+        
+        //设置被转发文字的文字
+        retweetedText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ";" + (status.retweeted_status?.text ?? "")
     }
     
     
