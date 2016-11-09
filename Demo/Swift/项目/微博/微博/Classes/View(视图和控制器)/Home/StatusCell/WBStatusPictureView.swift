@@ -12,6 +12,35 @@ class WBStatusPictureView: UIView {
 
     @IBOutlet weak var heightcons: NSLayoutConstraint!
     
+    var viewModel: WBStatusViewModel?{
+    
+        didSet{
+            
+            calcViewSize()
+        }
+    }
+    
+    /// 根据视图模型的配图大小，调整显示内容
+    private func calcViewSize(){
+        
+        //处理宽度
+        //1>单图，根据配图视图大小，修改，subview[0] 的宽高
+        if viewModel?.picUrls?.count == 1{
+            
+            let viewSize = viewModel?.pictureViewSize ?? CGSize()
+            let v = subviews[0]
+            v.frame = CGRect(x: 0, y: WBStatusPictureViewOutterMargin, width: viewSize.width, height: viewSize.height - WBStatusPictureViewOutterMargin)
+        }else{
+             //2>多图，恢复第0个视图的宽高 或者无图
+            
+            let v = subviews[0]
+            v.frame = CGRect(x: 0, y: WBStatusPictureViewOutterMargin, width: WBStatusPictureItemWith, height: WBStatusPictureItemWith)
+        }
+        //修改高度约束
+        heightcons.constant = viewModel?.pictureViewSize.height ?? 0
+        
+    }
+    
     var urls: [WBStatusPicture]?{
     
         didSet{

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SDWebImage
 
 ///微博数据列表视图模型
 
@@ -94,10 +95,7 @@ class WBStatusListViewModel {
                 
             }else
             {
-                self.cacheSingleImage(list: array)
-                
-                //完成回调
-                completion(isSuccess, true)
+                self.cacheSingleImage(list: array,completion: completion)
             }
             
             
@@ -105,8 +103,14 @@ class WBStatusListViewModel {
     }
     
     ///缓存本次下载微博数据数组中的单张图像
-    private func cacheSingleImage(list: [WBStatusViewModel])
+    private func cacheSingleImage(list: [WBStatusViewModel],completion:@escaping(_ isSuccess: Bool, _ shouldRefersh: Bool)->())
     {
+        //调度组
+        let group = DispatchGroup()
+        
+        
+        //记录数据长度
+        var length = 0
         //遍历数组，查找微博数组中有单张图像的，进行缓存
         for vm in list{
             
@@ -122,9 +126,43 @@ class WBStatusListViewModel {
                 continue
             }
             
+            //下载图像
+            //downloadImage 是SDWebImage的核心方法
+            //图像下载完成之后，会自动保存在沙河中， 文件路径是url的md5
+            //如果沙盒中已经存在缓存的图像，后续使用SD通过URL加载图像，都会加载本地沙河的图像
+            //不会发起网络请求，同时，调用方法，同样会调用
+            //方法还是同样的方法，调用还是同样的调用，不过内部不会再做处理了
+            //注意点：如果要缓存的图像，累计很大，要找的后台要接口
             
+            //入组
+            group.enter()
             
-            //需要缓存的URL
+            SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image,_, _, _, _) in
+            
+                //将图像转换成二进制图像
+                if let image = image,
+                    let data = UIImagePNGRepresentation(image){
+                    
+                    //NSData 是length属性
+                    length += data.count
+                    
+                    //图像缓存成功，更新配图视图的大小
+                    vm.updateSingleImageSize(image: image)
+                }
+                
+                print("缓存的图像是 \(image) 长度 \(length)")
+                
+                //出组
+                group.leave()
+            })
+        }
+        
+        //监听调度组
+        group.notify(queue: DispatchQueue.main){
+            
+            print("图片总大小 \(length / 1024)k")
+            
+            completion(true, true)
         }
     }
     

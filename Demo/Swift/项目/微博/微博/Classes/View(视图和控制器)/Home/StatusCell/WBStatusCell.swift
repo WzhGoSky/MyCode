@@ -32,7 +32,7 @@ class WBStatusCell: UITableViewCell {
             
             toolBar.viewModel = viewModel
             
-            pictureView.heightcons.constant = viewModel?.pictureViewSize.height ?? 0
+            pictureView?.viewModel = viewModel
             
             ///设置配图
             pictureView.urls = viewModel?.picUrls
