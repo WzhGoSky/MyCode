@@ -66,7 +66,10 @@
 	
 	异步函数具备开线程的能力，但是不一定会开启线程。
 	
-##2.dispatch_group
+##2.dispatch_group(调度组)
+
+>调度组最重要的目的,监听一组任务完成
+	
 	如果想在dispatch_queue中所有的任务执行完成后在做某种操作，在串行队列中，可以把该操作放到最后一个任务执行完成后继续，但是在并行队列中怎么做呢。这就有dispatch_group 成组操作。
 ###dispatch_group 使用函数
 
@@ -88,7 +91,7 @@
 	
 	上面的 log1 和log2输出顺序不定，因为是在并发队列上执行，当并发队列全部执行完成后，最后到main队列上执行一个操作，保证“end”是最后输出。
 	
-####2.dispatch_group_enter(group)  dispatch_group_leave(group)
+####2.dispatch_group_enter(group)   dispatch_group_leave(group)
 	标志着一个block(任务)被加入了group。
 	
 	dispatch_group_enter:增加当前group执行block数
@@ -137,7 +140,11 @@
 		dispatch_group_leave(group);
 	
 	});
-	
+3种情况:  
+  1.调度组没有任务，直接执行notify  
+  2.调度组入组多余出组，notify永远不会执行，因为组永远不会为空   
+  3.出租多余入组，会奔溃  
+
 ####3.dispatch_group_notify
 	void dispatch_group_notify(dispatch_group_t group,dispatch_queue_t queue,
 	dispatch_block_t block);
