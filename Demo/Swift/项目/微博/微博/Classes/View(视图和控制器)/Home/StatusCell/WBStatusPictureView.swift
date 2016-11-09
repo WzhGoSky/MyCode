@@ -17,6 +17,9 @@ class WBStatusPictureView: UIView {
         didSet{
             
             calcViewSize()
+            
+            ///设置配图 
+            urls = viewModel?.picUrls
         }
     }
     
@@ -36,12 +39,12 @@ class WBStatusPictureView: UIView {
             let v = subviews[0]
             v.frame = CGRect(x: 0, y: WBStatusPictureViewOutterMargin, width: WBStatusPictureItemWith, height: WBStatusPictureItemWith)
         }
-        //修改高度约束
+//        //修改高度约束
         heightcons.constant = viewModel?.pictureViewSize.height ?? 0
         
     }
     
-    var urls: [WBStatusPicture]?{
+   private var urls: [WBStatusPicture]?{
     
         didSet{
             //1.隐藏所有imageviews

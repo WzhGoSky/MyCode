@@ -72,7 +72,7 @@ class WBStatusListViewModel {
                 array.append(WBStatusViewModel(model: model))
             }
             
-            print("刷新了\(array.count)条数据,\(array)")
+//            print("刷新了\(array.count)条数据,\(array)")
             
             //2.拼接数据
             
@@ -149,8 +149,6 @@ class WBStatusListViewModel {
                     //图像缓存成功，更新配图视图的大小
                     vm.updateSingleImageSize(image: image)
                 }
-                
-                print("缓存的图像是 \(image) 长度 \(length)")
                 
                 //出组
                 group.leave()

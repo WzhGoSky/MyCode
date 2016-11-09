@@ -112,4 +112,15 @@ extension WBHomeViewController
         
         return cell
     }
+    
+    //父类必须重写方法  不然无法被调用
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //1.取出viewModel
+        let vm = listViewModel.statusList[indexPath.row]
+        
+        //2.返回计算好的行高
+        return vm.rowHeight
+        
+    }
 }

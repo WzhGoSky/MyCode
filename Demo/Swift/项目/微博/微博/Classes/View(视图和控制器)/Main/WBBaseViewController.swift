@@ -215,4 +215,9 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource{
             loadData()
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 10
+    }
 }

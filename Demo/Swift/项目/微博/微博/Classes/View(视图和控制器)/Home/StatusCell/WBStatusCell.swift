@@ -34,9 +34,6 @@ class WBStatusCell: UITableViewCell {
             
             pictureView?.viewModel = viewModel
             
-            ///设置配图
-            pictureView.urls = viewModel?.picUrls
-            
             //设置转发微博的文字
             retweetedLabel?.text = viewModel?.retweetedText
         }

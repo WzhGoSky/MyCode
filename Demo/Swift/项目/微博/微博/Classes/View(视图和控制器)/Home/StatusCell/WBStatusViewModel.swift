@@ -32,6 +32,9 @@ class WBStatusViewModel: CustomStringConvertible {
     
     var vipIcon: UIImage?
     
+    //行高
+    var rowHeight: CGFloat = 0
+    
     //转发文字
     var retweetedStr: String?
     //评论文字
@@ -91,8 +94,65 @@ class WBStatusViewModel: CustomStringConvertible {
         
         //设置被转发文字的文字
         retweetedText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ";" + (status.retweeted_status?.text ?? "")
+        
+        //计算行高
+        updateRowHeight()
     }
     
+    ///根据当前的视图模型内容计算行高
+    func updateRowHeight() {
+        
+        //原创微博
+        
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolbarHeight: CGFloat = 35
+        
+        var height: CGFloat = 0
+        
+        let textSize = CGSize(width: UIScreen.cz_screenWidth() - 2*margin, height: CGFloat(MAXFLOAT))
+        let originalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        
+        
+        //1.计算顶部位置
+        height = 2*margin + iconHeight + margin
+        
+        //2.正文高度
+        if let text = status.text {
+            
+        height += (text as NSString).boundingRect(with: textSize,
+                                        options: [.usesLineFragmentOrigin],
+                                        attributes: [NSFontAttributeName : originalFont],
+                                        context: nil).height
+        }
+        
+        //3.判断是否转发微博
+        if status.retweeted_status != nil {
+            
+            height += 2 * margin
+            
+            //转发文本的高度
+            if let text = retweetedText {
+               
+                height += (text as NSString).boundingRect(with: textSize,
+                                                          options: [.usesLineFragmentOrigin],
+                                                          attributes: [NSFontAttributeName : retweetedFont],
+                                                          context: nil).height
+            }
+        }
+        
+        //4.配图视图
+        height += pictureViewSize.height
+        
+        height += margin
+        
+        //5.底部工具栏
+        height += toolbarHeight
+        
+        //6.使用属性记录
+        rowHeight = height
+    }
     
     /// 配图视图的大小
     ///
@@ -126,7 +186,11 @@ class WBStatusViewModel: CustomStringConvertible {
         
         var size = image.size
         size.height += WBStatusPictureViewOutterMargin
+        //重新设置配图视图大小
         pictureViewSize = size
+        
+        //更新行高
+        updateRowHeight()
     }
     /// 给定一个数字，返回对应的描述结果
     ///
