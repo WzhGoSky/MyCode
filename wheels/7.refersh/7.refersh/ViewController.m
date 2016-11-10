@@ -93,4 +93,8 @@
     return _dataList;
 }
 
+- (void)dealloc
+{
+    NSLog(@"我被释放了");
+}
 @end

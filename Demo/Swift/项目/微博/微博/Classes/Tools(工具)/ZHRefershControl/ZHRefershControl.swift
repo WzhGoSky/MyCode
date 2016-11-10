@@ -8,10 +8,27 @@
 
 import UIKit
 
+///刷新临界点
+private let ZHRefershOffset: CGFloat = 60
+
+/// 刷新状态
+///
+/// - Normal: 普通状态
+/// - Pulling: 超过零界点如果放手开始刷新
+/// - Willrefersh: 用户超过零界点，并且放手
+enum ZHRefershState{
+    
+    case Normal
+    case Pulling
+    case Willrefersh
+}
+///刷新控件 - 负责刷新相关的逻辑处理 
 class ZHRefershControl: UIControl {
 
     // MARK - 属性
     fileprivate weak var scrollView: UIScrollView?
+    
+    fileprivate lazy var refershView: ZHRefershView = ZHRefershView.refershView()
     
     ///构造函数
     init(){
@@ -27,6 +44,15 @@ class ZHRefershControl: UIControl {
         setUpUI()
     }
 
+//    //本视图从父视图上移除
+    override func removeFromSuperview() {
+        // superView 还存在
+        superview?.removeObserver(self, forKeyPath: "contentOffset")
+        
+        super.removeFromSuperview()
+
+    }
+    
     
     override func willMove(toSuperview newSuperview: UIView?) {
         
@@ -45,6 +71,7 @@ class ZHRefershControl: UIControl {
         scrollView = sv
         
         //KVO 监听父视图的contentOffset
+        //在程序中，通常只监听某一个对象的某几个属性，如果属性太多，方法会很乱
         scrollView?.addObserver(self, forKeyPath: "contentOffset", options: [], context: nil)
         
     }
@@ -61,12 +88,47 @@ class ZHRefershControl: UIControl {
         }
         
         //初始化高度应该就是0  contentInset
-        print("top: \(sv.contentInset.top)")
+        print("top: \(sv.contentInset.top)  y: \(sv.contentOffset.y)")
         let height = -(sv.contentInset.top + sv.contentOffset.y)
+        
+        if height < 0{
+            
+            return
+        }
         
         //可以根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
         
+        //判断临界点
+        if sv.isDragging{
+            
+            if  (height > ZHRefershOffset && refershView.refershState == .Normal){
+            
+                print("放手刷新")
+                refershView.refershState = .Pulling
+                
+            }else if height <= ZHRefershOffset && refershView.refershState == .Pulling{
+                
+                print("继续使劲")
+                refershView.refershState = .Normal
+            }
+        }else
+        {
+           //放手刷新 - 判断是否超过临界点
+            if refershView.refershState == .Pulling{
+                
+                print("开始刷新")
+                //刷新结束后，将状态修改为.normal才能继续刷新
+                refershView.refershState = .Willrefersh
+                
+                //修改表格的contenInset
+                var inset = sv.contentInset
+                inset.top += ZHRefershOffset
+                sv.contentInset = inset
+                
+            }
+            
+        }
     }
     
     ///开始刷新
@@ -85,6 +147,21 @@ extension ZHRefershControl{
     
     fileprivate func setUpUI(){
         
-        backgroundColor = UIColor.yellow
+        backgroundColor = superview?.backgroundColor
+        
+        //设置超出边界不显示
+//        clipsToBounds = true
+        //添加刷新视图 - 从xib加载出来。默认是xib制定的宽高
+        addSubview(refershView)
+        
+        //自动布局 - 设置xib控件的自动布局需要制定宽高约束
+        refershView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addConstraint(NSLayoutConstraint(item: refershView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: refershView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: refershView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: refershView.bounds.size.width))
+        addConstraint(NSLayoutConstraint(item: refershView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: refershView.bounds.size.height))
     }
 }
