@@ -23,7 +23,7 @@ class WBBaseViewController: UIViewController{
     //用户没有就不创建
     var tableView: UITableView?
     
-    var refershControl: UIRefreshControl?
+    var refershControl: ZHRefershControl?
     
     var ispull = false
     
@@ -63,7 +63,7 @@ class WBBaseViewController: UIViewController{
     func loadData() -> () {
         
         //如果子类不实现任何方法，默认关闭刷新控件
-        refershControl?.endRefreshing()
+        refershControl?.endRefershing()
         
     }
 }
@@ -150,7 +150,7 @@ extension WBBaseViewController {
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         //refershControl
-        refershControl = UIRefreshControl()
+        refershControl = ZHRefershControl()
         
         tableView?.addSubview(refershControl!)
         

@@ -52,6 +52,7 @@
 		F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */; };
 		F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */; };
 		F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */; };
+		F02356731DD41CE100E0286B /* ZHRefershControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02356721DD41CE100E0286B /* ZHRefershControl.swift */; };
 		F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0536C511DCB06950029003C /* WBUserAccount.swift */; };
 		F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07715451DC885E9000059AE /* WBNetworkManager.swift */; };
 		F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0849A1DC71430005C734D /* WBVistorView.swift */; };
@@ -149,6 +150,7 @@
 		F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
 		F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
+		F02356721DD41CE100E0286B /* ZHRefershControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefershControl.swift; sourceTree = "<group>"; };
 		F0536C511DCB06950029003C /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		F07715451DC885E9000059AE /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		F0D0849A1DC71430005C734D /* WBVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVistorView.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		8410C7BE1DBFA15400511D72 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				F02356711DD41CD000E0286B /* ZHRefershControl */,
 				F07715441DC885CD000059AE /* Network */,
 				847F63D41DBFA9070046D981 /* Extension */,
 				847F63AD1DBFA5940046D981 /* Additions */,
@@ -430,6 +433,14 @@
 			);
 			name = "NewFeature(新特性)";
 			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		F02356711DD41CD000E0286B /* ZHRefershControl */ = {
+			isa = PBXGroup;
+			children = (
+				F02356721DD41CE100E0286B /* ZHRefershControl.swift */,
+			);
+			path = ZHRefershControl;
 			sourceTree = "<group>";
 		};
 		F0536C501DCB067E0029003C /* Model */ = {
@@ -714,6 +725,7 @@
 				84E477E71DD0AAF700B6A046 /* UIImage+Extensions.swift in Sources */,
 				8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */,
 				F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */,
+				F02356731DD41CE100E0286B /* ZHRefershControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

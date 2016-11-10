@@ -185,6 +185,27 @@ class WBStatusViewModel: CustomStringConvertible {
     func updateSingleImageSize(image: UIImage) {
         
         var size = image.size
+        
+        //过宽图像处理
+        let maxWidth: CGFloat = 300
+        let minWitdh: CGFloat = 40
+        
+        if size.width > maxWidth{
+            
+            size.width = maxWidth
+            //等比例调整高度
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        
+        //过窄的图像处理
+        if size.width < minWitdh {
+            
+            size.width = minWitdh
+            //要特殊处理高度，否则高度太大，会影响用户体验
+            size.height = size.width * image.size.height / image.size.width/4
+        }
+        
         size.height += WBStatusPictureViewOutterMargin
         //重新设置配图视图大小
         pictureViewSize = size
@@ -192,6 +213,7 @@ class WBStatusViewModel: CustomStringConvertible {
         //更新行高
         updateRowHeight()
     }
+    
     /// 给定一个数字，返回对应的描述结果
     ///
     /// - Parameters:
