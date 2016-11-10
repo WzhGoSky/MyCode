@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HeA-Cf-gdD" id="T8C-zS-JXH">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="409.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="409"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOX-YY-BZz" userLabel="顶部分割视图">
@@ -60,7 +60,7 @@
                         <rect key="frame" x="43" y="51" width="14" height="14"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlq-to-iga" userLabel="正文">
-                        <rect key="frame" x="20" y="70" width="38" height="18"/>
+                        <rect key="frame" x="20" y="70" width="344" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -156,7 +156,7 @@
                     <constraint firstItem="EOX-YY-BZz" firstAttribute="top" secondItem="T8C-zS-JXH" secondAttribute="top" id="Xto-T8-gP0"/>
                     <constraint firstItem="Pin-U5-abd" firstAttribute="leading" secondItem="GXc-4O-psb" secondAttribute="trailing" constant="11" id="Zhz-8U-DWp"/>
                     <constraint firstItem="eRM-Bk-lvb" firstAttribute="centerY" secondItem="Pin-U5-abd" secondAttribute="centerY" id="Zkd-tS-ILA"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dlq-to-iga" secondAttribute="trailing" constant="11" id="aCp-x4-pYi"/>
+                    <constraint firstAttribute="trailing" secondItem="dlq-to-iga" secondAttribute="trailing" constant="11" id="aCp-x4-pYi"/>
                     <constraint firstItem="9LT-5p-gOu" firstAttribute="bottom" secondItem="GXc-4O-psb" secondAttribute="bottom" id="fqo-5F-X9S"/>
                     <constraint firstAttribute="trailing" secondItem="EOX-YY-BZz" secondAttribute="trailing" id="g6M-qM-MQp"/>
                     <constraint firstItem="GXc-4O-psb" firstAttribute="leading" secondItem="T8C-zS-JXH" secondAttribute="leadingMargin" constant="12" id="gTW-ue-98O"/>
@@ -181,7 +181,7 @@
                 <outlet property="toolBar" destination="IfK-iv-Qnc" id="yvD-5o-hJB"/>
                 <outlet property="vipIcon" destination="29d-wT-wjC" id="b3E-Up-M4E"/>
             </connections>
-            <point key="canvasLocation" x="71.5" y="84"/>
+            <point key="canvasLocation" x="-9" y="38"/>
         </tableViewCell>
     </objects>
     <resources>
