@@ -134,11 +134,22 @@ class ZHRefershControl: UIControl {
     ///开始刷新
     func beiginRefershing() {
         
+        guard let sv = scrollView else {
+            
+            return
+        }
         
+        //刷新视图的状态
+        refershView.refershState = .Willrefersh
+        //修改表格的contenInset
+        var inset = sv.contentInset
+        inset.top += ZHRefershOffset
+        sv.contentInset = inset
     }
     
     ///结束刷新
     func endRefershing() {
+        
         
     }
 
