@@ -17,6 +17,9 @@
 		F023564B1DD416BC00E0286B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02356491DD416BC00E0286B /* LaunchScreen.storyboard */; };
 		F02356561DD416BC00E0286B /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02356551DD416BC00E0286B /* ____Tests.swift */; };
 		F02356611DD416BC00E0286B /* ____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02356601DD416BC00E0286B /* ____UITests.swift */; };
+		F0B4F56D1DD567F50069DCAF /* ZHHumanRefershView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B4F56C1DD567F50069DCAF /* ZHHumanRefershView.xib */; };
+		F0B4F56F1DD5781F0069DCAF /* ZHMTRefershView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B4F56E1DD5781F0069DCAF /* ZHMTRefershView.xib */; };
+		F0B4F5711DD579720069DCAF /* ZHMTRefershView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4F5701DD579720069DCAF /* ZHMTRefershView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		F023565C1DD416BC00E0286B /* 刷新控件UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "刷新控件UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02356601DD416BC00E0286B /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
 		F02356621DD416BC00E0286B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0B4F56C1DD567F50069DCAF /* ZHHumanRefershView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHHumanRefershView.xib; sourceTree = "<group>"; };
+		F0B4F56E1DD5781F0069DCAF /* ZHMTRefershView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHMTRefershView.xib; sourceTree = "<group>"; };
+		F0B4F5701DD579720069DCAF /* ZHMTRefershView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHMTRefershView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,9 @@
 				842662A61DD4BC2E0075F9BA /* ZHRefershControl.swift */,
 				842662A71DD4BC2E0075F9BA /* ZHRefershView.swift */,
 				842662A81DD4BC2E0075F9BA /* ZHRefershView.xib */,
+				F0B4F56C1DD567F50069DCAF /* ZHHumanRefershView.xib */,
+				F0B4F56E1DD5781F0069DCAF /* ZHMTRefershView.xib */,
+				F0B4F5701DD579720069DCAF /* ZHMTRefershView.swift */,
 			);
 			name = ZHRefershControl;
 			path = "../../微博/微博/Classes/Tools(工具)/ZHRefershControl";
@@ -253,8 +262,10 @@
 			files = (
 				F023564B1DD416BC00E0286B /* LaunchScreen.storyboard in Resources */,
 				F02356481DD416BC00E0286B /* Assets.xcassets in Resources */,
+				F0B4F56D1DD567F50069DCAF /* ZHHumanRefershView.xib in Resources */,
 				842662AB1DD4BC2E0075F9BA /* ZHRefershView.xib in Resources */,
 				F02356461DD416BC00E0286B /* Main.storyboard in Resources */,
+				F0B4F56F1DD5781F0069DCAF /* ZHMTRefershView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +293,7 @@
 				F02356431DD416BC00E0286B /* ViewController.swift in Sources */,
 				842662A91DD4BC2E0075F9BA /* ZHRefershControl.swift in Sources */,
 				842662AA1DD4BC2E0075F9BA /* ZHRefershView.swift in Sources */,
+				F0B4F5711DD579720069DCAF /* ZHMTRefershView.swift in Sources */,
 				F02356411DD416BC00E0286B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

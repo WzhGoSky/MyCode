@@ -55,6 +55,8 @@
 		F02356731DD41CE100E0286B /* ZHRefershControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02356721DD41CE100E0286B /* ZHRefershControl.swift */; };
 		F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0536C511DCB06950029003C /* WBUserAccount.swift */; };
 		F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07715451DC885E9000059AE /* WBNetworkManager.swift */; };
+		F0B4F5681DD564440069DCAF /* ZHRefershView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4F5661DD564440069DCAF /* ZHRefershView.swift */; };
+		F0B4F5691DD564440069DCAF /* ZHRefershView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B4F5671DD564440069DCAF /* ZHRefershView.xib */; };
 		F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0849A1DC71430005C734D /* WBVistorView.swift */; };
 		F0D92B4F1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */; };
 		F0DC3A351DD010F800FED38F /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC3A341DD010F800FED38F /* WBStatusCell.swift */; };
@@ -153,6 +155,8 @@
 		F02356721DD41CE100E0286B /* ZHRefershControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefershControl.swift; sourceTree = "<group>"; };
 		F0536C511DCB06950029003C /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		F07715451DC885E9000059AE /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
+		F0B4F5661DD564440069DCAF /* ZHRefershView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefershView.swift; sourceTree = "<group>"; };
+		F0B4F5671DD564440069DCAF /* ZHRefershView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRefershView.xib; sourceTree = "<group>"; };
 		F0D0849A1DC71430005C734D /* WBVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVistorView.swift; sourceTree = "<group>"; };
 		F0D92B4E1DC1905A00D4C5CC /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		F0DC3A341DD010F800FED38F /* WBStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
@@ -438,6 +442,8 @@
 		F02356711DD41CD000E0286B /* ZHRefershControl */ = {
 			isa = PBXGroup;
 			children = (
+				F0B4F5661DD564440069DCAF /* ZHRefershView.swift */,
+				F0B4F5671DD564440069DCAF /* ZHRefershView.xib */,
 				F02356721DD41CE100E0286B /* ZHRefershControl.swift */,
 			);
 			path = ZHRefershControl;
@@ -609,6 +615,7 @@
 				842E6D551DD21D8E00522F0F /* WBStatusRetweetedCell的.xib in Resources */,
 				84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */,
 				F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */,
+				F0B4F5691DD564440069DCAF /* ZHRefershView.xib in Resources */,
 				8413889D1DBF9AB200022EB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +691,7 @@
 			files = (
 				F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */,
 				F0DC3A3B1DD026D700FED38F /* WBStatusViewModel.swift in Sources */,
+				F0B4F5681DD564440069DCAF /* ZHRefershView.swift in Sources */,
 				847F63CE1DBFA5940046D981 /* UIColor+CZAddition.m in Sources */,
 				847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */,
 				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,

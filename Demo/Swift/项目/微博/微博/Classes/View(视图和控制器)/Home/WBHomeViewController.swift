@@ -35,7 +35,7 @@ class WBHomeViewController: WBBaseViewController {
             
             print("加载数据结束")
             //结束刷新
-//            self.refershControl?.endRefershing()
+            self.refershControl?.endRefershing()
             self.ispull = false
             
             if shouldRefersh

@@ -88,7 +88,7 @@ class ZHRefershControl: UIControl {
         }
         
         //初始化高度应该就是0  contentInset
-        print("top: \(sv.contentInset.top)  y: \(sv.contentOffset.y)")
+//        print("top: \(sv.contentInset.top)  y: \(sv.contentOffset.y)")
         let height = -(sv.contentInset.top + sv.contentOffset.y)
         
         if height < 0{
@@ -118,14 +118,11 @@ class ZHRefershControl: UIControl {
             if refershView.refershState == .Pulling{
                 
                 print("开始刷新")
-                //刷新结束后，将状态修改为.normal才能继续刷新
-                refershView.refershState = .Willrefersh
+               
+                beiginRefershing()
                 
-                //修改表格的contenInset
-                var inset = sv.contentInset
-                inset.top += ZHRefershOffset
-                sv.contentInset = inset
-                
+                //发送时间刷新事件
+//                sendActions(for: .valueChanged)
             }
             
         }
@@ -139,18 +136,42 @@ class ZHRefershControl: UIControl {
             return
         }
         
+        //判断是否正在刷新如果正在刷新，直接返回
+        if refershView.refershState == .Willrefersh {
+            
+            return
+        }
+        
         //刷新视图的状态
         refershView.refershState = .Willrefersh
         //修改表格的contenInset
         var inset = sv.contentInset
         inset.top += ZHRefershOffset
         sv.contentInset = inset
+        
+        sendActions(for: .valueChanged)
     }
     
     ///结束刷新
     func endRefershing() {
         
-        
+        //恢复刷新视图的状态
+        guard let sv = scrollView else {
+            
+            return
+        }
+
+        //判断状态，是否在刷新，如果不是，直接返回
+        if (refershView.refershState != .Willrefersh)
+        {
+            return
+        }
+        refershView.refershState = .Normal
+        //恢复表格视图的contentInset
+        //修改表格的contenInset
+        var inset = sv.contentInset
+        inset.top -= ZHRefershOffset
+        sv.contentInset = inset
     }
 
 }

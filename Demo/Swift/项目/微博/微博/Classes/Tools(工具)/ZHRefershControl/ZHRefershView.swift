@@ -24,6 +24,11 @@ class ZHRefershView: UIView {
             
             switch refershState {
             case .Normal:
+                
+                //恢复状态
+                tipIcon.isHidden = false
+                indicator.stopAnimating()
+                
                 tipLabel.text = "继续使劲拉"
                 
                 UIView.animate(withDuration: 0.25, animations: {
@@ -60,7 +65,7 @@ class ZHRefershView: UIView {
     
     class func refershView() -> ZHRefershView{
         
-        let nib = UINib(nibName: "ZHRefershView", bundle: nil)
+        let nib = UINib(nibName: "ZHHumanRefershView", bundle: nil)
         
         return nib.instantiate(withOwner: nil, options: nil)[0] as! ZHRefershView
         
