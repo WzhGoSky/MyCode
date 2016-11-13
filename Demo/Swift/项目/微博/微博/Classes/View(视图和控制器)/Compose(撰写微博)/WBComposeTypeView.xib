@@ -53,7 +53,7 @@
                             </view>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-Qs-qd4">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="Wtf-L1-P1G"/>
                                 </constraints>

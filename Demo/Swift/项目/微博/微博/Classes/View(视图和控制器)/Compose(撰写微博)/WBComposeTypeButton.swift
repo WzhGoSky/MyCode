@@ -14,6 +14,9 @@ class WBComposeTypeButton: UIControl {
  
     @IBOutlet weak var titleLabel: UILabel!
     
+    ///点击按钮要展示控制器的类型
+    var claName: String?
+    
     class func composeTypeButton(imageName: String, title: String) -> WBComposeTypeButton {
         
         let nib = UINib(nibName: "WBComposeTypeButton", bundle: nil)

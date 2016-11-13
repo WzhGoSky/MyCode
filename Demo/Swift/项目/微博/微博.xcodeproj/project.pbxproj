@@ -13,6 +13,7 @@
 		840CA8411DD818EE006DBFE3 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */; };
 		840CA8431DD86509006DBFE3 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */; };
 		840CA8451DD8651A006DBFE3 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */; };
+		840CA8471DD8B237006DBFE3 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */; };
 		8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */; };
 		8410C7C91DBFA1AF00511D72 /* WBNaviagtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */; };
 		8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */; };
@@ -99,6 +100,7 @@
 		840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
 		840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
 		840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
+		840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
 		8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTabbarController.swift; sourceTree = "<group>"; };
 		8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNaviagtionController.swift; sourceTree = "<group>"; };
 		8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */,
+				840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */,
 				8410C7C21DBFA15400511D72 /* Main(主要的) */,
 				8410C7C01DBFA15400511D72 /* Discover */,
 				8410C7C11DBFA15400511D72 /* Home */,
@@ -729,6 +732,7 @@
 				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,
 				F015CCCF1DD15AC50085A48A /* WBStatusPicture.swift in Sources */,
 				8410C7CD1DBFA34800511D72 /* WBDiscoverViewController.swift in Sources */,
+				840CA8471DD8B237006DBFE3 /* WBComposeViewController.swift in Sources */,
 				F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */,
 				F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */,
 				844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */,

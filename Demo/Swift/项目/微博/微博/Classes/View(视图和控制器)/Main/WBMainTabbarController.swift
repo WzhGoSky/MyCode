@@ -87,8 +87,25 @@ class WBMainTabbarController: UITabBarController {
         //实例化视图
         let v = WBComposeTypeView.composeTypeView()
         
-        //显示视图
-        v.show()
+        //显示视图- 注意闭包的循环引用
+        v.show { [weak v] (clsName) in
+            
+            //展现撰写微博控制器
+            guard let clsName = clsName,let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type else{
+                
+                v?.removeFromSuperview()
+                 
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true, completion: {
+                
+                v?.removeFromSuperview()
+            })
+        }
         
     }
 
