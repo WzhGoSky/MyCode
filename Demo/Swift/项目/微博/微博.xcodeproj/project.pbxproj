@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840CA83B1DD808EE006DBFE3 /* ZHMTRefershView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8391DD808EE006DBFE3 /* ZHMTRefershView.swift */; };
+		840CA83C1DD808EE006DBFE3 /* ZHMTRefershView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA83A1DD808EE006DBFE3 /* ZHMTRefershView.xib */; };
+		840CA83F1DD814EE006DBFE3 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */; };
+		840CA8411DD818EE006DBFE3 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */; };
+		840CA8431DD86509006DBFE3 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */; };
+		840CA8451DD8651A006DBFE3 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */; };
 		8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */; };
 		8410C7C91DBFA1AF00511D72 /* WBNaviagtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */; };
 		8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */; };
@@ -87,6 +93,12 @@
 		51D7BE4794C21032D9085516 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6859906B124F4E928813BD98 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		745F11BC3578EC0EF409FDEF /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		840CA8391DD808EE006DBFE3 /* ZHMTRefershView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHMTRefershView.swift; sourceTree = "<group>"; };
+		840CA83A1DD808EE006DBFE3 /* ZHMTRefershView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHMTRefershView.xib; sourceTree = "<group>"; };
+		840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
+		840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
+		840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
+		840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTabbarController.swift; sourceTree = "<group>"; };
 		8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNaviagtionController.swift; sourceTree = "<group>"; };
 		8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +222,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */ = {
+			isa = PBXGroup;
+			children = (
+				840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */,
+				840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */,
+				840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */,
+				840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */,
+			);
+			path = "Compose(撰写微博)";
+			sourceTree = "<group>";
+		};
 		8410C7BC1DBFA15400511D72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +269,7 @@
 		8410C7BF1DBFA15400511D72 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */,
 				8410C7C21DBFA15400511D72 /* Main(主要的) */,
 				8410C7C01DBFA15400511D72 /* Discover */,
 				8410C7C11DBFA15400511D72 /* Home */,
@@ -442,6 +466,8 @@
 		F02356711DD41CD000E0286B /* ZHRefershControl */ = {
 			isa = PBXGroup;
 			children = (
+				840CA8391DD808EE006DBFE3 /* ZHMTRefershView.swift */,
+				840CA83A1DD808EE006DBFE3 /* ZHMTRefershView.xib */,
 				F0B4F5661DD564440069DCAF /* ZHRefershView.swift */,
 				F0B4F5671DD564440069DCAF /* ZHRefershView.xib */,
 				F02356721DD41CE100E0286B /* ZHRefershControl.swift */,
@@ -569,7 +595,7 @@
 				TargetAttributes = {
 					841388911DBF9AB200022EB6 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3BBQ69D5B7;
+						DevelopmentTeam = 7UK5342358;
 						ProvisioningStyle = Automatic;
 					};
 					841388A51DBF9AB300022EB6 = {
@@ -612,11 +638,14 @@
 				844937701DC7608B00893737 /* main.json in Resources */,
 				F0DC3A371DD0110B00FED38F /* WBNormalStatusCell.xib in Resources */,
 				841388A01DBF9AB200022EB6 /* LaunchScreen.storyboard in Resources */,
+				840CA8451DD8651A006DBFE3 /* WBComposeTypeButton.xib in Resources */,
 				842E6D551DD21D8E00522F0F /* WBStatusRetweetedCell的.xib in Resources */,
 				84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */,
 				F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */,
+				840CA8411DD818EE006DBFE3 /* WBComposeTypeView.xib in Resources */,
 				F0B4F5691DD564440069DCAF /* ZHRefershView.xib in Resources */,
 				8413889D1DBF9AB200022EB6 /* Assets.xcassets in Resources */,
+				840CA83C1DD808EE006DBFE3 /* ZHMTRefershView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,10 +719,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */,
+				840CA8431DD86509006DBFE3 /* WBComposeTypeButton.swift in Sources */,
 				F0DC3A3B1DD026D700FED38F /* WBStatusViewModel.swift in Sources */,
 				F0B4F5681DD564440069DCAF /* ZHRefershView.swift in Sources */,
+				840CA83B1DD808EE006DBFE3 /* ZHMTRefershView.swift in Sources */,
 				847F63CE1DBFA5940046D981 /* UIColor+CZAddition.m in Sources */,
 				847F63D71DBFA9C40046D981 /* Bundle+Extension.swift in Sources */,
+				840CA83F1DD814EE006DBFE3 /* WBComposeTypeView.swift in Sources */,
 				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,
 				F015CCCF1DD15AC50085A48A /* WBStatusPicture.swift in Sources */,
 				8410C7CD1DBFA34800511D72 /* WBDiscoverViewController.swift in Sources */,
@@ -881,7 +913,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 3BBQ69D5B7;
+				DEVELOPMENT_TEAM = 7UK5342358;
 				INFOPLIST_FILE = "微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -899,7 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 3BBQ69D5B7;
+				DEVELOPMENT_TEAM = 7UK5342358;
 				INFOPLIST_FILE = "微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

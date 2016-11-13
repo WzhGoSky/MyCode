@@ -82,7 +82,14 @@ class WBMainTabbarController: UITabBarController {
     
     @objc fileprivate func composeStatus(){
         
-        print("撰写微博")
+        //FIXME0.判断是否登录
+        
+        //实例化视图
+        let v = WBComposeTypeView.composeTypeView()
+        
+        //显示视图
+        v.show()
+        
     }
 
 }

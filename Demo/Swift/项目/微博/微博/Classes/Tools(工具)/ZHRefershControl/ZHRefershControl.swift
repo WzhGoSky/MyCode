@@ -9,7 +9,7 @@
 import UIKit
 
 ///刷新临界点
-private let ZHRefershOffset: CGFloat = 60
+private let ZHRefershOffset: CGFloat = 126
 
 /// 刷新状态
 ///
@@ -28,7 +28,7 @@ class ZHRefershControl: UIControl {
     // MARK - 属性
     fileprivate weak var scrollView: UIScrollView?
     
-    fileprivate lazy var refershView: ZHRefershView = ZHRefershView.refershView()
+    fileprivate lazy var refershView: ZHMTRefershView = ZHMTRefershView.refershView()
     
     ///构造函数
     init(){
@@ -79,9 +79,6 @@ class ZHRefershControl: UIControl {
     //所有KVO方法都会调用此方法
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        
-        print(scrollView?.contentOffset ?? CGPoint())
-        
         guard let sv = scrollView else {
             
             return
@@ -98,6 +95,8 @@ class ZHRefershControl: UIControl {
         
         //可以根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
+        
+        refershView.parentViewHeight = height
         
         //判断临界点
         if sv.isDragging{
@@ -148,6 +147,8 @@ class ZHRefershControl: UIControl {
         var inset = sv.contentInset
         inset.top += ZHRefershOffset
         sv.contentInset = inset
+        
+        refershView.parentViewHeight = ZHRefershOffset
         
         sendActions(for: .valueChanged)
     }

@@ -31,9 +31,10 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData(){
     
+        refershControl?.beiginRefershing()
+        
         listViewModel.loadStatus(pullup: self.ispull) { (isSuccess, shouldRefersh) in
             
-            print("加载数据结束")
             //结束刷新
             self.refershControl?.endRefershing()
             self.ispull = false
