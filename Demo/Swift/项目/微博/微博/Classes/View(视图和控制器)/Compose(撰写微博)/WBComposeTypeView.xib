@@ -27,22 +27,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HU8-he-lP6">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB9-rs-mJ6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB9-rs-mJ6" userLabel="关闭按钮">
                                         <rect key="frame" x="175" y="9.5" width="25" height="25"/>
                                         <state key="normal" image="tabbar_compose_background_icon_close"/>
                                         <connections>
                                             <action selector="hidden:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gbg-vC-Szr"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu9-8j-zIh" userLabel="返回按钮">
+                                        <rect key="frame" x="175" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="clickReturn:" destination="iN0-l3-epB" eventType="touchUpInside" id="2L8-8Q-Drm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Uu9-8j-zIh" firstAttribute="centerX" secondItem="HU8-he-lP6" secondAttribute="centerX" id="9dz-44-adO"/>
                                     <constraint firstAttribute="height" constant="44" id="LtP-6c-mTa"/>
                                     <constraint firstItem="jB9-rs-mJ6" firstAttribute="centerX" secondItem="HU8-he-lP6" secondAttribute="centerX" id="df1-SW-5vi"/>
                                     <constraint firstItem="jB9-rs-mJ6" firstAttribute="centerY" secondItem="HU8-he-lP6" secondAttribute="centerY" id="rGI-lM-hae"/>
+                                    <constraint firstItem="Uu9-8j-zIh" firstAttribute="centerY" secondItem="HU8-he-lP6" secondAttribute="centerY" id="w6K-8P-9jN"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-Qs-qd4">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-Qs-qd4">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -74,6 +83,9 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="closeButtonCenterXCons" destination="df1-SW-5vi" id="YBc-5M-2vS"/>
+                <outlet property="returnButton" destination="Uu9-8j-zIh" id="hik-V8-eL8"/>
+                <outlet property="returnButtonCenterXCons" destination="9dz-44-adO" id="n1q-xS-rj8"/>
                 <outlet property="scrollView" destination="uyL-Qs-qd4" id="Rm5-2d-FbH"/>
             </connections>
             <point key="canvasLocation" x="-63" y="-8"/>
@@ -82,5 +94,6 @@
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
     </resources>
 </document>
