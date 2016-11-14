@@ -85,7 +85,7 @@ class ZHRefershControl: UIControl {
         }
         
         //初始化高度应该就是0  contentInset
-//        print("top: \(sv.contentInset.top)  y: \(sv.contentOffset.y)")
+//      print("top: \(sv.contentInset.top)  y: \(sv.contentOffset.y)")
         let height = -(sv.contentInset.top + sv.contentOffset.y)
         
         if height < 0{
@@ -96,7 +96,10 @@ class ZHRefershControl: UIControl {
         //可以根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
         
-        refershView.parentViewHeight = height
+        //如果正在刷新中不传递高度
+        if refershView.refershState != .Willrefersh {
+             refershView.parentViewHeight = height
+        }
         
         //判断临界点
         if sv.isDragging{

@@ -27,6 +27,7 @@ class ZHMTRefershView: UIView {
         
         didSet{
             
+            
             //44 - 126
             if parentViewHeight < 44 {
                 

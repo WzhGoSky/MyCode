@@ -50,11 +50,13 @@ class WBTitleButton: UIButton {
             return;
         }
         
-        print("调整按钮")
-        //将label 的x 向左移动 imageview的宽度
-        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
         
+        //将label 的x 向左移动 imageview的宽度
+        //OC中不允许直接修改结构体内部的值，Swift中可以直接修改
+//        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
+        titleLabel.frame.origin.x = 0
         //将imageview的x 向右移label的宽度
-        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width, dy: 0)
+//        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width, dy: 0)
+        imageView.frame.origin.x = titleLabel.bounds.width
     }
 }
