@@ -1,0 +1,8 @@
+
+
+target 'Emoticon' do
+
+  use_frameworks!
+
+pod 'YYModel'
+end
