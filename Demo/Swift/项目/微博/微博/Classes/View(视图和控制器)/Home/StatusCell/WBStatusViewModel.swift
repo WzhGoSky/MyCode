@@ -42,6 +42,11 @@ class WBStatusViewModel: CustomStringConvertible {
     //点赞文字
     var likeStr: String?
     
+    //来源字符串
+    var linkStr: String?
+    
+    var sourceStr: String?
+    
     ///配图视图大小
     var pictureViewSize = CGSize()
     
@@ -95,6 +100,10 @@ class WBStatusViewModel: CustomStringConvertible {
         //设置被转发文字的文字
         retweetedText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ";" + (status.retweeted_status?.text ?? "")
         
+        
+        //设置来源字符串
+        sourceStr = "来自"+(model.source?.zh_href()?.text ?? "")
+        
         //计算行高
         updateRowHeight()
     }
@@ -103,7 +112,6 @@ class WBStatusViewModel: CustomStringConvertible {
     func updateRowHeight() {
         
         //原创微博
-        
         let margin: CGFloat = 12
         let iconHeight: CGFloat = 34
         let toolbarHeight: CGFloat = 35
