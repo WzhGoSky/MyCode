@@ -49,6 +49,7 @@
 		84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */; };
 		84E477EC1DD0B3C700B6A046 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */; };
 		84E477F01DD0C0AD00B6A046 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */; };
+		84FC3CD11DDB32D500130207 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FC3CD01DDB32D400130207 /* WBComposeViewController.xib */; };
 		9BE20936284936540C01A23D /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D7BE4794C21032D9085516 /* Pods___.framework */; };
 		F015CCCF1DD15AC50085A48A /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015CCCE1DD15AC50085A48A /* WBStatusPicture.swift */; };
 		F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32541DCC697E000B41D5 /* WBTitleButton.swift */; };
@@ -157,6 +158,7 @@
 		84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
+		84FC3CD01DDB32D400130207 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
 		C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
 		F015CCCE1DD15AC50085A48A /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatusPicture.swift; path = "微博/Classes/View(视图和控制器)/Home/WBStatusPicture.swift"; sourceTree = SOURCE_ROOT; };
 		F01C32541DCC697E000B41D5 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */,
 				840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */,
+				84FC3CD01DDB32D400130207 /* WBComposeViewController.xib */,
 				8410C7C21DBFA15400511D72 /* Main(主要的) */,
 				8410C7C01DBFA15400511D72 /* Discover */,
 				8410C7C11DBFA15400511D72 /* Home */,
@@ -647,6 +650,7 @@
 				840CA8451DD8651A006DBFE3 /* WBComposeTypeButton.xib in Resources */,
 				842E6D551DD21D8E00522F0F /* WBStatusRetweetedCell的.xib in Resources */,
 				84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */,
+				84FC3CD11DDB32D500130207 /* WBComposeViewController.xib in Resources */,
 				F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */,
 				840CA8411DD818EE006DBFE3 /* WBComposeTypeView.xib in Resources */,
 				F0B4F5691DD564440069DCAF /* ZHRefershView.xib in Resources */,

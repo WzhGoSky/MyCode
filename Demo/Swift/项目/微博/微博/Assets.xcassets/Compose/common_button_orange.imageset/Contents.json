@@ -9,11 +9,11 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "tile",
-          "width" : 1
+          "width" : 2
         },
         "cap-insets" : {
           "right" : 11,
-          "left" : 10
+          "left" : 9
         }
       },
       "idiom" : "universal",
@@ -28,5 +28,8 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "compression-type" : "lossless"
   }
 }
