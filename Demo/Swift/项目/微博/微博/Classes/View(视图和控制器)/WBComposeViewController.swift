@@ -78,6 +78,13 @@ class WBComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    ///切换表情键盘
+    @objc fileprivate func emoticonKeyboard(){
+        
+         //textView.inputView 就是文本框的输入视图
+        //如果使用系统默认的键盘，输入视图为nil
+        
+    }
     
     @IBAction func sendStatus() {
         
@@ -155,6 +162,13 @@ fileprivate extension WBComposeViewController{
             items.append(UIBarButtonItem(customView: btn))
             
             btn.sizeToFit()
+            
+            //判断actionname
+            if let actionName = s["actionName"] {
+                
+                //给按钮添加监听方法
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
             
             //追加弹簧
             items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
