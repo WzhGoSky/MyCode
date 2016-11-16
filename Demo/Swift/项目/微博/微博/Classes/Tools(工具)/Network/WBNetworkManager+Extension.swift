@@ -130,20 +130,44 @@ extension WBNetworkManager{
 //MARK: - 发布微博接口
 extension WBNetworkManager{
     
-    func postStatus(text: String, completion: @escaping (_ result: [String: Any]?, _ isSuccess: Bool)->()) -> () {
+    /// 发布微博
+    ///
+    /// - Parameters:
+    ///   - text: 要发布的文本
+    ///   - image: 要上传的图像，可以为nil
+    ///   - completion: 完成回调
+    func postStatus(text: String, image: UIImage?,completion: @escaping (_ result: [String: Any]?, _ isSuccess: Bool)->()) -> () {
         
         //1.url 
-        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        let urlString: String
         
+        if image == nil{
+            
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        }else{
+            
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        }
+    
         //2.参数字典
         let params = ["status" : text]
         
-        //3.发起网络请求
-        tokenRequest(method: .POST, urlString: urlString, params: params as [String : AnyObject]?){ (json, isSuccess) in
+        //3如果图像不为空 需要设置name 和 data
+        var name: String?
+        var data: Data?
+        
+        if image != nil {
+            
+            name = "pic"
+            data = UIImagePNGRepresentation(image!)
+        }
+        
+        //4.发起网络请求
+        tokenRequest(method: .POST, urlString: urlString, params: params as [String : AnyObject]?, name: name, data: data){ (json, isSuccess) in
             
             completion(json as! [String : Any]? , isSuccess)
         }
-        
+
         
     }
 }
