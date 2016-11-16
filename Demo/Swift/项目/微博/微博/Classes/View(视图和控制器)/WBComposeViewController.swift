@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 ///撰写微博控制器
 /**
@@ -24,10 +25,52 @@ class WBComposeViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     @IBOutlet weak var toolBar: UIToolbar!
+    
+    ///工具栏底部约束
+    @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpUI()
+        
+        //监听键盘通知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardChanged), name:NSNotification.Name.UIKeyboardWillChangeFrame , object: nil)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        
+        textView.resignFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textView.becomeFirstResponder()
+    }
+    
+    @objc func keyBoardChanged(n: Notification){
+        
+        //1. 目标rect
+       guard let rect = (n.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,let duration = (n.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else{
+            
+            return
+        }
+        
+        //2. 设置底部约束的高度
+        let offset = view.bounds.height - rect.origin.y
+        
+        //3.更新底部约束
+        toolBarBottomCons.constant = offset
+        
+        //4.动画更新
+        UIView.animate(withDuration: duration){
+            
+            self.view.layoutIfNeeded()
+        }
     }
     
     @objc fileprivate func close(){
@@ -38,7 +81,34 @@ class WBComposeViewController: UIViewController {
     
     @IBAction func sendStatus() {
         
-        print("发布微博")
+        //1.获取微博文字
+        guard let text = textView.text else{
+            
+            return
+        }
+        
+        //2.发布微博
+        WBNetworkManager.shared.postStatus(text: text){ (result, isSuccess) in
+            
+            //修改样式
+            SVProgressHUD.setDefaultStyle(.dark)
+            
+            let message = isSuccess ? "发布成功":"网络不给力"
+            
+            SVProgressHUD.showInfo(withStatus: message)
+            
+            //如果成功，延迟一段时间关闭窗口
+            if isSuccess{
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                    
+                    //恢复样式
+                    SVProgressHUD.setDefaultStyle(.light)
+                    
+                    self.close()
+                })
+            }
+        }
     }
     
 }
@@ -102,6 +172,14 @@ fileprivate extension WBComposeViewController{
         
         navigationItem.titleView = titleLabel
         
-//        sendButton.isEnabled = false
+    }
+}
+
+extension WBComposeViewController: UITextViewDelegate{
+    
+    ///文本视图文字变化
+    func textViewDidChange(_ textView: UITextView) {
+        
+        sendButton.isEnabled = textView.hasText
     }
 }

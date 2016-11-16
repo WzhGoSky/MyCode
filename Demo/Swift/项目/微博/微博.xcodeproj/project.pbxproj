@@ -57,6 +57,7 @@
 		F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */; };
 		F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */; };
 		F02356731DD41CE100E0286B /* ZHRefershControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02356721DD41CE100E0286B /* ZHRefershControl.swift */; };
+		F0498B6B1DDC3AF10028801A /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0498B6A1DDC3AF10028801A /* WBComposeTextView.swift */; };
 		F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0536C511DCB06950029003C /* WBUserAccount.swift */; };
 		F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07715451DC885E9000059AE /* WBNetworkManager.swift */; };
 		F09A86671DD956C400C1C7D4 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86611DD956C400C1C7D4 /* Bundle+Extension.swift */; };
@@ -166,6 +167,7 @@
 		F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		F02356721DD41CE100E0286B /* ZHRefershControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefershControl.swift; sourceTree = "<group>"; };
+		F0498B6A1DDC3AF10028801A /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
 		F0536C511DCB06950029003C /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		F07715451DC885E9000059AE /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		F09A86611DD956C400C1C7D4 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */ = {
 			isa = PBXGroup;
 			children = (
+				F0498B691DDC3AD70028801A /* view */,
 				840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */,
 				840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */,
 				840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */,
@@ -469,6 +472,14 @@
 				F02356721DD41CE100E0286B /* ZHRefershControl.swift */,
 			);
 			path = ZHRefershControl;
+			sourceTree = "<group>";
+		};
+		F0498B691DDC3AD70028801A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F0498B6A1DDC3AF10028801A /* WBComposeTextView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		F0536C501DCB067E0029003C /* Model */ = {
@@ -755,6 +766,7 @@
 				F0DC3A391DD01EAD00FED38F /* WBUser.swift in Sources */,
 				841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */,
 				8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */,
+				F0498B6B1DDC3AF10028801A /* WBComposeTextView.swift in Sources */,
 				8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */,
 				F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */,
 				84469D261DCA2BA10028A69C /* WBOAuthController.swift in Sources */,

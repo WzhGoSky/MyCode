@@ -11,6 +11,10 @@ import AFNetworking
 
 //Swift 的枚举支持任意数据类型
 //switch、 enum 在OC中只支持整数
+/**
+    405错误，不支持的网络请求方法
+ 
+ */
 enum WBHttpMethod {
     
     case GET
