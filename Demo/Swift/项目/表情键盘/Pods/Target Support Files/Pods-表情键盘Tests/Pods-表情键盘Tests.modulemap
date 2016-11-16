@@ -1,0 +1,6 @@
+framework module Pods_____Tests {
+  umbrella header "Pods-表情键盘Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

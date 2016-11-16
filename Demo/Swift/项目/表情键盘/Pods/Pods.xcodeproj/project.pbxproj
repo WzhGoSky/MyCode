@@ -1,0 +1,839 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018C07BF86651DFA304EABB213843035 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D78C0160095C530B083E5C9636058 /* Foundation.framework */; };
+		1133F2CAB15652DDAA9828956552CBF8 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C7A1073637327C2D52CCD3BEDBFE4 /* NSObject+YYModel.m */; };
+		20BC7DC45EC3240E5246FB261027A7E9 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EEB1BF0CC695DE3CFBFD144B740510 /* YYClassInfo.m */; };
+		3477AC92A3435AF539DCDF7512D714CA /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B7D46F03FE96EAC5592C287E14BE8AB2 /* NSObject+YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD16B5F724712F653033870D7964B8B /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5967A2C13205CF40B171004E24C1443B /* YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4459A3E2C40C14D8BA5F15A06D6C7055 /* Pods-表情键盘Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB7C59AF76FA3111B304013B362D2BF /* Pods-表情键盘Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FEFF1D7FCB730375442D60722DD4595 /* Pods-表情键盘-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B115D4B204AFEAA3163BAC140FC9C78B /* Pods-表情键盘-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B7E7A83E290784F09C9186777D9CEA8 /* YYModel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB8BFDD6C7FA43A5F3A40E0E838FA9A /* YYModel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7055F74D5DD8177CA6162CD06308A1B3 /* Pods-表情键盘UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B23C3ADD589E2649BB31E3EF0B9338 /* Pods-表情键盘UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75407030044D13F9DEAFBA3C2C28E3CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D78C0160095C530B083E5C9636058 /* Foundation.framework */; };
+		974B69CF7850AF30FDAFFDFC30AA2BC1 /* Pods-表情键盘UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80762213CEA26A06FA9669E29D8A33FF /* Pods-表情键盘UITests-dummy.m */; };
+		ACA4AB593CF8778BB2D3E25CDD56AE66 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 805AB6FB2D3B85037CCBBB0ED0327065 /* YYClassInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF287106B909FD29E609FEFEE6474E20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D78C0160095C530B083E5C9636058 /* Foundation.framework */; };
+		C240205B6CA30A20D15DC6FE723CF5A6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3648E5087CA8718F5E0C23C3726D9EC /* CoreFoundation.framework */; };
+		D4F642FE30B0C76DBC3F9B40DA1FA003 /* Pods-表情键盘Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C1D99836ED7699E2A3C12162BFDD /* Pods-表情键盘Tests-dummy.m */; };
+		EF18E2DA19467DBD8EBF29417DE40FBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578D78C0160095C530B083E5C9636058 /* Foundation.framework */; };
+		EF3B6AAEE4C47674CC693B4A1F4BFD11 /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C0682D46679BA668693995C21D19D6 /* YYModel-dummy.m */; };
+		F2F9F835A02D2AA193666BF268DC8195 /* Pods-表情键盘-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E96681367A00E9F343C865DBBB1BBD3 /* Pods-表情键盘-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23BA4AC5A3317B682FDBA6013E3EE429 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5B51A07C3B00098EBEF196C3523E51A;
+			remoteInfo = YYModel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B6206B71A39167B5C517EF4C77B299E /* YYModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YYModel.modulemap; sourceTree = "<group>"; };
+		1E96681367A00E9F343C865DBBB1BBD3 /* Pods-表情键盘-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-表情键盘-dummy.m"; sourceTree = "<group>"; };
+		250BD9D857753DA3DDDBCD663291DAE6 /* YYModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C0682D46679BA668693995C21D19D6 /* YYModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYModel-dummy.m"; sourceTree = "<group>"; };
+		3D63065B9359B06152452F89F9AFD8C4 /* Pods-表情键盘Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-表情键盘Tests-frameworks.sh"; sourceTree = "<group>"; };
+		3DB7C59AF76FA3111B304013B362D2BF /* Pods-表情键盘Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-表情键盘Tests-umbrella.h"; sourceTree = "<group>"; };
+		3DCA3D0A4560F4C122006EC2D2E82D30 /* Pods-表情键盘UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-表情键盘UITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4458ED281B42D810E9A7D1D0B9367F97 /* Pods-表情键盘Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-表情键盘Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		48A7C1D99836ED7699E2A3C12162BFDD /* Pods-表情键盘Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-表情键盘Tests-dummy.m"; sourceTree = "<group>"; };
+		52EEB1BF0CC695DE3CFBFD144B740510 /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
+		578D78C0160095C530B083E5C9636058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5967A2C13205CF40B171004E24C1443B /* YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYModel.h; path = YYModel/YYModel.h; sourceTree = "<group>"; };
+		6359161B26B533DB25D60C26ED988EAA /* Pods-表情键盘-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-表情键盘-acknowledgements.plist"; sourceTree = "<group>"; };
+		697E2A162C8E5E257346F4ACEE4736DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73603CAED9CF7DD388954E323B103B35 /* Pods_____Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		805AB6FB2D3B85037CCBBB0ED0327065 /* YYClassInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYClassInfo.h; path = YYModel/YYClassInfo.h; sourceTree = "<group>"; };
+		80762213CEA26A06FA9669E29D8A33FF /* Pods-表情键盘UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-表情键盘UITests-dummy.m"; sourceTree = "<group>"; };
+		814060AB94E38B0E04CF64E4C182BC75 /* Pods-表情键盘Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-表情键盘Tests.modulemap"; sourceTree = "<group>"; };
+		84FF3825F1F2E6D3BA6D499D6D3BCE01 /* Pods-表情键盘UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-表情键盘UITests.modulemap"; sourceTree = "<group>"; };
+		8998AF72AEB8FD6813B0ACA2C935EEBF /* Pods-表情键盘-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-表情键盘-frameworks.sh"; sourceTree = "<group>"; };
+		8B7BEF8AA36332C0FAC670501C7855BB /* Pods-表情键盘UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-表情键盘UITests.release.xcconfig"; sourceTree = "<group>"; };
+		9283BB2EF2E3C887954C0C274E0DB23A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9329F5918C6DC2B855EAF873F02F3ECF /* Pods-表情键盘UITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-表情键盘UITests-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		965C7A1073637327C2D52CCD3BEDBFE4 /* NSObject+YYModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYModel.m"; path = "YYModel/NSObject+YYModel.m"; sourceTree = "<group>"; };
+		98A29414D6504D3F0D859EE0E01EEB55 /* Pods_____UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EB8BFDD6C7FA43A5F3A40E0E838FA9A /* YYModel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-umbrella.h"; sourceTree = "<group>"; };
+		9F0AC8F76DBA0D5FD5F624A5FFF848AF /* Pods-表情键盘.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-表情键盘.modulemap"; sourceTree = "<group>"; };
+		A6244A6BEBEB330EC9269217F6689FF8 /* Pods-表情键盘.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-表情键盘.debug.xcconfig"; sourceTree = "<group>"; };
+		A75DEA68D1DA23F2EAA66ADC48036456 /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE86F2D0E347AE4C2B6FE45F7494C827 /* Pods-表情键盘Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-表情键盘Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B115D4B204AFEAA3163BAC140FC9C78B /* Pods-表情键盘-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-表情键盘-umbrella.h"; sourceTree = "<group>"; };
+		B7D46F03FE96EAC5592C287E14BE8AB2 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
+		B9843869ADED163F30C910CA48F3B0D3 /* Pods-表情键盘Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-表情键盘Tests-resources.sh"; sourceTree = "<group>"; };
+		B9B23C3ADD589E2649BB31E3EF0B9338 /* Pods-表情键盘UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-表情键盘UITests-umbrella.h"; sourceTree = "<group>"; };
+		BE7474E3CF872421243189B5213D8E55 /* Pods-表情键盘Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-表情键盘Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C0E7093DA4D44ECC69B477C470BB46E2 /* Pods-表情键盘-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-表情键盘-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C3C7EDE62C882DD4D17C9B00BAA0A454 /* YYModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.xcconfig; sourceTree = "<group>"; };
+		C4373F21196AF181616E48C9BDF5296A /* Pods-表情键盘-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-表情键盘-resources.sh"; sourceTree = "<group>"; };
+		C4FBF8ABB35FFF5346D1ABCBFE35677B /* Pods-表情键盘Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-表情键盘Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C59C117FB60912D83D1069D5BE3D31FB /* Pods-表情键盘.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-表情键盘.release.xcconfig"; sourceTree = "<group>"; };
+		C6E2CC693BA9D7FA298976E4A38CBE68 /* Pods-表情键盘UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-表情键盘UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CF6C7A5222AE106F8102CA049B99C0CE /* Pods-表情键盘UITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-表情键盘UITests-resources.sh"; sourceTree = "<group>"; };
+		DF8ADDAA8C0AA872C7C98154D5333488 /* Pods-表情键盘UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-表情键盘UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E017EDC1FFAF720060C16F9F6678643C /* YYModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-prefix.pch"; sourceTree = "<group>"; };
+		E3648E5087CA8718F5E0C23C3726D9EC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		E48CAEB110CD84526EE78B731A9DD8EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F613DF08298A7EE24DA8B33580F70C17 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08AE0C56C8F0F592212496C0D109FDA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018C07BF86651DFA304EABB213843035 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621C49B52A70F62DF8399E21D1B03322 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF18E2DA19467DBD8EBF29417DE40FBA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B73B6553F1303AD4F1653D152E4B78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C240205B6CA30A20D15DC6FE723CF5A6 /* CoreFoundation.framework in Frameworks */,
+				75407030044D13F9DEAFBA3C2C28E3CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BCC8E40059DF19651E2FEA29BE2DDF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF287106B909FD29E609FEFEE6474E20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09380EA71E3EBD81A87882157DB36C71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EADFB64E1E3B0D228C305C49EE28D12 /* YYModel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0EADFB64E1E3B0D228C305C49EE28D12 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				B7D46F03FE96EAC5592C287E14BE8AB2 /* NSObject+YYModel.h */,
+				965C7A1073637327C2D52CCD3BEDBFE4 /* NSObject+YYModel.m */,
+				805AB6FB2D3B85037CCBBB0ED0327065 /* YYClassInfo.h */,
+				52EEB1BF0CC695DE3CFBFD144B740510 /* YYClassInfo.m */,
+				5967A2C13205CF40B171004E24C1443B /* YYModel.h */,
+				6CBFD2F103FFE1F250918CCE24B686CA /* Support Files */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0FCCBC75AC6D7490A558A097D6946DE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		501D06631C6921BE9A569EEEF14F1458 /* Pods-表情键盘 */ = {
+			isa = PBXGroup;
+			children = (
+				697E2A162C8E5E257346F4ACEE4736DD /* Info.plist */,
+				9F0AC8F76DBA0D5FD5F624A5FFF848AF /* Pods-表情键盘.modulemap */,
+				C0E7093DA4D44ECC69B477C470BB46E2 /* Pods-表情键盘-acknowledgements.markdown */,
+				6359161B26B533DB25D60C26ED988EAA /* Pods-表情键盘-acknowledgements.plist */,
+				1E96681367A00E9F343C865DBBB1BBD3 /* Pods-表情键盘-dummy.m */,
+				8998AF72AEB8FD6813B0ACA2C935EEBF /* Pods-表情键盘-frameworks.sh */,
+				C4373F21196AF181616E48C9BDF5296A /* Pods-表情键盘-resources.sh */,
+				B115D4B204AFEAA3163BAC140FC9C78B /* Pods-表情键盘-umbrella.h */,
+				A6244A6BEBEB330EC9269217F6689FF8 /* Pods-表情键盘.debug.xcconfig */,
+				C59C117FB60912D83D1069D5BE3D31FB /* Pods-表情键盘.release.xcconfig */,
+			);
+			name = "Pods-表情键盘";
+			path = "Target Support Files/Pods-表情键盘";
+			sourceTree = "<group>";
+		};
+		6ADCF3E20685F1D0CBF94B2991D71C72 /* Pods-表情键盘UITests */ = {
+			isa = PBXGroup;
+			children = (
+				9283BB2EF2E3C887954C0C274E0DB23A /* Info.plist */,
+				84FF3825F1F2E6D3BA6D499D6D3BCE01 /* Pods-表情键盘UITests.modulemap */,
+				C6E2CC693BA9D7FA298976E4A38CBE68 /* Pods-表情键盘UITests-acknowledgements.markdown */,
+				3DCA3D0A4560F4C122006EC2D2E82D30 /* Pods-表情键盘UITests-acknowledgements.plist */,
+				80762213CEA26A06FA9669E29D8A33FF /* Pods-表情键盘UITests-dummy.m */,
+				9329F5918C6DC2B855EAF873F02F3ECF /* Pods-表情键盘UITests-frameworks.sh */,
+				CF6C7A5222AE106F8102CA049B99C0CE /* Pods-表情键盘UITests-resources.sh */,
+				B9B23C3ADD589E2649BB31E3EF0B9338 /* Pods-表情键盘UITests-umbrella.h */,
+				DF8ADDAA8C0AA872C7C98154D5333488 /* Pods-表情键盘UITests.debug.xcconfig */,
+				8B7BEF8AA36332C0FAC670501C7855BB /* Pods-表情键盘UITests.release.xcconfig */,
+			);
+			name = "Pods-表情键盘UITests";
+			path = "Target Support Files/Pods-表情键盘UITests";
+			sourceTree = "<group>";
+		};
+		6CBFD2F103FFE1F250918CCE24B686CA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F613DF08298A7EE24DA8B33580F70C17 /* Info.plist */,
+				1B6206B71A39167B5C517EF4C77B299E /* YYModel.modulemap */,
+				C3C7EDE62C882DD4D17C9B00BAA0A454 /* YYModel.xcconfig */,
+				32C0682D46679BA668693995C21D19D6 /* YYModel-dummy.m */,
+				E017EDC1FFAF720060C16F9F6678643C /* YYModel-prefix.pch */,
+				9EB8BFDD6C7FA43A5F3A40E0E838FA9A /* YYModel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YYModel";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				09380EA71E3EBD81A87882157DB36C71 /* Pods */,
+				9A1B83ABE57BDFBFC32ECDC354862678 /* Products */,
+				9A502BC64701C072DF412689CE812066 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9A1B83ABE57BDFBFC32ECDC354862678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A75DEA68D1DA23F2EAA66ADC48036456 /* Pods_____.framework */,
+				73603CAED9CF7DD388954E323B103B35 /* Pods_____Tests.framework */,
+				98A29414D6504D3F0D859EE0E01EEB55 /* Pods_____UITests.framework */,
+				250BD9D857753DA3DDDBCD663291DAE6 /* YYModel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A502BC64701C072DF412689CE812066 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				501D06631C6921BE9A569EEEF14F1458 /* Pods-表情键盘 */,
+				D4F1EF810E309CE72AB5EDE235091356 /* Pods-表情键盘Tests */,
+				6ADCF3E20685F1D0CBF94B2991D71C72 /* Pods-表情键盘UITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D4F1EF810E309CE72AB5EDE235091356 /* Pods-表情键盘Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E48CAEB110CD84526EE78B731A9DD8EF /* Info.plist */,
+				814060AB94E38B0E04CF64E4C182BC75 /* Pods-表情键盘Tests.modulemap */,
+				BE7474E3CF872421243189B5213D8E55 /* Pods-表情键盘Tests-acknowledgements.markdown */,
+				AE86F2D0E347AE4C2B6FE45F7494C827 /* Pods-表情键盘Tests-acknowledgements.plist */,
+				48A7C1D99836ED7699E2A3C12162BFDD /* Pods-表情键盘Tests-dummy.m */,
+				3D63065B9359B06152452F89F9AFD8C4 /* Pods-表情键盘Tests-frameworks.sh */,
+				B9843869ADED163F30C910CA48F3B0D3 /* Pods-表情键盘Tests-resources.sh */,
+				3DB7C59AF76FA3111B304013B362D2BF /* Pods-表情键盘Tests-umbrella.h */,
+				4458ED281B42D810E9A7D1D0B9367F97 /* Pods-表情键盘Tests.debug.xcconfig */,
+				C4FBF8ABB35FFF5346D1ABCBFE35677B /* Pods-表情键盘Tests.release.xcconfig */,
+			);
+			name = "Pods-表情键盘Tests";
+			path = "Target Support Files/Pods-表情键盘Tests";
+			sourceTree = "<group>";
+		};
+		F0FCCBC75AC6D7490A558A097D6946DE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3648E5087CA8718F5E0C23C3726D9EC /* CoreFoundation.framework */,
+				578D78C0160095C530B083E5C9636058 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		08EE323D0C0056A403027ED77532BC3E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FEFF1D7FCB730375442D60722DD4595 /* Pods-表情键盘-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27C9E4E86A1E6F558CBA39E30FE3879E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3477AC92A3435AF539DCDF7512D714CA /* NSObject+YYModel.h in Headers */,
+				ACA4AB593CF8778BB2D3E25CDD56AE66 /* YYClassInfo.h in Headers */,
+				6B7E7A83E290784F09C9186777D9CEA8 /* YYModel-umbrella.h in Headers */,
+				3BD16B5F724712F653033870D7964B8B /* YYModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D91883ED2B9C9B7A56693DDB3731D23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7055F74D5DD8177CA6162CD06308A1B3 /* Pods-表情键盘UITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE8D7BDE99CF1D91BCE3C18A2B76E331 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4459A3E2C40C14D8BA5F15A06D6C7055 /* Pods-表情键盘Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A5B51A07C3B00098EBEF196C3523E51A /* YYModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B3B861DBCC20426999A70B9E6A86215 /* Build configuration list for PBXNativeTarget "YYModel" */;
+			buildPhases = (
+				A69BAECB3666EFB027E938EC58F5028F /* Sources */,
+				85B73B6553F1303AD4F1653D152E4B78 /* Frameworks */,
+				27C9E4E86A1E6F558CBA39E30FE3879E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YYModel;
+			productName = YYModel;
+			productReference = 250BD9D857753DA3DDDBCD663291DAE6 /* YYModel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CBE78F4B63209840CBA62DF5A6822725 /* Pods-表情键盘 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF55E553A43B262D858076B3019D54A7 /* Build configuration list for PBXNativeTarget "Pods-表情键盘" */;
+			buildPhases = (
+				AC84D3C5976E366BA673F1E5F2128014 /* Sources */,
+				9BCC8E40059DF19651E2FEA29BE2DDF5 /* Frameworks */,
+				08EE323D0C0056A403027ED77532BC3E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0351D07B09E242450D587615AB39F10D /* PBXTargetDependency */,
+			);
+			name = "Pods-表情键盘";
+			productName = "Pods-表情键盘";
+			productReference = A75DEA68D1DA23F2EAA66ADC48036456 /* Pods_____.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DAE2DB9E814A3C29B7DC865CAE40E45F /* Pods-表情键盘UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5A430287827E9E7EC07F13BCC412316 /* Build configuration list for PBXNativeTarget "Pods-表情键盘UITests" */;
+			buildPhases = (
+				31AF62DFC27B7B9502EB7578078032F9 /* Sources */,
+				08AE0C56C8F0F592212496C0D109FDA8 /* Frameworks */,
+				5D91883ED2B9C9B7A56693DDB3731D23 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-表情键盘UITests";
+			productName = "Pods-表情键盘UITests";
+			productReference = 98A29414D6504D3F0D859EE0E01EEB55 /* Pods_____UITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E983798EBE3C8F2F695802B6208EC833 /* Pods-表情键盘Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE8FADC61DDFE57DA8E18E2D2F35AAB /* Build configuration list for PBXNativeTarget "Pods-表情键盘Tests" */;
+			buildPhases = (
+				ECADADBDD33C4B6948BEECB677597361 /* Sources */,
+				621C49B52A70F62DF8399E21D1B03322 /* Frameworks */,
+				EE8D7BDE99CF1D91BCE3C18A2B76E331 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-表情键盘Tests";
+			productName = "Pods-表情键盘Tests";
+			productReference = 73603CAED9CF7DD388954E323B103B35 /* Pods_____Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 9A1B83ABE57BDFBFC32ECDC354862678 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBE78F4B63209840CBA62DF5A6822725 /* Pods-表情键盘 */,
+				E983798EBE3C8F2F695802B6208EC833 /* Pods-表情键盘Tests */,
+				DAE2DB9E814A3C29B7DC865CAE40E45F /* Pods-表情键盘UITests */,
+				A5B51A07C3B00098EBEF196C3523E51A /* YYModel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31AF62DFC27B7B9502EB7578078032F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				974B69CF7850AF30FDAFFDFC30AA2BC1 /* Pods-表情键盘UITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A69BAECB3666EFB027E938EC58F5028F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1133F2CAB15652DDAA9828956552CBF8 /* NSObject+YYModel.m in Sources */,
+				20BC7DC45EC3240E5246FB261027A7E9 /* YYClassInfo.m in Sources */,
+				EF3B6AAEE4C47674CC693B4A1F4BFD11 /* YYModel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC84D3C5976E366BA673F1E5F2128014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2F9F835A02D2AA193666BF268DC8195 /* Pods-表情键盘-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECADADBDD33C4B6948BEECB677597361 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F642FE30B0C76DBC3F9B40DA1FA003 /* Pods-表情键盘Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0351D07B09E242450D587615AB39F10D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYModel;
+			target = A5B51A07C3B00098EBEF196C3523E51A /* YYModel */;
+			targetProxy = 23BA4AC5A3317B682FDBA6013E3EE429 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		087DB28F98CDD78D526C6A14AEFA7471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF8ADDAA8C0AA872C7C98154D5333488 /* Pods-表情键盘UITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-表情键盘UITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-表情键盘UITests/Pods-表情键盘UITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Pods_____UITests";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0AD481A91021A708F0D8BB495D8253E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6244A6BEBEB330EC9269217F6689FF8 /* Pods-表情键盘.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-表情键盘/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-表情键盘/Pods-表情键盘.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Pods_____";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23F915D1DD6AC0B8F927E1317E1F1706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4458ED281B42D810E9A7D1D0B9367F97 /* Pods-表情键盘Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-表情键盘Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-表情键盘Tests/Pods-表情键盘Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Pods_____Tests";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3C27E795F39F608EB41B055A9A73DDD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C59C117FB60912D83D1069D5BE3D31FB /* Pods-表情键盘.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-表情键盘/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-表情键盘/Pods-表情键盘.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Pods_____";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4C43CDC66E6357432C6E92FC5A8ACA58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4FBF8ABB35FFF5346D1ABCBFE35677B /* Pods-表情键盘Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-表情键盘Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-表情键盘Tests/Pods-表情键盘Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Pods_____Tests";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56AAFD969340241D8758ED10FC3EEDA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C7EDE62C882DD4D17C9B00BAA0A454 /* YYModel.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYModel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = YYModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B13D8CB58E7F552380E6CC32E53683FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B7BEF8AA36332C0FAC670501C7855BB /* Pods-表情键盘UITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-表情键盘UITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-表情键盘UITests/Pods-表情键盘UITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Pods_____UITests";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D560687C2EAA7604298B56AEE78343D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E46BDCE6728BC0A3BA4ECD7E147DDD23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C7EDE62C882DD4D17C9B00BAA0A454 /* YYModel.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYModel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = YYModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F1CACC81189ECB1BB82CE47F73EBE3D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B3B861DBCC20426999A70B9E6A86215 /* Build configuration list for PBXNativeTarget "YYModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56AAFD969340241D8758ED10FC3EEDA6 /* Debug */,
+				E46BDCE6728BC0A3BA4ECD7E147DDD23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1CACC81189ECB1BB82CE47F73EBE3D1 /* Debug */,
+				D560687C2EAA7604298B56AEE78343D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5A430287827E9E7EC07F13BCC412316 /* Build configuration list for PBXNativeTarget "Pods-表情键盘UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087DB28F98CDD78D526C6A14AEFA7471 /* Debug */,
+				B13D8CB58E7F552380E6CC32E53683FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF55E553A43B262D858076B3019D54A7 /* Build configuration list for PBXNativeTarget "Pods-表情键盘" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AD481A91021A708F0D8BB495D8253E4 /* Debug */,
+				3C27E795F39F608EB41B055A9A73DDD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE8FADC61DDFE57DA8E18E2D2F35AAB /* Build configuration list for PBXNativeTarget "Pods-表情键盘Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23F915D1DD6AC0B8F927E1317E1F1706 /* Debug */,
+				4C43CDC66E6357432C6E92FC5A8ACA58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
