@@ -23,8 +23,11 @@
 		F02F7E021DDD42EB00EDBD5E /* WBEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02F7DFC1DDD42EB00EDBD5E /* WBEmoticonInputView.xib */; };
 		F02F7E031DDD42EB00EDBD5E /* WBEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F7DFD1DDD42EB00EDBD5E /* WBEmoticonManager.swift */; };
 		F0A99C441DDD48D200B1D291 /* WBEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A99C431DDD48D200B1D291 /* WBEmoticonToolbar.swift */; };
+<<<<<<< HEAD
 		F0A99C471DDD572C00B1D291 /* WBEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A99C451DDD572C00B1D291 /* WBEmoticonCell.swift */; };
 		F0A99C4A1DDD5A7C00B1D291 /* WBEmoticonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A99C491DDD5A7C00B1D291 /* WBEmoticonLayout.swift */; };
+=======
+>>>>>>> origin/master
 		FA31A442F4E53F9EFF1FDAA1 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C425CAD0087F48C683E45A6C /* Pods_____.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +77,11 @@
 		F02F7DFC1DDD42EB00EDBD5E /* WBEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBEmoticonInputView.xib; sourceTree = "<group>"; };
 		F02F7DFD1DDD42EB00EDBD5E /* WBEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonManager.swift; sourceTree = "<group>"; };
 		F0A99C431DDD48D200B1D291 /* WBEmoticonToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonToolbar.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F0A99C451DDD572C00B1D291 /* WBEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonCell.swift; sourceTree = "<group>"; };
 		F0A99C491DDD5A7C00B1D291 /* WBEmoticonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonLayout.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> origin/master
 		F2A370FC5CDE86A2DAA5492B /* Pods-表情键盘Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-表情键盘Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-表情键盘Tests/Pods-表情键盘Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,8 +217,11 @@
 				F02F7DFB1DDD42EB00EDBD5E /* WBEmoticonInputView.swift */,
 				F02F7DFC1DDD42EB00EDBD5E /* WBEmoticonInputView.xib */,
 				F0A99C431DDD48D200B1D291 /* WBEmoticonToolbar.swift */,
+<<<<<<< HEAD
 				F0A99C451DDD572C00B1D291 /* WBEmoticonCell.swift */,
 				F0A99C491DDD5A7C00B1D291 /* WBEmoticonLayout.swift */,
+=======
+>>>>>>> origin/master
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,13 +510,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02F7DFF1DDD42EB00EDBD5E /* WBEmoticon.swift in Sources */,
+<<<<<<< HEAD
 				F0A99C4A1DDD5A7C00B1D291 /* WBEmoticonLayout.swift in Sources */,
+=======
+>>>>>>> origin/master
 				F02F7E011DDD42EB00EDBD5E /* WBEmoticonInputView.swift in Sources */,
 				F02F7E001DDD42EB00EDBD5E /* WBEmoticonPackage.swift in Sources */,
 				84EA93E51DDCA2BF007B63D6 /* ViewController.swift in Sources */,
 				F02F7E031DDD42EB00EDBD5E /* WBEmoticonManager.swift in Sources */,
 				F0A99C441DDD48D200B1D291 /* WBEmoticonToolbar.swift in Sources */,
+<<<<<<< HEAD
 				F0A99C471DDD572C00B1D291 /* WBEmoticonCell.swift in Sources */,
+=======
+>>>>>>> origin/master
 				84EA93E31DDCA2BF007B63D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

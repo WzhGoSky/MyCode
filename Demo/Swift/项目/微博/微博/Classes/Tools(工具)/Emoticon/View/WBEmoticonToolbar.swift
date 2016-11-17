@@ -51,6 +51,7 @@ fileprivate extension WBEmoticonToolbar{
             btn.setTitleColor(UIColor.darkGray, for: .highlighted)
             btn.setTitleColor(UIColor.darkGray, for: .selected)
             
+<<<<<<< HEAD
             //设置按钮图片
             let imageName = "compose_emotion_table_\(p.bgImageName ?? "")_normal"
             let imageNameSL = "compose_emotion_table_\(p.bgImageName ?? "")_selected"
@@ -73,6 +74,8 @@ fileprivate extension WBEmoticonToolbar{
             btn.setBackgroundImage(imageSL, for: .highlighted)
             btn.setBackgroundImage(imageSL, for: .selected)
             
+=======
+>>>>>>> origin/master
             addSubview(btn)
         }
     }

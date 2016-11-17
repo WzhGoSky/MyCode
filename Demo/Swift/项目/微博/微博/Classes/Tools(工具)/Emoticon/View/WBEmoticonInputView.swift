@@ -17,10 +17,14 @@ class WBEmoticonInputView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var toolbar: UIView!
+<<<<<<< HEAD
     
     //选中表情回调闭包属性
     fileprivate var selectedEmoticonCallBack: ((_ em: WBEmoticon?) ->())?
     class func inputView(selectedEmoticon: @escaping (_ em: WBEmoticon?)->()) -> WBEmoticonInputView{
+=======
+    class func inputView() -> WBEmoticonInputView{
+>>>>>>> origin/master
         
         let nib = UINib(nibName: "WBEmoticonInputView", bundle: nil)
         

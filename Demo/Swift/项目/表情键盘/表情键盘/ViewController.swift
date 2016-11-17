@@ -110,6 +110,10 @@ class ViewController: UIViewController {
         
         textView.reloadInputViews()
         
+<<<<<<< HEAD
+=======
+        
+>>>>>>> origin/master
     }
     
     override func viewDidAppear(_ animated: Bool) {
