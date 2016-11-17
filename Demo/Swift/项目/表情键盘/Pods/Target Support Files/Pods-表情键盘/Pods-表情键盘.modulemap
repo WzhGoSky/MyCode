@@ -1,6 +1,0 @@
-framework module Pods_____ {
-  umbrella header "Pods-表情键盘-umbrella.h"
-
-  export *
-  module * { export * }
-}
