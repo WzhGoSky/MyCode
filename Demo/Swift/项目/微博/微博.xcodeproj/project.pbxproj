@@ -1,0 +1,1098 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		840CA83B1DD808EE006DBFE3 /* ZHMTRefershView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8391DD808EE006DBFE3 /* ZHMTRefershView.swift */; };
+		840CA83C1DD808EE006DBFE3 /* ZHMTRefershView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA83A1DD808EE006DBFE3 /* ZHMTRefershView.xib */; };
+		840CA83F1DD814EE006DBFE3 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */; };
+		840CA8411DD818EE006DBFE3 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */; };
+		840CA8431DD86509006DBFE3 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */; };
+		840CA8451DD8651A006DBFE3 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */; };
+		840CA8471DD8B237006DBFE3 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */; };
+		8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */; };
+		8410C7C91DBFA1AF00511D72 /* WBNaviagtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */; };
+		8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */; };
+		8410C7CD1DBFA34800511D72 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7CC1DBFA34800511D72 /* WBDiscoverViewController.swift */; };
+		8410C7CF1DBFA35200511D72 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7CE1DBFA35200511D72 /* WBHomeViewController.swift */; };
+		8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7D01DBFA35E00511D72 /* WBMessageViewController.swift */; };
+		8410C7D61DBFA43500511D72 /* WBPorfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410C7D51DBFA43500511D72 /* WBPorfileViewController.swift */; };
+		841388961DBF9AB200022EB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388951DBF9AB200022EB6 /* AppDelegate.swift */; };
+		8413889D1DBF9AB200022EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8413889C1DBF9AB200022EB6 /* Assets.xcassets */; };
+		841388A01DBF9AB200022EB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8413889E1DBF9AB200022EB6 /* LaunchScreen.storyboard */; };
+		841388AB1DBF9AB300022EB6 /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388AA1DBF9AB300022EB6 /* __Tests.swift */; };
+		841388B61DBF9AB300022EB6 /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841388B51DBF9AB300022EB6 /* __UITests.swift */; };
+		841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */; };
+		842E6D551DD21D8E00522F0F /* WBStatusRetweetedCell的.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842E6D541DD21D8E00522F0F /* WBStatusRetweetedCell的.xib */; };
+		84469D231DCA29620028A69C /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D221DCA29620028A69C /* WBCommon.swift */; };
+		84469D261DCA2BA10028A69C /* WBOAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84469D251DCA2BA10028A69C /* WBOAuthController.swift */; };
+		844937701DC7608B00893737 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 8449376F1DC7608B00893737 /* main.json */; };
+		844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */; };
+		844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EC1DC8DAF300893737 /* WBStatus.swift */; };
+		844937EF1DC8DCF500893737 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844937EE1DC8DCF500893737 /* WBStatusListViewModel.swift */; };
+		847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B01DBFA5940046D981 /* NSArray+Log.m */; };
+		847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */; };
+		847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */; };
+		847F63CA1DBFA5940046D981 /* NSString+CZBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B61DBFA5940046D981 /* NSString+CZBase64.m */; };
+		847F63CB1DBFA5940046D981 /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63B81DBFA5940046D981 /* NSString+CZHash.m */; };
+		847F63CC1DBFA5940046D981 /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63BA1DBFA5940046D981 /* NSString+CZPath.m */; };
+		847F63CD1DBFA5940046D981 /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63BC1DBFA5940046D981 /* UIButton+CZAddition.m */; };
+		847F63CE1DBFA5940046D981 /* UIColor+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63BE1DBFA5940046D981 /* UIColor+CZAddition.m */; };
+		847F63CF1DBFA5940046D981 /* UILabel+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C01DBFA5940046D981 /* UILabel+CZAddition.m */; };
+		847F63D01DBFA5940046D981 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C21DBFA5940046D981 /* UIScreen+CZAddition.m */; };
+		847F63D11DBFA5940046D981 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C41DBFA5940046D981 /* UIView+CZAddition.m */; };
+		847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */; };
+		84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */; };
+		84E477EC1DD0B3C700B6A046 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */; };
+		84E477F01DD0C0AD00B6A046 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */; };
+		84EA94161DDCA3E3007B63D6 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84EA94111DDCA3E3007B63D6 /* HMEmoticon.bundle */; };
+		84EA94171DDCA3E3007B63D6 /* WBEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA94131DDCA3E3007B63D6 /* WBEmoticon.swift */; };
+		84EA94181DDCA3E3007B63D6 /* WBEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA94141DDCA3E3007B63D6 /* WBEmoticonPackage.swift */; };
+		84EA94191DDCA3E3007B63D6 /* WBEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA94151DDCA3E3007B63D6 /* WBEmoticonManager.swift */; };
+		84FC3CD11DDB32D500130207 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FC3CD01DDB32D400130207 /* WBComposeViewController.xib */; };
+		9BE20936284936540C01A23D /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D7BE4794C21032D9085516 /* Pods___.framework */; };
+		F015CCCF1DD15AC50085A48A /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015CCCE1DD15AC50085A48A /* WBStatusPicture.swift */; };
+		F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32541DCC697E000B41D5 /* WBTitleButton.swift */; };
+		F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */; };
+		F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */; };
+		F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */; };
+		F02356731DD41CE100E0286B /* ZHRefershControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02356721DD41CE100E0286B /* ZHRefershControl.swift */; };
+		F0498B6B1DDC3AF10028801A /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0498B6A1DDC3AF10028801A /* WBComposeTextView.swift */; };
+		F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0536C511DCB06950029003C /* WBUserAccount.swift */; };
+		F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07715451DC885E9000059AE /* WBNetworkManager.swift */; };
+		F09A86671DD956C400C1C7D4 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86611DD956C400C1C7D4 /* Bundle+Extension.swift */; };
+		F09A86681DD956C400C1C7D4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86621DD956C400C1C7D4 /* Date+Extensions.swift */; };
+		F09A86691DD956C400C1C7D4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86631DD956C400C1C7D4 /* String+Extension.swift */; };
+		F09A866A1DD956C400C1C7D4 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86641DD956C400C1C7D4 /* UIBarButtonItem-Extension.swift */; };
+		F09A866B1DD956C400C1C7D4 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86651DD956C400C1C7D4 /* UIImage+Extensions.swift */; };
+		F09A866C1DD956C400C1C7D4 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09A86661DD956C400C1C7D4 /* UIImageView+WebImage.swift */; };
+		F0B4F5681DD564440069DCAF /* ZHRefershView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4F5661DD564440069DCAF /* ZHRefershView.swift */; };
+		F0B4F5691DD564440069DCAF /* ZHRefershView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B4F5671DD564440069DCAF /* ZHRefershView.xib */; };
+		F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0849A1DC71430005C734D /* WBVistorView.swift */; };
+		F0DC3A351DD010F800FED38F /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC3A341DD010F800FED38F /* WBStatusCell.swift */; };
+		F0DC3A371DD0110B00FED38F /* WBNormalStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0DC3A361DD0110B00FED38F /* WBNormalStatusCell.xib */; };
+		F0DC3A391DD01EAD00FED38F /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC3A381DD01EAD00FED38F /* WBUser.swift */; };
+		F0DC3A3B1DD026D700FED38F /* WBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC3A3A1DD026D700FED38F /* WBStatusViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		841388A71DBF9AB300022EB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8413888A1DBF9AB200022EB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841388911DBF9AB200022EB6;
+			remoteInfo = "微博";
+		};
+		841388B21DBF9AB300022EB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8413888A1DBF9AB200022EB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841388911DBF9AB200022EB6;
+			remoteInfo = "微博";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06504A5364E29F0CF2EC811C /* Pods-微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.release.xcconfig"; sourceTree = "<group>"; };
+		51D7BE4794C21032D9085516 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6859906B124F4E928813BD98 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		745F11BC3578EC0EF409FDEF /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		840CA8391DD808EE006DBFE3 /* ZHMTRefershView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHMTRefershView.swift; sourceTree = "<group>"; };
+		840CA83A1DD808EE006DBFE3 /* ZHMTRefershView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHMTRefershView.xib; sourceTree = "<group>"; };
+		840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
+		840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
+		840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
+		840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
+		840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
+		8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTabbarController.swift; sourceTree = "<group>"; };
+		8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNaviagtionController.swift; sourceTree = "<group>"; };
+		8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
+		8410C7CC1DBFA34800511D72 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		8410C7CE1DBFA35200511D72 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		8410C7D01DBFA35E00511D72 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		8410C7D51DBFA43500511D72 /* WBPorfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPorfileViewController.swift; sourceTree = "<group>"; };
+		841388921DBF9AB200022EB6 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841388951DBF9AB200022EB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8413889C1DBF9AB200022EB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8413889F1DBF9AB200022EB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		841388A11DBF9AB200022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841388A61DBF9AB300022EB6 /* 微博Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "微博Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841388AA1DBF9AB300022EB6 /* __Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Tests.swift; sourceTree = "<group>"; };
+		841388AC1DBF9AB300022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841388B11DBF9AB300022EB6 /* 微博UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "微博UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		841388B51DBF9AB300022EB6 /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
+		841388B71DBF9AB300022EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		842E6D541DD21D8E00522F0F /* WBStatusRetweetedCell的.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "WBStatusRetweetedCell的.xib"; sourceTree = "<group>"; };
+		84469D221DCA29620028A69C /* WBCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCommon.swift; sourceTree = "<group>"; };
+		84469D251DCA2BA10028A69C /* WBOAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthController.swift; sourceTree = "<group>"; };
+		8449376F1DC7608B00893737 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
+		844937EC1DC8DAF300893737 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatus.swift; path = "微博/Classes/Tools(工具)/Network/WBStatus.swift"; sourceTree = SOURCE_ROOT; };
+		844937EE1DC8DCF500893737 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatusListViewModel.swift; path = "微博/Classes/Tools(工具)/Network/WBStatusListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		847F63AE1DBFA5940046D981 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
+		847F63AF1DBFA5940046D981 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		847F63B01DBFA5940046D981 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		847F63B11DBFA5940046D981 /* NSAttributedString+CZAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CZAdditon.h"; sourceTree = "<group>"; };
+		847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CZAdditon.m"; sourceTree = "<group>"; };
+		847F63B31DBFA5940046D981 /* NSObject+CZRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZRuntime.h"; sourceTree = "<group>"; };
+		847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZRuntime.m"; sourceTree = "<group>"; };
+		847F63B51DBFA5940046D981 /* NSString+CZBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZBase64.h"; sourceTree = "<group>"; };
+		847F63B61DBFA5940046D981 /* NSString+CZBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZBase64.m"; sourceTree = "<group>"; };
+		847F63B71DBFA5940046D981 /* NSString+CZHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZHash.h"; sourceTree = "<group>"; };
+		847F63B81DBFA5940046D981 /* NSString+CZHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZHash.m"; sourceTree = "<group>"; };
+		847F63B91DBFA5940046D981 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
+		847F63BA1DBFA5940046D981 /* NSString+CZPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZPath.m"; sourceTree = "<group>"; };
+		847F63BB1DBFA5940046D981 /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
+		847F63BC1DBFA5940046D981 /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
+		847F63BD1DBFA5940046D981 /* UIColor+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CZAddition.h"; sourceTree = "<group>"; };
+		847F63BE1DBFA5940046D981 /* UIColor+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CZAddition.m"; sourceTree = "<group>"; };
+		847F63BF1DBFA5940046D981 /* UILabel+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CZAddition.h"; sourceTree = "<group>"; };
+		847F63C01DBFA5940046D981 /* UILabel+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CZAddition.m"; sourceTree = "<group>"; };
+		847F63C11DBFA5940046D981 /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
+		847F63C21DBFA5940046D981 /* UIScreen+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CZAddition.m"; sourceTree = "<group>"; };
+		847F63C31DBFA5940046D981 /* UIView+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZAddition.h"; sourceTree = "<group>"; };
+		847F63C41DBFA5940046D981 /* UIView+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CZAddition.m"; sourceTree = "<group>"; };
+		847F63C51DBFA5940046D981 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
+		847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
+		847F63D51DBFA92B0046D981 /* weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weibo-Bridge.h"; sourceTree = "<group>"; };
+		84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
+		84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
+		84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
+		84EA94111DDCA3E3007B63D6 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		84EA94131DDCA3E3007B63D6 /* WBEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticon.swift; sourceTree = "<group>"; };
+		84EA94141DDCA3E3007B63D6 /* WBEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonPackage.swift; sourceTree = "<group>"; };
+		84EA94151DDCA3E3007B63D6 /* WBEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonManager.swift; sourceTree = "<group>"; };
+		84FC3CD01DDB32D400130207 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
+		C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
+		F015CCCE1DD15AC50085A48A /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatusPicture.swift; path = "微博/Classes/View(视图和控制器)/Home/WBStatusPicture.swift"; sourceTree = SOURCE_ROOT; };
+		F01C32541DCC697E000B41D5 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
+		F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
+		F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
+		F02356721DD41CE100E0286B /* ZHRefershControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefershControl.swift; sourceTree = "<group>"; };
+		F0498B6A1DDC3AF10028801A /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
+		F0536C511DCB06950029003C /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
+		F07715451DC885E9000059AE /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
+		F09A86611DD956C400C1C7D4 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		F09A86621DD956C400C1C7D4 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		F09A86631DD956C400C1C7D4 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F09A86641DD956C400C1C7D4 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		F09A86651DD956C400C1C7D4 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		F09A86661DD956C400C1C7D4 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
+		F0B4F5661DD564440069DCAF /* ZHRefershView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefershView.swift; sourceTree = "<group>"; };
+		F0B4F5671DD564440069DCAF /* ZHRefershView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRefershView.xib; sourceTree = "<group>"; };
+		F0D0849A1DC71430005C734D /* WBVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVistorView.swift; sourceTree = "<group>"; };
+		F0DC3A341DD010F800FED38F /* WBStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
+		F0DC3A361DD0110B00FED38F /* WBNormalStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNormalStatusCell.xib; sourceTree = "<group>"; };
+		F0DC3A381DD01EAD00FED38F /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBUser.swift; path = "微博/Classes/View(视图和控制器)/Home/StatusCell/WBUser.swift"; sourceTree = SOURCE_ROOT; };
+		F0DC3A3A1DD026D700FED38F /* WBStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStatusViewModel.swift; path = "微博/Classes/View(视图和控制器)/Home/StatusCell/WBStatusViewModel.swift"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8413888F1DBF9AB200022EB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE20936284936540C01A23D /* Pods___.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841388A31DBF9AB300022EB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841388AE1DBF9AB300022EB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17858DFA7FA851B489E1CEAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51D7BE4794C21032D9085516 /* Pods___.framework */,
+				6859906B124F4E928813BD98 /* Pods___Tests.framework */,
+				745F11BC3578EC0EF409FDEF /* Pods___UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E5FF99991DF2A36FFB97AC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */,
+				06504A5364E29F0CF2EC811C /* Pods-微博.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */ = {
+			isa = PBXGroup;
+			children = (
+				F0498B691DDC3AD70028801A /* view */,
+				840CA8421DD86509006DBFE3 /* WBComposeTypeButton.swift */,
+				840CA8441DD8651A006DBFE3 /* WBComposeTypeButton.xib */,
+				840CA83E1DD814EE006DBFE3 /* WBComposeTypeView.swift */,
+				840CA8401DD818EE006DBFE3 /* WBComposeTypeView.xib */,
+			);
+			path = "Compose(撰写微博)";
+			sourceTree = "<group>";
+		};
+		8410C7BC1DBFA15400511D72 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8410C7BF1DBFA15400511D72 /* View(视图和控制器) */,
+				8410C7BD1DBFA15400511D72 /* Model(模型) */,
+				8410C7BE1DBFA15400511D72 /* Tools(工具) */,
+				8410C7C51DBFA15400511D72 /* ViewMode(视图模型) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8410C7BD1DBFA15400511D72 /* Model(模型) */ = {
+			isa = PBXGroup;
+			children = (
+				F0DC3A381DD01EAD00FED38F /* WBUser.swift */,
+				844937EC1DC8DAF300893737 /* WBStatus.swift */,
+				F015CCCE1DD15AC50085A48A /* WBStatusPicture.swift */,
+			);
+			path = "Model(模型)";
+			sourceTree = "<group>";
+		};
+		8410C7BE1DBFA15400511D72 /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+				84EA94101DDCA3E3007B63D6 /* Emoticon */,
+				F09A86601DD956C400C1C7D4 /* Extension */,
+				F02356711DD41CD000E0286B /* ZHRefershControl */,
+				F07715441DC885CD000059AE /* Network */,
+				847F63AD1DBFA5940046D981 /* Additions */,
+				84469D221DCA29620028A69C /* WBCommon.swift */,
+			);
+			path = "Tools(工具)";
+			sourceTree = "<group>";
+		};
+		8410C7BF1DBFA15400511D72 /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				840CA83D1DD814A4006DBFE3 /* Compose(撰写微博) */,
+				840CA8461DD8B237006DBFE3 /* WBComposeViewController.swift */,
+				84FC3CD01DDB32D400130207 /* WBComposeViewController.xib */,
+				8410C7C21DBFA15400511D72 /* Main(主要的) */,
+				8410C7C01DBFA15400511D72 /* Discover */,
+				8410C7C11DBFA15400511D72 /* Home */,
+				8410C7C31DBFA15400511D72 /* Message */,
+				8410C7D41DBFA43500511D72 /* Porfile */,
+			);
+			path = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		8410C7C01DBFA15400511D72 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				8410C7CC1DBFA34800511D72 /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		8410C7C11DBFA15400511D72 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0DC3A331DD010DC00FED38F /* StatusCell */,
+				F01C32531DCC696A000B41D5 /* TitleButton */,
+				8410C7CE1DBFA35200511D72 /* WBHomeViewController.swift */,
+				841F6E6D1DC0F37B006B97DB /* WBDemoViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8410C7C21DBFA15400511D72 /* Main(主要的) */ = {
+			isa = PBXGroup;
+			children = (
+				F01C32561DCC7B9B000B41D5 /* NewFeature(新特性) */,
+				84469D241DCA2B6B0028A69C /* OAuth(授权) */,
+				F0F2771B1DC2DBC300FDA093 /* 主控制器 */,
+				8410C7CA1DBFA31D00511D72 /* WBBaseViewController.swift */,
+				F0D0849C1DC71434005C734D /* 访客视图 */,
+			);
+			name = "Main(主要的)";
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8410C7C31DBFA15400511D72 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				8410C7D01DBFA35E00511D72 /* WBMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		8410C7C51DBFA15400511D72 /* ViewMode(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+				F0DC3A3A1DD026D700FED38F /* WBStatusViewModel.swift */,
+				844937EE1DC8DCF500893737 /* WBStatusListViewModel.swift */,
+			);
+			name = "ViewMode(视图模型)";
+			path = "ViewMode(视图模型)l";
+			sourceTree = "<group>";
+		};
+		8410C7D41DBFA43500511D72 /* Porfile */ = {
+			isa = PBXGroup;
+			children = (
+				8410C7D51DBFA43500511D72 /* WBPorfileViewController.swift */,
+			);
+			path = Porfile;
+			sourceTree = "<group>";
+		};
+		841388891DBF9AB200022EB6 = {
+			isa = PBXGroup;
+			children = (
+				841388941DBF9AB200022EB6 /* 微博 */,
+				841388A91DBF9AB300022EB6 /* 微博Tests */,
+				841388B41DBF9AB300022EB6 /* 微博UITests */,
+				841388931DBF9AB200022EB6 /* Products */,
+				3E5FF99991DF2A36FFB97AC7 /* Pods */,
+				17858DFA7FA851B489E1CEAC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		841388931DBF9AB200022EB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				841388921DBF9AB200022EB6 /* 微博.app */,
+				841388A61DBF9AB300022EB6 /* 微博Tests.xctest */,
+				841388B11DBF9AB300022EB6 /* 微博UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		841388941DBF9AB200022EB6 /* 微博 */ = {
+			isa = PBXGroup;
+			children = (
+				8410C7BC1DBFA15400511D72 /* Classes */,
+				841388951DBF9AB200022EB6 /* AppDelegate.swift */,
+				847F63D51DBFA92B0046D981 /* weibo-Bridge.h */,
+				8413889C1DBF9AB200022EB6 /* Assets.xcassets */,
+				8413889E1DBF9AB200022EB6 /* LaunchScreen.storyboard */,
+				841388A11DBF9AB200022EB6 /* Info.plist */,
+			);
+			path = "微博";
+			sourceTree = "<group>";
+		};
+		841388A91DBF9AB300022EB6 /* 微博Tests */ = {
+			isa = PBXGroup;
+			children = (
+				841388AA1DBF9AB300022EB6 /* __Tests.swift */,
+				841388AC1DBF9AB300022EB6 /* Info.plist */,
+			);
+			path = "微博Tests";
+			sourceTree = "<group>";
+		};
+		841388B41DBF9AB300022EB6 /* 微博UITests */ = {
+			isa = PBXGroup;
+			children = (
+				841388B51DBF9AB300022EB6 /* __UITests.swift */,
+				841388B71DBF9AB300022EB6 /* Info.plist */,
+			);
+			path = "微博UITests";
+			sourceTree = "<group>";
+		};
+		84469D241DCA2B6B0028A69C /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				84469D251DCA2BA10028A69C /* WBOAuthController.swift */,
+			);
+			name = "OAuth(授权)";
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		847F63AD1DBFA5940046D981 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				847F63AE1DBFA5940046D981 /* CZAdditions.h */,
+				847F63AF1DBFA5940046D981 /* NSArray+Log.h */,
+				847F63B01DBFA5940046D981 /* NSArray+Log.m */,
+				847F63B11DBFA5940046D981 /* NSAttributedString+CZAdditon.h */,
+				847F63B21DBFA5940046D981 /* NSAttributedString+CZAdditon.m */,
+				847F63B31DBFA5940046D981 /* NSObject+CZRuntime.h */,
+				847F63B41DBFA5940046D981 /* NSObject+CZRuntime.m */,
+				847F63B51DBFA5940046D981 /* NSString+CZBase64.h */,
+				847F63B61DBFA5940046D981 /* NSString+CZBase64.m */,
+				847F63B71DBFA5940046D981 /* NSString+CZHash.h */,
+				847F63B81DBFA5940046D981 /* NSString+CZHash.m */,
+				847F63B91DBFA5940046D981 /* NSString+CZPath.h */,
+				847F63BA1DBFA5940046D981 /* NSString+CZPath.m */,
+				847F63BB1DBFA5940046D981 /* UIButton+CZAddition.h */,
+				847F63BC1DBFA5940046D981 /* UIButton+CZAddition.m */,
+				847F63BD1DBFA5940046D981 /* UIColor+CZAddition.h */,
+				847F63BE1DBFA5940046D981 /* UIColor+CZAddition.m */,
+				847F63BF1DBFA5940046D981 /* UILabel+CZAddition.h */,
+				847F63C01DBFA5940046D981 /* UILabel+CZAddition.m */,
+				847F63C11DBFA5940046D981 /* UIScreen+CZAddition.h */,
+				847F63C21DBFA5940046D981 /* UIScreen+CZAddition.m */,
+				847F63C31DBFA5940046D981 /* UIView+CZAddition.h */,
+				847F63C41DBFA5940046D981 /* UIView+CZAddition.m */,
+				847F63C51DBFA5940046D981 /* UIViewController+CZAddition.h */,
+				847F63C61DBFA5940046D981 /* UIViewController+CZAddition.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		84EA94101DDCA3E3007B63D6 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				84EA94111DDCA3E3007B63D6 /* HMEmoticon.bundle */,
+				84EA94121DDCA3E3007B63D6 /* model */,
+				84EA94151DDCA3E3007B63D6 /* WBEmoticonManager.swift */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		84EA94121DDCA3E3007B63D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				84EA94131DDCA3E3007B63D6 /* WBEmoticon.swift */,
+				84EA94141DDCA3E3007B63D6 /* WBEmoticonPackage.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F01C32531DCC696A000B41D5 /* TitleButton */ = {
+			isa = PBXGroup;
+			children = (
+				F01C32541DCC697E000B41D5 /* WBTitleButton.swift */,
+			);
+			path = TitleButton;
+			sourceTree = "<group>";
+		};
+		F01C32561DCC7B9B000B41D5 /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				F01C32571DCC7E21000B41D5 /* WBWelcomeView.swift */,
+				F01C325B1DCC885D000B41D5 /* WBWelcomeView.xib */,
+				F01C32591DCC7E5A000B41D5 /* WBNewFeatureView.swift */,
+				84A9FE3A1DCCCE4C00CAD48D /* WBNewFeatureView.xib */,
+			);
+			name = "NewFeature(新特性)";
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		F02356711DD41CD000E0286B /* ZHRefershControl */ = {
+			isa = PBXGroup;
+			children = (
+				840CA8391DD808EE006DBFE3 /* ZHMTRefershView.swift */,
+				840CA83A1DD808EE006DBFE3 /* ZHMTRefershView.xib */,
+				F0B4F5661DD564440069DCAF /* ZHRefershView.swift */,
+				F0B4F5671DD564440069DCAF /* ZHRefershView.xib */,
+				F02356721DD41CE100E0286B /* ZHRefershControl.swift */,
+			);
+			path = ZHRefershControl;
+			sourceTree = "<group>";
+		};
+		F0498B691DDC3AD70028801A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F0498B6A1DDC3AF10028801A /* WBComposeTextView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F0536C501DCB067E0029003C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0536C511DCB06950029003C /* WBUserAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F07715441DC885CD000059AE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F0536C501DCB067E0029003C /* Model */,
+				F07715451DC885E9000059AE /* WBNetworkManager.swift */,
+				844937EA1DC8CD1B00893737 /* WBNetworkManager+Extension.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F09A86601DD956C400C1C7D4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F09A86611DD956C400C1C7D4 /* Bundle+Extension.swift */,
+				F09A86621DD956C400C1C7D4 /* Date+Extensions.swift */,
+				F09A86631DD956C400C1C7D4 /* String+Extension.swift */,
+				F09A86641DD956C400C1C7D4 /* UIBarButtonItem-Extension.swift */,
+				F09A86651DD956C400C1C7D4 /* UIImage+Extensions.swift */,
+				F09A86661DD956C400C1C7D4 /* UIImageView+WebImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F0D0849C1DC71434005C734D /* 访客视图 */ = {
+			isa = PBXGroup;
+			children = (
+				F0D0849A1DC71430005C734D /* WBVistorView.swift */,
+			);
+			name = "访客视图";
+			sourceTree = "<group>";
+		};
+		F0DC3A331DD010DC00FED38F /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				F0DC3A341DD010F800FED38F /* WBStatusCell.swift */,
+				84E477EB1DD0B3C700B6A046 /* WBStatusToolBar.swift */,
+				84E477EF1DD0C0AD00B6A046 /* WBStatusPictureView.swift */,
+				842E6D541DD21D8E00522F0F /* WBStatusRetweetedCell的.xib */,
+				F0DC3A361DD0110B00FED38F /* WBNormalStatusCell.xib */,
+			);
+			path = StatusCell;
+			sourceTree = "<group>";
+		};
+		F0F2771B1DC2DBC300FDA093 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				8449376F1DC7608B00893737 /* main.json */,
+				8410C7C61DBFA19D00511D72 /* WBMainTabbarController.swift */,
+				8410C7C81DBFA1AF00511D72 /* WBNaviagtionController.swift */,
+			);
+			name = "主控制器";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		841388911DBF9AB200022EB6 /* 微博 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841388BA1DBF9AB300022EB6 /* Build configuration list for PBXNativeTarget "微博" */;
+			buildPhases = (
+				EB27D1D968D16FA5DB246F91 /* [CP] Check Pods Manifest.lock */,
+				8413888E1DBF9AB200022EB6 /* Sources */,
+				8413888F1DBF9AB200022EB6 /* Frameworks */,
+				841388901DBF9AB200022EB6 /* Resources */,
+				027A12663F0D987AE34EF136 /* [CP] Embed Pods Frameworks */,
+				8FB5B27AB2F97A050AD81D3C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "微博";
+			productName = "微博";
+			productReference = 841388921DBF9AB200022EB6 /* 微博.app */;
+			productType = "com.apple.product-type.application";
+		};
+		841388A51DBF9AB300022EB6 /* 微博Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841388BD1DBF9AB300022EB6 /* Build configuration list for PBXNativeTarget "微博Tests" */;
+			buildPhases = (
+				841388A21DBF9AB300022EB6 /* Sources */,
+				841388A31DBF9AB300022EB6 /* Frameworks */,
+				841388A41DBF9AB300022EB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				841388A81DBF9AB300022EB6 /* PBXTargetDependency */,
+			);
+			name = "微博Tests";
+			productName = "微博Tests";
+			productReference = 841388A61DBF9AB300022EB6 /* 微博Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		841388B01DBF9AB300022EB6 /* 微博UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841388C01DBF9AB300022EB6 /* Build configuration list for PBXNativeTarget "微博UITests" */;
+			buildPhases = (
+				841388AD1DBF9AB300022EB6 /* Sources */,
+				841388AE1DBF9AB300022EB6 /* Frameworks */,
+				841388AF1DBF9AB300022EB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				841388B31DBF9AB300022EB6 /* PBXTargetDependency */,
+			);
+			name = "微博UITests";
+			productName = "微博UITests";
+			productReference = 841388B11DBF9AB300022EB6 /* 微博UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8413888A1DBF9AB200022EB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WB;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = wangzhenhai;
+				TargetAttributes = {
+					841388911DBF9AB200022EB6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7UK5342358;
+						ProvisioningStyle = Automatic;
+					};
+					841388A51DBF9AB300022EB6 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 841388911DBF9AB200022EB6;
+					};
+					841388B01DBF9AB300022EB6 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 841388911DBF9AB200022EB6;
+					};
+				};
+			};
+			buildConfigurationList = 8413888D1DBF9AB200022EB6 /* Build configuration list for PBXProject "微博" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 841388891DBF9AB200022EB6;
+			productRefGroup = 841388931DBF9AB200022EB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				841388911DBF9AB200022EB6 /* 微博 */,
+				841388A51DBF9AB300022EB6 /* 微博Tests */,
+				841388B01DBF9AB300022EB6 /* 微博UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		841388901DBF9AB200022EB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844937701DC7608B00893737 /* main.json in Resources */,
+				F0DC3A371DD0110B00FED38F /* WBNormalStatusCell.xib in Resources */,
+				841388A01DBF9AB200022EB6 /* LaunchScreen.storyboard in Resources */,
+				840CA8451DD8651A006DBFE3 /* WBComposeTypeButton.xib in Resources */,
+				842E6D551DD21D8E00522F0F /* WBStatusRetweetedCell的.xib in Resources */,
+				84A9FE3B1DCCCE4C00CAD48D /* WBNewFeatureView.xib in Resources */,
+				84FC3CD11DDB32D500130207 /* WBComposeViewController.xib in Resources */,
+				84EA94161DDCA3E3007B63D6 /* HMEmoticon.bundle in Resources */,
+				F01C325C1DCC885D000B41D5 /* WBWelcomeView.xib in Resources */,
+				840CA8411DD818EE006DBFE3 /* WBComposeTypeView.xib in Resources */,
+				F0B4F5691DD564440069DCAF /* ZHRefershView.xib in Resources */,
+				8413889D1DBF9AB200022EB6 /* Assets.xcassets in Resources */,
+				840CA83C1DD808EE006DBFE3 /* ZHMTRefershView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841388A41DBF9AB300022EB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841388AF1DBF9AB300022EB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		027A12663F0D987AE34EF136 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-微博/Pods-微博-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB5B27AB2F97A050AD81D3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-微博/Pods-微博-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB27D1D968D16FA5DB246F91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8413888E1DBF9AB200022EB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D0849B1DC71430005C734D /* WBVistorView.swift in Sources */,
+				F09A866C1DD956C400C1C7D4 /* UIImageView+WebImage.swift in Sources */,
+				84EA94171DDCA3E3007B63D6 /* WBEmoticon.swift in Sources */,
+				F09A86671DD956C400C1C7D4 /* Bundle+Extension.swift in Sources */,
+				F09A866A1DD956C400C1C7D4 /* UIBarButtonItem-Extension.swift in Sources */,
+				840CA8431DD86509006DBFE3 /* WBComposeTypeButton.swift in Sources */,
+				F0DC3A3B1DD026D700FED38F /* WBStatusViewModel.swift in Sources */,
+				F0B4F5681DD564440069DCAF /* ZHRefershView.swift in Sources */,
+				840CA83B1DD808EE006DBFE3 /* ZHMTRefershView.swift in Sources */,
+				847F63CE1DBFA5940046D981 /* UIColor+CZAddition.m in Sources */,
+				840CA83F1DD814EE006DBFE3 /* WBComposeTypeView.swift in Sources */,
+				847F63C71DBFA5940046D981 /* NSArray+Log.m in Sources */,
+				F09A866B1DD956C400C1C7D4 /* UIImage+Extensions.swift in Sources */,
+				F015CCCF1DD15AC50085A48A /* WBStatusPicture.swift in Sources */,
+				8410C7CD1DBFA34800511D72 /* WBDiscoverViewController.swift in Sources */,
+				840CA8471DD8B237006DBFE3 /* WBComposeViewController.swift in Sources */,
+				84EA94191DDCA3E3007B63D6 /* WBEmoticonManager.swift in Sources */,
+				F01C32551DCC697F000B41D5 /* WBTitleButton.swift in Sources */,
+				F01C32581DCC7E21000B41D5 /* WBWelcomeView.swift in Sources */,
+				844937ED1DC8DAF300893737 /* WBStatus.swift in Sources */,
+				847F63CF1DBFA5940046D981 /* UILabel+CZAddition.m in Sources */,
+				84469D231DCA29620028A69C /* WBCommon.swift in Sources */,
+				847F63C81DBFA5940046D981 /* NSAttributedString+CZAdditon.m in Sources */,
+				847F63D21DBFA5940046D981 /* UIViewController+CZAddition.m in Sources */,
+				84EA94181DDCA3E3007B63D6 /* WBEmoticonPackage.swift in Sources */,
+				F01C325A1DCC7E5A000B41D5 /* WBNewFeatureView.swift in Sources */,
+				847F63CA1DBFA5940046D981 /* NSString+CZBase64.m in Sources */,
+				F0DC3A391DD01EAD00FED38F /* WBUser.swift in Sources */,
+				841F6E6E1DC0F37B006B97DB /* WBDemoViewController.swift in Sources */,
+				8410C7D11DBFA35E00511D72 /* WBMessageViewController.swift in Sources */,
+				F0498B6B1DDC3AF10028801A /* WBComposeTextView.swift in Sources */,
+				8410C7CB1DBFA31D00511D72 /* WBBaseViewController.swift in Sources */,
+				F07715461DC885E9000059AE /* WBNetworkManager.swift in Sources */,
+				84469D261DCA2BA10028A69C /* WBOAuthController.swift in Sources */,
+				844937EB1DC8CD1B00893737 /* WBNetworkManager+Extension.swift in Sources */,
+				8410C7CF1DBFA35200511D72 /* WBHomeViewController.swift in Sources */,
+				F0DC3A351DD010F800FED38F /* WBStatusCell.swift in Sources */,
+				847F63CD1DBFA5940046D981 /* UIButton+CZAddition.m in Sources */,
+				847F63D01DBFA5940046D981 /* UIScreen+CZAddition.m in Sources */,
+				844937EF1DC8DCF500893737 /* WBStatusListViewModel.swift in Sources */,
+				F09A86681DD956C400C1C7D4 /* Date+Extensions.swift in Sources */,
+				84E477F01DD0C0AD00B6A046 /* WBStatusPictureView.swift in Sources */,
+				8410C7C91DBFA1AF00511D72 /* WBNaviagtionController.swift in Sources */,
+				847F63C91DBFA5940046D981 /* NSObject+CZRuntime.m in Sources */,
+				841388961DBF9AB200022EB6 /* AppDelegate.swift in Sources */,
+				84E477EC1DD0B3C700B6A046 /* WBStatusToolBar.swift in Sources */,
+				F09A86691DD956C400C1C7D4 /* String+Extension.swift in Sources */,
+				8410C7D61DBFA43500511D72 /* WBPorfileViewController.swift in Sources */,
+				847F63CC1DBFA5940046D981 /* NSString+CZPath.m in Sources */,
+				847F63D11DBFA5940046D981 /* UIView+CZAddition.m in Sources */,
+				847F63CB1DBFA5940046D981 /* NSString+CZHash.m in Sources */,
+				8410C7C71DBFA19D00511D72 /* WBMainTabbarController.swift in Sources */,
+				F0536C521DCB06950029003C /* WBUserAccount.swift in Sources */,
+				F02356731DD41CE100E0286B /* ZHRefershControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841388A21DBF9AB300022EB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841388AB1DBF9AB300022EB6 /* __Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841388AD1DBF9AB300022EB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841388B61DBF9AB300022EB6 /* __UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		841388A81DBF9AB300022EB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841388911DBF9AB200022EB6 /* 微博 */;
+			targetProxy = 841388A71DBF9AB300022EB6 /* PBXContainerItemProxy */;
+		};
+		841388B31DBF9AB300022EB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841388911DBF9AB200022EB6 /* 微博 */;
+			targetProxy = 841388B21DBF9AB300022EB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8413889E1DBF9AB200022EB6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8413889F1DBF9AB200022EB6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		841388B81DBF9AB300022EB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		841388B91DBF9AB300022EB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		841388BB1DBF9AB300022EB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C687EF0BF3128AFB008B33B8 /* Pods-微博.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7UK5342358;
+				INFOPLIST_FILE = "微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.weibo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "微博/weibo-Bridge.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		841388BC1DBF9AB300022EB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06504A5364E29F0CF2EC811C /* Pods-微博.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7UK5342358;
+				INFOPLIST_FILE = "微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangzhenhai.weibo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "微博/weibo-Bridge.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		841388BE1DBF9AB300022EB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "微博Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangzhenhai.--Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/微博.app/微博";
+			};
+			name = Debug;
+		};
+		841388BF1DBF9AB300022EB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "微博Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangzhenhai.--Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/微博.app/微博";
+			};
+			name = Release;
+		};
+		841388C11DBF9AB300022EB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "微博UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangzhenhai.--UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "微博";
+			};
+			name = Debug;
+		};
+		841388C21DBF9AB300022EB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "微博UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wangzhenhai.--UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "微博";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8413888D1DBF9AB200022EB6 /* Build configuration list for PBXProject "微博" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841388B81DBF9AB300022EB6 /* Debug */,
+				841388B91DBF9AB300022EB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841388BA1DBF9AB300022EB6 /* Build configuration list for PBXNativeTarget "微博" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841388BB1DBF9AB300022EB6 /* Debug */,
+				841388BC1DBF9AB300022EB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841388BD1DBF9AB300022EB6 /* Build configuration list for PBXNativeTarget "微博Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841388BE1DBF9AB300022EB6 /* Debug */,
+				841388BF1DBF9AB300022EB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841388C01DBF9AB300022EB6 /* Build configuration list for PBXNativeTarget "微博UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841388C11DBF9AB300022EB6 /* Debug */,
+				841388C21DBF9AB300022EB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8413888A1DBF9AB200022EB6 /* Project object */;
+}
