@@ -11,6 +11,9 @@ import UIKit
 //表情输入视图
 class WBEmoticonInputView: UIView {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var toolbar: UIView!
     class func inputView() -> WBEmoticonInputView{
         
         let nib = UINib(nibName: "WBEmoticonInputView", bundle: nil)

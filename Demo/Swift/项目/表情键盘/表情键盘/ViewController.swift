@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         textView.inputView = emoticonView
         
         textView.reloadInputViews()
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,7 +31,6 @@ class ViewController: UIViewController {
         
         textView.becomeFirstResponder()
     }
-
 
 }
 

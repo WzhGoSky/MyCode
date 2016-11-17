@@ -16,12 +16,13 @@
 		84EA93ED1DDCA2C0007B63D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA93EB1DDCA2C0007B63D6 /* LaunchScreen.storyboard */; };
 		84EA93F81DDCA2C0007B63D6 /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA93F71DDCA2C0007B63D6 /* ____Tests.swift */; };
 		84EA94031DDCA2C0007B63D6 /* ____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA94021DDCA2C0007B63D6 /* ____UITests.swift */; };
-		84EA94201DDCA3F3007B63D6 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84EA941B1DDCA3F3007B63D6 /* HMEmoticon.bundle */; };
-		84EA94211DDCA3F3007B63D6 /* WBEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA941D1DDCA3F3007B63D6 /* WBEmoticon.swift */; };
-		84EA94221DDCA3F3007B63D6 /* WBEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA941E1DDCA3F3007B63D6 /* WBEmoticonPackage.swift */; };
-		84EA94231DDCA3F3007B63D6 /* WBEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA941F1DDCA3F3007B63D6 /* WBEmoticonManager.swift */; };
-		84EA94261DDCA4FD007B63D6 /* WBEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA94251DDCA4FD007B63D6 /* WBEmoticonInputView.swift */; };
-		84EA94281DDCA635007B63D6 /* WBEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EA94271DDCA635007B63D6 /* WBEmoticonInputView.xib */; };
+		F02F7DFE1DDD42EB00EDBD5E /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F02F7DF61DDD42EB00EDBD5E /* HMEmoticon.bundle */; };
+		F02F7DFF1DDD42EB00EDBD5E /* WBEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F7DF81DDD42EB00EDBD5E /* WBEmoticon.swift */; };
+		F02F7E001DDD42EB00EDBD5E /* WBEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F7DF91DDD42EB00EDBD5E /* WBEmoticonPackage.swift */; };
+		F02F7E011DDD42EB00EDBD5E /* WBEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F7DFB1DDD42EB00EDBD5E /* WBEmoticonInputView.swift */; };
+		F02F7E021DDD42EB00EDBD5E /* WBEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02F7DFC1DDD42EB00EDBD5E /* WBEmoticonInputView.xib */; };
+		F02F7E031DDD42EB00EDBD5E /* WBEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F7DFD1DDD42EB00EDBD5E /* WBEmoticonManager.swift */; };
+		F0A99C441DDD48D200B1D291 /* WBEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A99C431DDD48D200B1D291 /* WBEmoticonToolbar.swift */; };
 		FA31A442F4E53F9EFF1FDAA1 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C425CAD0087F48C683E45A6C /* Pods_____.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,18 +59,19 @@
 		84EA93FE1DDCA2C0007B63D6 /* 表情键盘UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "表情键盘UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EA94021DDCA2C0007B63D6 /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
 		84EA94041DDCA2C0007B63D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84EA941B1DDCA3F3007B63D6 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
-		84EA941D1DDCA3F3007B63D6 /* WBEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticon.swift; sourceTree = "<group>"; };
-		84EA941E1DDCA3F3007B63D6 /* WBEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonPackage.swift; sourceTree = "<group>"; };
-		84EA941F1DDCA3F3007B63D6 /* WBEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonManager.swift; sourceTree = "<group>"; };
-		84EA94251DDCA4FD007B63D6 /* WBEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonInputView.swift; sourceTree = "<group>"; };
-		84EA94271DDCA635007B63D6 /* WBEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBEmoticonInputView.xib; sourceTree = "<group>"; };
 		AC63040344FEB933AB828C2C /* Pods-表情键盘UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-表情键盘UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-表情键盘UITests/Pods-表情键盘UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C425CAD0087F48C683E45A6C /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FAB211803758C7F9343F21 /* Pods_____UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5FD9BF0EBF5370FFDA0EB /* Pods-表情键盘.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-表情键盘.release.xcconfig"; path = "Pods/Target Support Files/Pods-表情键盘/Pods-表情键盘.release.xcconfig"; sourceTree = "<group>"; };
 		D9E536D6D387216D8CD50750 /* Pods_____Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EFDFE5D38F77A9FCDBDB5E /* Pods-表情键盘.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-表情键盘.debug.xcconfig"; path = "Pods/Target Support Files/Pods-表情键盘/Pods-表情键盘.debug.xcconfig"; sourceTree = "<group>"; };
+		F02F7DF61DDD42EB00EDBD5E /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		F02F7DF81DDD42EB00EDBD5E /* WBEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticon.swift; sourceTree = "<group>"; };
+		F02F7DF91DDD42EB00EDBD5E /* WBEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonPackage.swift; sourceTree = "<group>"; };
+		F02F7DFB1DDD42EB00EDBD5E /* WBEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonInputView.swift; sourceTree = "<group>"; };
+		F02F7DFC1DDD42EB00EDBD5E /* WBEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBEmoticonInputView.xib; sourceTree = "<group>"; };
+		F02F7DFD1DDD42EB00EDBD5E /* WBEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonManager.swift; sourceTree = "<group>"; };
+		F0A99C431DDD48D200B1D291 /* WBEmoticonToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonToolbar.swift; sourceTree = "<group>"; };
 		F2A370FC5CDE86A2DAA5492B /* Pods-表情键盘Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-表情键盘Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-表情键盘Tests/Pods-表情键盘Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +138,7 @@
 		84EA93E11DDCA2BF007B63D6 /* 表情键盘 */ = {
 			isa = PBXGroup;
 			children = (
-				84EA941A1DDCA3F3007B63D6 /* Emoticon */,
+				F02F7DF51DDD42EB00EDBD5E /* Emoticon */,
 				84EA93E21DDCA2BF007B63D6 /* AppDelegate.swift */,
 				84EA93E41DDCA2BF007B63D6 /* ViewController.swift */,
 				84EA93E61DDCA2BF007B63D6 /* Main.storyboard */,
@@ -165,36 +167,6 @@
 			path = "表情键盘UITests";
 			sourceTree = "<group>";
 		};
-		84EA941A1DDCA3F3007B63D6 /* Emoticon */ = {
-			isa = PBXGroup;
-			children = (
-				84EA94241DDCA4D0007B63D6 /* View */,
-				84EA941B1DDCA3F3007B63D6 /* HMEmoticon.bundle */,
-				84EA941C1DDCA3F3007B63D6 /* model */,
-				84EA941F1DDCA3F3007B63D6 /* WBEmoticonManager.swift */,
-			);
-			name = Emoticon;
-			path = "../../Github/MyCode/Demo/Swift/项目/微博/微博/Classes/Tools(工具)/Emoticon";
-			sourceTree = "<group>";
-		};
-		84EA941C1DDCA3F3007B63D6 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				84EA941D1DDCA3F3007B63D6 /* WBEmoticon.swift */,
-				84EA941E1DDCA3F3007B63D6 /* WBEmoticonPackage.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		84EA94241DDCA4D0007B63D6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				84EA94251DDCA4FD007B63D6 /* WBEmoticonInputView.swift */,
-				84EA94271DDCA635007B63D6 /* WBEmoticonInputView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		CEF45E3B1771B1D66A05E4FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +178,37 @@
 				62A3F7106823513019A8EEAE /* Pods-表情键盘UITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F02F7DF51DDD42EB00EDBD5E /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				F02F7DF61DDD42EB00EDBD5E /* HMEmoticon.bundle */,
+				F02F7DF71DDD42EB00EDBD5E /* model */,
+				F02F7DFA1DDD42EB00EDBD5E /* View */,
+				F02F7DFD1DDD42EB00EDBD5E /* WBEmoticonManager.swift */,
+			);
+			name = Emoticon;
+			path = "../../微博/微博/Classes/Tools(工具)/Emoticon";
+			sourceTree = "<group>";
+		};
+		F02F7DF71DDD42EB00EDBD5E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F02F7DF81DDD42EB00EDBD5E /* WBEmoticon.swift */,
+				F02F7DF91DDD42EB00EDBD5E /* WBEmoticonPackage.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F02F7DFA1DDD42EB00EDBD5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F02F7DFB1DDD42EB00EDBD5E /* WBEmoticonInputView.swift */,
+				F02F7DFC1DDD42EB00EDBD5E /* WBEmoticonInputView.xib */,
+				F0A99C431DDD48D200B1D291 /* WBEmoticonToolbar.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +264,7 @@
 				84EA93FB1DDCA2C0007B63D6 /* Frameworks */,
 				84EA93FC1DDCA2C0007B63D6 /* Resources */,
 				7B667544E34387515E1592E3 /* [CP] Copy Pods Resources */,
+				66817E2F4A8C6C3DDF9A6CD3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,10 +327,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EA94201DDCA3F3007B63D6 /* HMEmoticon.bundle in Resources */,
+				F02F7DFE1DDD42EB00EDBD5E /* HMEmoticon.bundle in Resources */,
 				84EA93ED1DDCA2C0007B63D6 /* LaunchScreen.storyboard in Resources */,
 				84EA93EA1DDCA2BF007B63D6 /* Assets.xcassets in Resources */,
-				84EA94281DDCA635007B63D6 /* WBEmoticonInputView.xib in Resources */,
+				F02F7E021DDD42EB00EDBD5E /* WBEmoticonInputView.xib in Resources */,
 				84EA93E81DDCA2BF007B63D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		46E77900C6AE88E473FB927B /* [CP] Check Pods Manifest.lock */ = {
@@ -405,7 +409,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		66817E2F4A8C6C3DDF9A6CD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-表情键盘UITests/Pods-表情键盘UITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6DECA4EC22F493CF43A98CCB /* [CP] Embed Pods Frameworks */ = {
@@ -450,7 +469,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A40CA2CFCC2707F503E1B994 /* [CP] Copy Pods Resources */ = {
@@ -475,12 +494,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EA94211DDCA3F3007B63D6 /* WBEmoticon.swift in Sources */,
-				84EA94221DDCA3F3007B63D6 /* WBEmoticonPackage.swift in Sources */,
+				F02F7DFF1DDD42EB00EDBD5E /* WBEmoticon.swift in Sources */,
+				F02F7E011DDD42EB00EDBD5E /* WBEmoticonInputView.swift in Sources */,
+				F02F7E001DDD42EB00EDBD5E /* WBEmoticonPackage.swift in Sources */,
 				84EA93E51DDCA2BF007B63D6 /* ViewController.swift in Sources */,
+				F02F7E031DDD42EB00EDBD5E /* WBEmoticonManager.swift in Sources */,
+				F0A99C441DDD48D200B1D291 /* WBEmoticonToolbar.swift in Sources */,
 				84EA93E31DDCA2BF007B63D6 /* AppDelegate.swift in Sources */,
-				84EA94261DDCA4FD007B63D6 /* WBEmoticonInputView.swift in Sources */,
-				84EA94231DDCA3F3007B63D6 /* WBEmoticonManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
